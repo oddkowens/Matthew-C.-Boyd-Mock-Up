@@ -1234,8 +1234,14 @@
       .testimonials-grid::-webkit-scrollbar { display: none; }
       .testimonial {
         min-width: 80vw;
-        scroll-snap-align: start;
+        max-width: 80vw;
+        width: 80vw;
         flex-shrink: 0;
+        scroll-snap-align: start;
+        white-space: normal;
+        word-break: normal;
+        overflow-wrap: break-word;
+        box-sizing: border-box;
       }
       .testimonial:nth-child(2),
       .testimonial:nth-child(3) { display: flex; }
@@ -1245,9 +1251,8 @@
       .prac { padding: 28px 20px 36px; }
       .prac-title { font-size: 18px; }
 
-      /* Hide process section on mobile */
-      .process-grid { display: none; }
-      .process-head { display: none; }
+      /* Hide entire process section on mobile */
+      .process { display: none; }
 
       /* FAQ — hide last 2 questions, keep top 4 */
       .faq .wrap { grid-template-columns: 1fr; gap: 32px; }
