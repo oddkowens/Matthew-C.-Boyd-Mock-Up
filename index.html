@@ -40,20 +40,29 @@
       line-height: 1.6;
     }
 
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 48px;
+      width: 100%;
+    }
+
     a { text-decoration: none; }
     img { display: block; max-width: 100%; }
 
     /* ── NAVIGATION ── */
     .nav {
       background: var(--navy);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 48px;
       height: 68px;
       position: sticky;
       top: 0;
       z-index: 100;
+    }
+    .nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
     }
 
     .nav-logo {
@@ -90,16 +99,18 @@
     }
     .nav-cta:hover { background: var(--gold-light) !important; }
 
-    /* ── HERO ── */
     .hero {
       background: var(--navy);
+      overflow: hidden;
+    }
+    .hero .container {
       display: grid;
       grid-template-columns: 1fr 420px;
       min-height: 520px;
     }
 
     .hero-left {
-      padding: 72px 48px;
+      padding: 72px 0;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -191,12 +202,13 @@
       pointer-events: none;
     }
 
-    /* ── STATS BAR ── */
     .stats-bar {
       background: var(--navy-mid);
+      border-top: 1px solid var(--navy-light);
+    }
+    .stats-bar .container {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      border-top: 1px solid var(--navy-light);
     }
 
     .stat {
@@ -222,8 +234,10 @@
     }
 
     /* ── SHARED SECTION STYLES ── */
-    .section { padding: 80px 48px; }
+    .section { padding: 80px 0; }
+    .section .container { width: 100%; }
     .section-light { background: var(--cream); }
+    .section-white { background: var(--white); }
     .section-white { background: var(--white); }
 
     .section-label {
@@ -294,10 +308,11 @@
       font-weight: 300;
     }
 
-    /* ── ABOUT ── */
     .about {
       background: var(--navy);
-      padding: 80px 48px;
+      padding: 80px 0;
+    }
+    .about .container {
       display: grid;
       grid-template-columns: 1fr 300px;
       gap: 72px;
@@ -444,10 +459,11 @@
       font-weight: 300;
     }
 
-    /* ── CTA BAND ── */
     .cta-band {
       background: var(--navy-mid);
-      padding: 64px 48px;
+      padding: 64px 0;
+    }
+    .cta-band .container {
       display: grid;
       grid-template-columns: 1fr auto;
       align-items: center;
@@ -496,15 +512,16 @@
     }
     .btn-cta:hover { background: var(--gold-light); }
 
-    /* ── FOOTER ── */
     .footer {
       background: var(--navy);
-      padding: 36px 48px;
+      padding: 36px 0;
+      border-top: 1px solid var(--navy-light);
+    }
+    .footer .container {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       align-items: center;
       gap: 24px;
-      border-top: 1px solid var(--navy-light);
     }
 
     .footer-logo {
@@ -528,25 +545,21 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
-      .nav { padding: 0 24px; }
-      .nav-links { gap: 16px; }
+      .container { padding: 0 24px; }
 
-      .hero { grid-template-columns: 1fr; }
+      .hero .container { grid-template-columns: 1fr; }
       .hero-right { height: 340px; }
-      .hero-left { padding: 48px 24px; }
+      .hero-left { padding: 48px 0; }
       .hero-h1 { font-size: 32px; }
 
-      .stats-bar { grid-template-columns: 1fr; }
+      .stats-bar .container { grid-template-columns: 1fr; }
       .stat { border-right: none; border-bottom: 1px solid var(--navy-light); }
       .stat:last-child { border-bottom: none; }
 
-      .section { padding: 56px 24px; }
-
       .results-grid { grid-template-columns: 1fr; }
 
-      .about {
+      .about .container {
         grid-template-columns: 1fr;
-        padding: 56px 24px;
         gap: 40px;
       }
       .about-img-wrap { max-width: 280px; }
@@ -556,18 +569,16 @@
       .process-grid { grid-template-columns: 1fr 1fr; }
       .process-step::after { display: none; }
 
-      .cta-band {
+      .cta-band .container {
         grid-template-columns: 1fr;
         text-align: center;
-        padding: 48px 24px;
       }
       .cta-phone { justify-content: center; }
 
-      .footer {
+      .footer .container {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 16px;
-        padding: 32px 24px;
       }
       .footer-copy { text-align: center; }
     }
@@ -584,18 +595,20 @@
 
   <!-- NAVIGATION -->
   <nav class="nav">
-    <div class="nav-logo">Matthew C. <span>Boyd</span></div>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#results">Case Results</a></li>
-      <li><a href="#practice">Practice Areas</a></li>
-      <li><a href="#contact" class="nav-cta">Free Consultation</a></li>
-    </ul>
+    <div class="container">
+      <div class="nav-logo">Matthew C. <span>Boyd</span></div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#results">Case Results</a></li>
+        <li><a href="#practice">Practice Areas</a></li>
+        <li><a href="#contact" class="nav-cta">Free Consultation</a></li>
+      </ul>
+    </div>
   </nav>
 
-  <!-- HERO -->
   <section class="hero">
-    <div class="hero-left">
+    <div class="container">
+      <div class="hero-left">
       <div class="eyebrow">Philadelphia Criminal Defense Attorney</div>
       <h1 class="hero-h1">
         When the stakes are<br>
@@ -628,199 +641,214 @@
         <img src="assets/images/matthew-boyd-hero.jpg" alt="Matthew C. Boyd, Philadelphia Criminal Defense Attorney" />
       </picture>
     </div>
+    </div><!-- /.container -->
   </section>
 
   <!-- STATS BAR -->
   <div class="stats-bar">
-    <div class="stat">
-      <div class="stat-num">100+</div>
-      <div class="stat-label">Jury Trials Litigated</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">10+</div>
-      <div class="stat-label">Years Criminal Defense</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">1,000s</div>
-      <div class="stat-label">Cases Handled</div>
+    <div class="container">
+      <div class="stat">
+        <div class="stat-num">100+</div>
+        <div class="stat-label">Jury Trials Litigated</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">10+</div>
+        <div class="stat-label">Years Criminal Defense</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">1,000s</div>
+        <div class="stat-label">Cases Handled</div>
+      </div>
     </div>
   </div>
 
   <!-- CASE RESULTS -->
   <section class="section section-light" id="results">
-    <div class="section-label">Verdicts that speak for themselves</div>
-    <h2 class="section-h2">Notable Case Results</h2>
-    <div class="section-rule"></div>
-    <div class="results-grid">
-      <div class="result-card">
-        <div class="result-verdict">Not Guilty — All Charges</div>
-        <div class="result-charges">Attempted Murder &amp; Aggravated Assault</div>
-        <p class="result-body">
-          Three eyewitnesses testified they personally saw the client commit the crime.
-          Matthew exposed critical inconsistencies in their accounts and demonstrated to the
-          jury that each witness had motive to falsely identify his client. The jury returned
-          Not Guilty on every count.
-        </p>
-      </div>
-      <div class="result-card">
-        <div class="result-verdict">Not Guilty — All Charges</div>
-        <div class="result-charges">Narcotics Distribution &amp; Firearms Offenses</div>
-        <p class="result-body">
-          The client's own DNA was found on both an illegal firearm and a large quantity of
-          narcotics. Matthew proved that police contaminated the evidence by failing to wear
-          gloves during the search — and the jury returned Not Guilty on all charges.
-        </p>
+    <div class="container">
+      <div class="section-label">Verdicts that speak for themselves</div>
+      <h2 class="section-h2">Notable Case Results</h2>
+      <div class="section-rule"></div>
+      <div class="results-grid">
+        <div class="result-card">
+          <div class="result-verdict">Not Guilty — All Charges</div>
+          <div class="result-charges">Attempted Murder &amp; Aggravated Assault</div>
+          <p class="result-body">
+            Three eyewitnesses testified they personally saw the client commit the crime.
+            Matthew exposed critical inconsistencies in their accounts and demonstrated to the
+            jury that each witness had motive to falsely identify his client. The jury returned
+            Not Guilty on every count.
+          </p>
+        </div>
+        <div class="result-card">
+          <div class="result-verdict">Not Guilty — All Charges</div>
+          <div class="result-charges">Narcotics Distribution &amp; Firearms Offenses</div>
+          <p class="result-body">
+            The client's own DNA was found on both an illegal firearm and a large quantity of
+            narcotics. Matthew proved that police contaminated the evidence by failing to wear
+            gloves during the search — and the jury returned Not Guilty on all charges.
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ABOUT -->
   <section class="about" id="about">
-    <div>
-      <div class="about-eyebrow">Why Matthew is different</div>
-      <blockquote class="about-quote">
-        "Many attorneys think being a lawyer is just a way to earn a paycheck.
-        Matthew decided he wanted to be a trial attorney in fifth grade."
-      </blockquote>
-      <p class="about-body">
-        Matthew has practiced criminal law since graduating from Villanova University
-        School of Law in 2014. He has handled thousands of cases — pretrial hearings,
-        bail and detainer hearings, motions to suppress, and over 100 jury trials. He
-        cares about his clients. He returns calls. And he actually goes to trial when
-        that is what it takes to win.
-      </p>
-      <p class="about-body">
-        He is dedicated to standing up to a criminal justice system that too often
-        over-prosecutes and dehumanizes those it was built to serve.
-      </p>
-      <div class="about-credential">
-        <i data-lucide="graduation-cap" style="width:16px;height:16px;stroke:var(--gold)"></i>
-        Matthew C. Boyd, Esq. &nbsp;·&nbsp; Villanova Law, 2014
+    <div class="container">
+      <div>
+        <div class="about-eyebrow">Why Matthew is different</div>
+        <blockquote class="about-quote">
+          "Many attorneys think being a lawyer is just a way to earn a paycheck.
+          Matthew decided he wanted to be a trial attorney in fifth grade."
+        </blockquote>
+        <p class="about-body">
+          Matthew has practiced criminal law since graduating from Villanova University
+          School of Law in 2014. He has handled thousands of cases — pretrial hearings,
+          bail and detainer hearings, motions to suppress, and over 100 jury trials. He
+          cares about his clients. He returns calls. And he actually goes to trial when
+          that is what it takes to win.
+        </p>
+        <p class="about-body">
+          He is dedicated to standing up to a criminal justice system that too often
+          over-prosecutes and dehumanizes those it was built to serve.
+        </p>
+        <div class="about-credential">
+          <i data-lucide="graduation-cap" style="width:16px;height:16px;stroke:var(--gold)"></i>
+          Matthew C. Boyd, Esq. &nbsp;·&nbsp; Villanova Law, 2014
+        </div>
       </div>
-    </div>
-    <div class="about-img-wrap">
-      <!--
-        IMAGE FILE: matthew-boyd-about.webp  (or .jpg)
-        Can be the same source photo as the hero — same file is fine.
-        Place in: assets/images/matthew-boyd-about.webp
-      -->
-      <picture>
-        <source srcset="assets/images/matthew-boyd-about.webp" type="image/webp">
-        <img src="assets/images/matthew-boyd-about.jpg" alt="Matthew C. Boyd" />
-      </picture>
+      <div class="about-img-wrap">
+        <!--
+          IMAGE FILE: matthew-boyd-about.webp  (or .jpg)
+          Can be the same source photo as the hero — same file is fine.
+          Place in: assets/images/matthew-boyd-about.webp
+        -->
+        <picture>
+          <source srcset="assets/images/matthew-boyd-about.webp" type="image/webp">
+          <img src="assets/images/matthew-boyd-about.jpg" alt="Matthew C. Boyd" />
+        </picture>
+      </div>
     </div>
   </section>
 
   <!-- PRACTICE AREAS -->
   <section class="section section-light" id="practice">
-    <div class="section-label">What Matthew handles</div>
-    <h2 class="section-h2">Practice Areas</h2>
-    <div class="section-rule"></div>
-    <div class="practice-grid">
+    <div class="container">
+      <div class="section-label">What Matthew handles</div>
+      <h2 class="section-h2">Practice Areas</h2>
+      <div class="section-rule"></div>
+      <div class="practice-grid">
 
-      <div class="prac-card">
-        <div class="prac-icon">
-          <i data-lucide="shield-alert" style="width:18px;height:18px;stroke:var(--gold)"></i>
+        <div class="prac-card">
+          <div class="prac-icon">
+            <i data-lucide="shield-alert" style="width:18px;height:18px;stroke:var(--gold)"></i>
+          </div>
+          <div class="prac-title">Violent Crimes</div>
+          <p class="prac-body">Attempted Murder, Aggravated Assault, Robbery, Kidnapping. Matthew has won Not Guilty verdicts on the most serious charges Philadelphia prosecutors bring.</p>
         </div>
-        <div class="prac-title">Violent Crimes</div>
-        <p class="prac-body">Attempted Murder, Aggravated Assault, Robbery, Kidnapping. Matthew has won Not Guilty verdicts on the most serious charges Philadelphia prosecutors bring.</p>
-      </div>
 
-      <div class="prac-card">
-        <div class="prac-icon">
-          <i data-lucide="lock" style="width:18px;height:18px;stroke:var(--gold)"></i>
+        <div class="prac-card">
+          <div class="prac-icon">
+            <i data-lucide="lock" style="width:18px;height:18px;stroke:var(--gold)"></i>
+          </div>
+          <div class="prac-title">Drug &amp; Firearms Offenses</div>
+          <p class="prac-body">Possession, distribution, and firearms charges. Matthew challenges the evidence, the search, and the stop — and wins cases others would plead out.</p>
         </div>
-        <div class="prac-title">Drug &amp; Firearms Offenses</div>
-        <p class="prac-body">Possession, distribution, and firearms charges. Matthew challenges the evidence, the search, and the stop — and wins cases others would plead out.</p>
-      </div>
 
-      <div class="prac-card">
-        <div class="prac-icon">
-          <i data-lucide="car" style="width:18px;height:18px;stroke:var(--gold)"></i>
+        <div class="prac-card">
+          <div class="prac-icon">
+            <i data-lucide="car" style="width:18px;height:18px;stroke:var(--gold)"></i>
+          </div>
+          <div class="prac-title">DUI Defense</div>
+          <p class="prac-body">Challenging traffic stops, field sobriety tests, and breath test results. Matthew protects your license, your record, and your future.</p>
         </div>
-        <div class="prac-title">DUI Defense</div>
-        <p class="prac-body">Challenging traffic stops, field sobriety tests, and breath test results. Matthew protects your license, your record, and your future.</p>
-      </div>
 
-      <div class="prac-card">
-        <div class="prac-icon">
-          <i data-lucide="gavel" style="width:18px;height:18px;stroke:var(--gold)"></i>
+        <div class="prac-card">
+          <div class="prac-icon">
+            <i data-lucide="gavel" style="width:18px;height:18px;stroke:var(--gold)"></i>
+          </div>
+          <div class="prac-title">Pretrial &amp; Bail Hearings</div>
+          <p class="prac-body">Matthew has represented clients at thousands of preliminary hearings and regularly gets clients out of custody before trial by challenging bail and detainers.</p>
         </div>
-        <div class="prac-title">Pretrial &amp; Bail Hearings</div>
-        <p class="prac-body">Matthew has represented clients at thousands of preliminary hearings and regularly gets clients out of custody before trial by challenging bail and detainers.</p>
-      </div>
 
-      <div class="prac-card">
-        <div class="prac-icon">
-          <i data-lucide="home" style="width:18px;height:18px;stroke:var(--gold)"></i>
+        <div class="prac-card">
+          <div class="prac-icon">
+            <i data-lucide="home" style="width:18px;height:18px;stroke:var(--gold)"></i>
+          </div>
+          <div class="prac-title">Burglary &amp; Theft</div>
+          <p class="prac-body">Burglary, Robbery, Receiving Stolen Property. Strategic defense from the moment of arrest through trial.</p>
         </div>
-        <div class="prac-title">Burglary &amp; Theft</div>
-        <p class="prac-body">Burglary, Robbery, Receiving Stolen Property. Strategic defense from the moment of arrest through trial.</p>
-      </div>
 
-      <div class="prac-card">
-        <div class="prac-icon">
-          <i data-lucide="message-circle" style="width:18px;height:18px;stroke:var(--gold)"></i>
+        <div class="prac-card">
+          <div class="prac-icon">
+            <i data-lucide="message-circle" style="width:18px;height:18px;stroke:var(--gold)"></i>
+          </div>
+          <div class="prac-title">Free Consultation</div>
+          <p class="prac-body">Not sure if you need an attorney? Call Matthew. He will tell you honestly what you are facing and what your options are — no pressure, no obligation.</p>
         </div>
-        <div class="prac-title">Free Consultation</div>
-        <p class="prac-body">Not sure if you need an attorney? Call Matthew. He will tell you honestly what you are facing and what your options are — no pressure, no obligation.</p>
-      </div>
 
+      </div>
     </div>
   </section>
 
   <!-- HOW IT WORKS -->
   <section class="section section-white">
-    <div class="section-label">From first call to verdict</div>
-    <h2 class="section-h2">What to Expect</h2>
-    <div class="section-rule"></div>
-    <div class="process-grid">
-      <div class="process-step">
-        <div class="step-num">01</div>
-        <div class="step-title">Free Consultation</div>
-        <p class="step-body">Call or text Matthew directly. He will review the charges, explain your rights, and give you an honest read on your situation — at no cost.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-num">02</div>
-        <div class="step-title">Case Investigation</div>
-        <p class="step-body">Matthew digs into the evidence, the stop, the search, and the witnesses. He looks for every angle before the first hearing.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-num">03</div>
-        <div class="step-title">Pretrial Strategy</div>
-        <p class="step-body">Motions to suppress, bail hearings, preliminary hearings. Many cases are won or lost before trial — Matthew knows this and prepares accordingly.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-num">04</div>
-        <div class="step-title">Trial Ready</div>
-        <p class="step-body">If the case goes to trial, Matthew is ready. Over 100 jury trials. A winning record. He does not back down when it matters most.</p>
+    <div class="container">
+      <div class="section-label">From first call to verdict</div>
+      <h2 class="section-h2">What to Expect</h2>
+      <div class="section-rule"></div>
+      <div class="process-grid">
+        <div class="process-step">
+          <div class="step-num">01</div>
+          <div class="step-title">Free Consultation</div>
+          <p class="step-body">Call or text Matthew directly. He will review the charges, explain your rights, and give you an honest read on your situation — at no cost.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">02</div>
+          <div class="step-title">Case Investigation</div>
+          <p class="step-body">Matthew digs into the evidence, the stop, the search, and the witnesses. He looks for every angle before the first hearing.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">03</div>
+          <div class="step-title">Pretrial Strategy</div>
+          <p class="step-body">Motions to suppress, bail hearings, preliminary hearings. Many cases are won or lost before trial — Matthew knows this and prepares accordingly.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">04</div>
+          <div class="step-title">Trial Ready</div>
+          <p class="step-body">If the case goes to trial, Matthew is ready. Over 100 jury trials. A winning record. He does not back down when it matters most.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- CTA BAND -->
   <section class="cta-band" id="contact">
-    <div>
-      <h2>Facing charges? Don't wait.</h2>
-      <p>Every day matters in a criminal case. Matthew is available and responds quickly.</p>
-    </div>
-    <div class="cta-right">
-      <div class="cta-phone">
-        <i data-lucide="phone" style="width:22px;height:22px;stroke:var(--gold)"></i>
-        (215) 000-0000
+    <div class="container">
+      <div>
+        <h2>Facing charges? Don't wait.</h2>
+        <p>Every day matters in a criminal case. Matthew is available and responds quickly.</p>
       </div>
-      <a href="mailto:matthew@matthewboydlaw.com" class="btn-cta">Schedule a Free Consultation</a>
+      <div class="cta-right">
+        <div class="cta-phone">
+          <i data-lucide="phone" style="width:22px;height:22px;stroke:var(--gold)"></i>
+          (215) 000-0000
+        </div>
+        <a href="mailto:matthew@matthewboydlaw.com" class="btn-cta">Schedule a Free Consultation</a>
+      </div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <div class="footer-logo">Matthew C. Boyd, Esq.</div>
-    <p class="footer-disclaimer">
-      Attorney advertising. Prior results do not guarantee a similar outcome.
-      Philadelphia, Pennsylvania.
-    </p>
-    <p class="footer-copy">&copy; 2025 Matthew C. Boyd</p>
+    <div class="container">
+      <div class="footer-logo">Matthew C. Boyd, Esq.</div>
+      <p class="footer-disclaimer">
+        Attorney advertising. Prior results do not guarantee a similar outcome.
+        Philadelphia, Pennsylvania.
+      </p>
+      <p class="footer-copy">&copy; 2025 Matthew C. Boyd</p>
+    </div>
   </footer>
 
   <!-- Initialize Lucide icons -->
