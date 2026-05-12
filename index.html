@@ -229,26 +229,64 @@
     .cta-band,
     .nav { position: relative; }
 
-    /* Ensure content sits above grain */
+    /* Ensure content sits above grain and scrim */
     .hero .container,
     .stats-bar .container,
     .section-dark .container,
     .about .container,
     .cta-band .container,
-    .nav .container { position: relative; z-index: 3; }
+    .nav .container { position: relative; z-index: 4; }
 
-    /* Skyline background layer — used on hero, results, about, cta */
-    .dark-bg-skyline {
+    /* Skyline parallax background — single image, CSS-only, covers all dark sections */
+    .hero,
+    .stats-bar,
+    .section-dark,
+    .about,
+    .cta-band {
+      background-color: var(--navy);
+      background-image: url("assets/images/philadelphia-skyline.jpg");
+      background-size: cover;
+      background-position: center center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+    }
+
+    /* Scrim — navy color overlay at 80% so the skyline reads at ~20% opacity */
+    .hero::before,
+    .stats-bar::before,
+    .section-dark::before,
+    .about::before,
+    .cta-band::before {
+      content: '';
       position: absolute;
       inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center center;
-      filter: grayscale(100%) brightness(0.18) contrast(1.2);
-      opacity: 0.55;
-      pointer-events: none;
+      background: rgba(15, 28, 46, 0.80);
       z-index: 1;
+      pointer-events: none;
+    }
+
+    /* WebP fallback for CSS background */
+    @supports (background-image: url("x.webp")) {
+      .hero,
+      .stats-bar,
+      .section-dark,
+      .about,
+      .cta-band {
+        background-image: url("assets/images/philadelphia-skyline.webp");
+      }
+    }
+
+    /* Mobile: fixed attachment breaks on iOS Safari, fall back to static */
+    @media (max-width: 768px) {
+      .hero,
+      .stats-bar,
+      .section-dark,
+      .about,
+      .cta-band {
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: center top;
+      }
     }
 
     /* Section angle dividers */
@@ -1228,15 +1266,6 @@
 
   <!-- HERO -->
   <section class="hero">
-    <!--
-      SKYLINE IMAGE: assets/images/philadelphia-skyline.webp + .jpg
-      Also used here as a dark background texture layer.
-      Same file as the philly band below — no extra file needed.
-    -->
-    <picture>
-      <source srcset="assets/images/philadelphia-skyline.webp" type="image/webp">
-      <img class="dark-bg-skyline" src="assets/images/philadelphia-skyline.jpg" alt="" role="presentation" />
-    </picture>
     <div class="container">
       <div class="hero-left">
         <div class="eyebrow">Philadelphia Criminal Defense Attorney</div>
@@ -1293,10 +1322,6 @@
 
   <!-- CASE RESULTS -->
   <section class="section section-dark" id="results">
-    <picture>
-      <source srcset="assets/images/philadelphia-skyline.webp" type="image/webp">
-      <img class="dark-bg-skyline" src="assets/images/philadelphia-skyline.jpg" alt="" role="presentation" />
-    </picture>
     <div class="container">
       <div class="section-label">Verdicts that speak for themselves</div>
       <h2 class="section-h2">Notable Case Results</h2>
@@ -1344,10 +1369,6 @@
 
   <!-- ABOUT -->
   <section class="about" id="about">
-    <picture>
-      <source srcset="assets/images/philadelphia-skyline.webp" type="image/webp">
-      <img class="dark-bg-skyline" src="assets/images/philadelphia-skyline.jpg" alt="" role="presentation" />
-    </picture>
     <div class="container">
       <div>
         <div class="about-eyebrow">Why Matthew is different</div>
@@ -1697,10 +1718,6 @@
 
   <!-- CTA BAND -->
   <section class="cta-band">
-    <picture>
-      <source srcset="assets/images/philadelphia-skyline.webp" type="image/webp">
-      <img class="dark-bg-skyline" src="assets/images/philadelphia-skyline.jpg" alt="" role="presentation" />
-    </picture>
     <div class="container">
       <div>
         <h2>Facing charges? Don&rsquo;t wait.</h2>
