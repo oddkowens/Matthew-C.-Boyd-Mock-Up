@@ -237,57 +237,47 @@
     .cta-band .container,
     .nav .container { position: relative; z-index: 4; }
 
-    /* Skyline parallax background — single image, CSS-only, covers all dark sections */
+    /* Skyline parallax — single fixed element behind all dark sections.
+       Using a fixed-position element avoids the overflow:hidden + background-attachment:fixed
+       browser bug that kills the effect on sections with overflow hidden. */
+    .skyline-parallax {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("assets/images/philadelphia-skyline.jpg");
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      opacity: 0.2;
+      z-index: 0;
+      pointer-events: none;
+    }
+    @supports (background-image: url("x.webp")) {
+      .skyline-parallax {
+        background-image: url("assets/images/philadelphia-skyline.webp");
+      }
+    }
+
+    /* Dark sections sit above the fixed skyline with a semi-transparent navy bg.
+       rgba(15,28,46,0.88) keeps navy feel while letting skyline show at ~20% */
     .hero,
     .stats-bar,
     .section-dark,
     .about,
     .cta-band {
-      background-color: var(--navy);
-      background-image: url("assets/images/philadelphia-skyline.jpg");
-      background-size: cover;
-      background-position: center center;
-      background-attachment: fixed;
-      background-repeat: no-repeat;
-    }
-
-    /* Scrim — navy color overlay at 80% so the skyline reads at ~20% opacity */
-    .hero::before,
-    .stats-bar::before,
-    .section-dark::before,
-    .about::before,
-    .cta-band::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(15, 28, 46, 0.80);
+      background-color: rgba(15, 28, 46, 0.88) !important;
+      position: relative;
       z-index: 1;
-      pointer-events: none;
     }
 
-    /* WebP fallback for CSS background */
-    @supports (background-image: url("x.webp")) {
-      .hero,
-      .stats-bar,
-      .section-dark,
-      .about,
-      .cta-band {
-        background-image: url("assets/images/philadelphia-skyline.webp");
-      }
-    }
-
-    /* Mobile: fixed attachment breaks on iOS Safari, fall back to static */
-    @media (max-width: 768px) {
-      .hero,
-      .stats-bar,
-      .section-dark,
-      .about,
-      .cta-band {
-        background-attachment: scroll;
-        background-size: cover;
-        background-position: center top;
-      }
-    }
+    /* Light sections need solid backgrounds to fully cover the fixed skyline */
+    .section-light { background: var(--cream) !important; position: relative; z-index: 1; }
+    .section-white { background: var(--white) !important; position: relative; z-index: 1; }
+    .philly-band   { position: relative; z-index: 1; }
+    .nav           { z-index: 100; }
+    .nav-drawer    { z-index: 99; }
+    .footer        { position: relative; z-index: 1; }
 
     /* Section angle dividers */
     .angle-bottom {
@@ -323,7 +313,6 @@
 
     /* ── HERO ── */
     .hero {
-      background: var(--navy);
       overflow: hidden;
     }
     .hero .container {
@@ -424,7 +413,6 @@
 
     /* ── STATS BAR ── */
     .stats-bar {
-      background: var(--navy-mid);
       border-top: 1px solid var(--navy-light);
     }
     .stats-bar .container {
@@ -612,7 +600,6 @@
 
     /* ── ABOUT ── */
     .about {
-      background: var(--navy);
       padding: 88px 0;
     }
     .about .container {
@@ -914,7 +901,6 @@
 
     /* ── CTA BAND ── */
     .cta-band {
-      background: var(--navy-mid);
       padding: 72px 0;
     }
     .cta-band .container {
@@ -1239,6 +1225,9 @@
   </style>
 </head>
 <body>
+
+  <!-- Fixed skyline background — sits behind all dark sections via z-index -->
+  <div class="skyline-parallax" aria-hidden="true"></div>
 
   <!-- NAVIGATION -->
   <nav class="nav">
