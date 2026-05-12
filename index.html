@@ -1167,38 +1167,118 @@
       .results-intro { grid-template-columns: 1fr; gap: 24px; }
       .footer-main { grid-template-columns: 1fr 1fr; gap: 48px; }
     }
+
     @media (max-width: 900px) {
       .wrap { padding: 0 24px; }
       .nav-links { display: none; }
       .nav-hamburger { display: flex; }
-      .hero .wrap { grid-template-columns: 1fr; gap: 56px; padding-top: 64px; padding-bottom: 72px; }
-      .hero-portrait { max-width: 360px; }
-      .hero-stat { left: 0; }
-      .stats .wrap { grid-template-columns: 1fr; }
-      .stat { border-right: none; border-bottom: 1px solid var(--navy-line); }
-      .stat:last-child { border-bottom: none; }
-      .section { padding: 72px 0; }
-      .case-item { grid-template-columns: 1fr; gap: 16px; }
-      .about .wrap { grid-template-columns: 1fr; }
+
+      /* Hero — tighter, portrait hidden, CTA front and center */
+      .hero .wrap { grid-template-columns: 1fr; gap: 0; padding-top: 56px; padding-bottom: 56px; }
+      .hero-portrait { display: none; }
+      .hero-h1 { font-size: 42px; }
+      .hero-sub { font-size: 15px; margin-bottom: 32px; }
+
+      /* Stats — compact horizontal row instead of full-height stacked blocks */
+      .stats .wrap {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0;
+      }
+      .stat {
+        padding: 20px 12px;
+        border-right: 1px solid var(--navy-line);
+        border-bottom: none;
+      }
+      .stat:last-child { border-right: none; }
+      .stat-num { font-size: 28px; }
+      .stat-label { font-size: 10px; letter-spacing: 0.1em; }
+
+      /* Reduce all section padding */
+      .section { padding: 56px 0; }
+      .results { padding: 56px 0; }
+      .about { padding: 56px 0; }
+      .why-trial { padding: 56px 0; }
+      .philly { min-height: 280px; }
+      .philly .wrap { padding-top: 48px; padding-bottom: 48px; }
+
+      /* Case results */
+      .case-item { grid-template-columns: 1fr; gap: 12px; }
+      .case-index { display: none; }
+      .case-charges { font-size: 22px; }
+
+      /* About */
+      .about .wrap { grid-template-columns: 1fr; gap: 32px; }
       .about-img-wrap { position: static; width: 100%; max-width: 100%; }
-      .testimonials-grid { grid-template-columns: 1fr; gap: 24px; }
+      .about-creds { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+      .about-cred-num { font-size: 24px; }
+
+      /* Hide why trial on mobile — covered by about section */
+      .why-trial { display: none; }
+
+      /* Hide philly band on mobile — not a conversion driver */
+      .philly { display: none; }
+
+      /* Testimonials — horizontal scroll carousel */
+      .testimonials-grid {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        gap: 16px;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 16px;
+        margin: 0 -24px;
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+      .testimonials-grid::-webkit-scrollbar { display: none; }
+      .testimonial {
+        min-width: 80vw;
+        scroll-snap-align: start;
+        flex-shrink: 0;
+      }
+      .testimonial:nth-child(2),
+      .testimonial:nth-child(3) { display: flex; }
+
+      /* Practice — 2 columns */
       .practice-grid { grid-template-columns: 1fr 1fr; }
-      .process-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
-      .process-grid::before { display: none; }
-      .faq .wrap { grid-template-columns: 1fr; gap: 48px; }
+      .prac { padding: 28px 20px 36px; }
+      .prac-title { font-size: 18px; }
+
+      /* Hide process section on mobile */
+      .process-grid { display: none; }
+      .process-head { display: none; }
+
+      /* FAQ — hide last 2 questions, keep top 4 */
+      .faq .wrap { grid-template-columns: 1fr; gap: 32px; }
       .faq-aside { position: static; }
-      .contact .wrap { grid-template-columns: 1fr; gap: 48px; }
-      .cta-band .wrap { grid-template-columns: 1fr; text-align: center; gap: 32px; }
-      .cta-phone { justify-content: center; }
-      .footer-main { grid-template-columns: 1fr; gap: 40px; padding-bottom: 40px; }
+      .faq-aside p { display: none; }
+      .faq-item:nth-child(5),
+      .faq-item:nth-child(6) { display: none; }
+
+      /* Contact */
+      .contact .wrap { grid-template-columns: 1fr; gap: 36px; }
+
+      /* CTA band */
+      .cta-band { padding: 48px 0; }
+      .cta-band .wrap { grid-template-columns: 1fr; text-align: center; gap: 24px; }
+      .cta-phone { justify-content: center; font-size: 26px; }
+
+      /* Footer — essentials only */
+      .footer { padding: 40px 0 24px; }
+      .footer-main { grid-template-columns: 1fr; gap: 0; padding-bottom: 0; border-bottom: none; }
+      .footer-brand { padding-bottom: 28px; border-bottom: 1px solid var(--navy-line); margin-bottom: 28px; }
+      .footer-col:nth-child(2),
+      .footer-col:nth-child(3) { display: none; }
+      .footer-col:nth-child(4) { padding-bottom: 28px; border-bottom: 1px solid var(--navy-line); margin-bottom: 28px; }
       .footer-bottom { grid-template-columns: 1fr; text-align: center; gap: 12px; }
       .footer-bottom .mid, .footer-bottom .right { text-align: center; }
     }
+
     @media (max-width: 600px) {
+      .hero-h1 { font-size: 36px; }
       .practice-grid { grid-template-columns: 1fr; }
-      .process-grid { grid-template-columns: 1fr; }
       .form-row { grid-template-columns: 1fr; }
-      .about-creds { grid-template-columns: 1fr 1fr; }
     }
   </style>
 </head>
