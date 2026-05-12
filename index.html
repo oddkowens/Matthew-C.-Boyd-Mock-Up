@@ -1251,8 +1251,39 @@
       .prac { padding: 28px 20px 36px; }
       .prac-title { font-size: 18px; }
 
-      /* Hide entire process section on mobile */
-      .process { display: none; }
+      /* Process — horizontal scroll carousel matching testimonials */
+      #process-section { display: block; }
+      .process-grid {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        gap: 16px;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 16px;
+        margin: 0 -24px;
+        padding-left: 24px;
+        padding-right: 24px;
+        background: transparent;
+        border: none;
+        grid-template-columns: unset;
+      }
+      .process-grid::before { display: none; }
+      .process-step {
+        min-width: 72vw;
+        max-width: 72vw;
+        width: 72vw;
+        flex-shrink: 0;
+        scroll-snap-align: start;
+        background: var(--white);
+        border: 1px solid var(--cream-dim);
+        padding: 28px 24px;
+        box-sizing: border-box;
+      }
+      .process-grid::-webkit-scrollbar { display: none; }
+      .process-dot { margin-bottom: 20px; }
+      .process-title { font-size: 18px; }
+      .process-body { font-size: 14px; }
 
       /* FAQ — hide last 2 questions, keep top 4 */
       .faq .wrap { grid-template-columns: 1fr; gap: 32px; }
@@ -1644,7 +1675,7 @@
   </section>
 
   <!-- PROCESS -->
-  <section class="section section-light">
+  <section class="section section-light" id="process-section">
     <div class="wrap">
       <span class="section-label">From First Call to Verdict</span>
       <h2 class="section-h2">What to Expect</h2>
