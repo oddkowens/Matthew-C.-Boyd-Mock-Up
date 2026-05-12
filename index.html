@@ -112,7 +112,7 @@
       list-style: none;
     }
     .nav-links a {
-      color: var(--text-muted);
+      color: #c8d4e0;
       font-size: 14px;
       font-weight: 400;
       letter-spacing: 0.03em;
@@ -166,7 +166,7 @@
     }
     .nav-drawer.open { display: flex; }
     .nav-drawer a {
-      color: var(--text-muted);
+      color: #c8d4e0;
       font-size: 15px;
       padding: 10px 0;
       border-bottom: 1px solid var(--navy-light);
@@ -259,14 +259,15 @@
       }
     }
 
-    /* Dark sections sit above the fixed skyline with a semi-transparent navy bg.
-       rgba(15,28,46,0.88) keeps navy feel while letting skyline show at ~20% */
+    /* Dark sections sit above the fixed skyline.
+       0.93 opacity restores the deep navy while letting just enough
+       skyline texture bleed through at ~7% — subtle, not washed out */
     .hero,
     .stats-bar,
     .section-dark,
     .about,
     .cta-band {
-      background-color: rgba(15, 28, 46, 0.88) !important;
+      background-color: rgba(15, 28, 46, 0.93) !important;
       position: relative;
       z-index: 1;
     }
@@ -348,12 +349,12 @@
     .hero-h1 em { color: var(--gold); font-style: normal; }
 
     .hero-sub {
-      color: var(--text-muted);
+      color: #c8d4e0;
       font-size: 16px;
       line-height: 1.75;
       max-width: 420px;
       margin-bottom: 40px;
-      font-weight: 300;
+      font-weight: 400;
     }
 
     .hero-actions {
@@ -435,7 +436,7 @@
       line-height: 1;
     }
     .stat-label {
-      color: var(--text-muted);
+      color: #c8d4e0;
       font-size: 12px;
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -480,8 +481,8 @@
     /* ── CASE RESULTS ── */
     .results-intro {
       font-size: 15px;
-      color: var(--text-muted);
-      font-weight: 300;
+      color: #c8d4e0;
+      font-weight: 400;
       max-width: 560px;
       line-height: 1.75;
       margin-bottom: 48px;
@@ -534,9 +535,9 @@
 
     .result-body {
       font-size: 15px;
-      color: var(--text-muted);
+      color: #c8d4e0;
       line-height: 1.75;
-      font-weight: 300;
+      font-weight: 400;
     }
 
     /* ── PHILADELPHIA BAND ── */
@@ -554,11 +555,20 @@
       height: 100%;
       object-fit: cover;
       object-position: center 60%;
-      filter: brightness(0.28) saturate(0.5);
+      filter: brightness(0.22) saturate(0.4);
+    }
+    /* Extra scrim on top of the image for guaranteed contrast */
+    .philly-band::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(10, 20, 35, 0.6);
+      z-index: 1;
+      pointer-events: none;
     }
     .philly-band-overlay {
       position: relative;
-      z-index: 1;
+      z-index: 2;
       width: 100%;
       padding: 64px 0;
     }
@@ -570,28 +580,30 @@
     }
     .philly-band-text h3 {
       font-family: 'Playfair Display', serif;
-      color: var(--cream);
+      color: #ffffff;
       font-size: 26px;
       font-weight: 700;
       margin-bottom: 12px;
+      text-shadow: 0 1px 8px rgba(0,0,0,0.5);
     }
     .philly-band-text p {
-      color: var(--text-muted);
+      color: #c8d4e0;
       font-size: 15px;
-      font-weight: 300;
+      font-weight: 400;
       max-width: 500px;
       line-height: 1.75;
     }
     .philly-band-stat { text-align: center; flex-shrink: 0; }
     .philly-band-stat-num {
       font-family: 'Playfair Display', serif;
-      color: var(--gold);
+      color: var(--gold-light);
       font-size: 44px;
       font-weight: 700;
       line-height: 1.1;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.4);
     }
     .philly-band-stat-label {
-      color: var(--text-muted);
+      color: #c8d4e0;
       font-size: 12px;
       letter-spacing: 0.12em;
       text-transform: uppercase;
@@ -631,10 +643,10 @@
     }
 
     .about-body {
-      color: var(--text-muted);
+      color: #c8d4e0;
       font-size: 15px;
       line-height: 1.8;
-      font-weight: 300;
+      font-weight: 400;
       margin-bottom: 20px;
     }
 
@@ -919,9 +931,9 @@
     }
 
     .cta-band p {
-      color: var(--text-muted);
+      color: #c8d4e0;
       font-size: 15px;
-      font-weight: 300;
+      font-weight: 400;
     }
 
     .cta-right { text-align: center; }
@@ -993,19 +1005,19 @@
 
     .footer-logo {
       font-family: 'Playfair Display', serif;
-      color: var(--text-muted);
+      color: #c8d4e0;
       font-size: 15px;
     }
 
     .footer-disclaimer {
-      color: #3d5166;
+      color: #7a93aa;
       font-size: 12px;
       line-height: 1.6;
       text-align: center;
     }
 
     .footer-copy {
-      color: #3d5166;
+      color: #7a93aa;
       font-size: 12px;
       text-align: right;
     }
@@ -1162,7 +1174,7 @@
 
     /* ── FOOTER EXPANDED ── */
     .footer-affiliation {
-      color: var(--text-muted);
+      color: #7a93aa;
       font-size: 12px;
       margin-top: 4px;
     }
@@ -1303,7 +1315,7 @@
         <div class="stat-label">Years Criminal Defense</div>
       </div>
       <div class="stat">
-        <div class="stat-num">1,000+</div>
+        <div class="stat-num">1,000s</div>
         <div class="stat-label">Cases Handled</div>
       </div>
     </div>
