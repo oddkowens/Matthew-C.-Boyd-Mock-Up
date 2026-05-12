@@ -473,7 +473,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center 50%;
+      object-position: center 85%;
       filter: brightness(0.25) saturate(0.5);
     }
     .philly::after {
@@ -530,7 +530,7 @@
     }
     .about-img-wrap {
       position: sticky;
-      top: 96px;
+      top: calc(72px + 32px);
       overflow: hidden;
     }
     .about-img-wrap img {
@@ -743,7 +743,7 @@
       gap: 96px;
       align-items: start;
     }
-    .faq-aside { position: sticky; top: 96px; }
+    .faq-aside { position: static; }
     .faq-aside .section-h2 { margin-bottom: 20px; }
     .faq-aside p {
       font-size: 16px;
@@ -1176,7 +1176,7 @@
           <div class="case-index">01</div>
           <div class="case-content">
             <div class="case-verdict-pill">Not Guilty — All Charges</div>
-            <div class="case-charges">Attempted Murder &amp; Aggravated Assault</div>
+            <div class="case-charges">Attempted Murder and Aggravated Assault</div>
             <p class="case-body">Three eyewitnesses testified they personally saw the client commit the crime. Matthew exposed critical inconsistencies in their accounts and demonstrated to the jury that each witness had motive to falsely identify his client. The jury returned Not Guilty on every count.</p>
           </div>
         </div>
@@ -1185,7 +1185,7 @@
           <div class="case-index">02</div>
           <div class="case-content">
             <div class="case-verdict-pill">Not Guilty — All Charges</div>
-            <div class="case-charges">Narcotics Distribution &amp; Firearms Offenses</div>
+            <div class="case-charges">Narcotics Distribution and Firearms Offenses</div>
             <p class="case-body">The client's own DNA was found on both an illegal firearm and a large quantity of narcotics. Matthew proved that police contaminated the evidence by failing to wear gloves during the search, and the jury returned Not Guilty on all charges.</p>
           </div>
         </div>
@@ -1498,12 +1498,12 @@
           <a href="tel:2150000000">(215) 000-0000</a>
         </div>
         <div class="contact-detail">
-          <i data-lucide="mail" style="width:18px;height:18px"></i>
-          <a href="mailto:matthew@matthewboydlaw.com">matthew@matthewboydlaw.com</a>
-        </div>
-        <div class="contact-detail">
           <i data-lucide="map-pin" style="width:18px;height:18px"></i>
           <span>Philadelphia, Pennsylvania</span>
+        </div>
+        <div class="contact-detail">
+          <i data-lucide="clock" style="width:18px;height:18px"></i>
+          <span>Available 7 days a week. Urgent matters answered same day.</span>
         </div>
       </div>
 
