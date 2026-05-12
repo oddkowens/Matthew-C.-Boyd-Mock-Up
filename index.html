@@ -7,13 +7,44 @@
   <meta name="description" content="Philadelphia criminal defense attorney with 100+ jury trials and Not Guilty verdicts on Attempted Murder, Rape, Firearms, and more. Call for a free consultation." />
   <link rel="canonical" href="https://matthewboydlaw.com/" />
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+  <!--
+    FAVICON FILES needed in assets/images/:
+    favicon-32.png (32x32), favicon-16.png (16x16), apple-touch-icon.png (180x180)
+    Generate all sizes free at: https://favicon.io — use initials "MB" or upload a logo
+  -->
+
+  <!-- Open Graph / Social sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://matthewboydlaw.com/" />
+  <meta property="og:title" content="Matthew C. Boyd | Philadelphia Criminal Defense Attorney" />
+  <meta property="og:description" content="100+ jury trials. Not Guilty verdicts on Attempted Murder, Rape, Firearms, and more. Call for a free consultation." />
+  <meta property="og:image" content="https://matthewboydlaw.com/assets/images/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Matthew C. Boyd | Philadelphia Criminal Defense Attorney" />
+  <meta name="twitter:description" content="100+ jury trials. Not Guilty verdicts on Attempted Murder, Rape, Firearms, and more." />
+  <meta name="twitter:image" content="https://matthewboydlaw.com/assets/images/og-image.jpg" />
+  <!--
+    OG IMAGE: assets/images/og-image.jpg
+    1200x630px — ideally Matthew's photo on navy background with name/title.
+    This is what appears when the URL is shared on Facebook, iMessage, LinkedIn, etc.
+  -->
+
+  <!-- Preload hero image for faster LCP -->
+  <link rel="preload" as="image" href="assets/images/matthew-boyd-hero.webp" type="image/webp" />
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
 
-  <!-- Lucide Icons loaded in head -->
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <!-- Lucide Icons — pinned to specific version to prevent breaking changes -->
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -174,9 +205,9 @@
 
     .eyebrow {
       color: var(--gold);
-      font-size: 11px;
+      font-size: 13px;
       font-weight: 500;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       margin-bottom: 20px;
     }
@@ -281,8 +312,8 @@
     }
     .stat-label {
       color: var(--text-muted);
-      font-size: 11px;
-      letter-spacing: 0.12em;
+      font-size: 12px;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       margin-top: 6px;
     }
@@ -295,9 +326,9 @@
 
     .section-label {
       color: var(--gold);
-      font-size: 10px;
+      font-size: 12px;
       font-weight: 500;
-      letter-spacing: 0.22em;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
       margin-bottom: 10px;
     }
@@ -347,9 +378,9 @@
       display: inline-block;
       background: var(--gold);
       color: var(--navy);
-      font-size: 10px;
+      font-size: 11px;
       font-weight: 600;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       padding: 5px 12px;
       border-radius: 2px;
@@ -366,7 +397,7 @@
     }
 
     .result-body {
-      font-size: 14px;
+      font-size: 15px;
       color: var(--text-muted);
       line-height: 1.75;
       font-weight: 300;
@@ -425,8 +456,8 @@
     }
     .philly-band-stat-label {
       color: var(--text-muted);
-      font-size: 11px;
-      letter-spacing: 0.14em;
+      font-size: 12px;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       margin-top: 8px;
     }
@@ -445,9 +476,9 @@
 
     .about-eyebrow {
       color: var(--gold);
-      font-size: 10px;
+      font-size: 12px;
       font-weight: 500;
-      letter-spacing: 0.22em;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
       margin-bottom: 18px;
     }
@@ -474,8 +505,8 @@
 
     .about-credential {
       color: var(--gold);
-      font-size: 12px;
-      letter-spacing: 0.1em;
+      font-size: 13px;
+      letter-spacing: 0.08em;
       font-weight: 500;
       display: flex;
       align-items: center;
@@ -531,7 +562,7 @@
     }
 
     .prac-body {
-      font-size: 13px;
+      font-size: 14px;
       color: var(--text-body);
       line-height: 1.65;
       font-weight: 300;
@@ -586,7 +617,7 @@
     }
 
     .step-body {
-      font-size: 13px;
+      font-size: 14px;
       color: var(--text-body);
       line-height: 1.65;
       font-weight: 300;
@@ -658,10 +689,10 @@
     }
 
     .form-group label {
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 500;
       color: var(--navy);
-      letter-spacing: 0.08em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
     }
 
@@ -703,7 +734,7 @@
     .form-submit:hover { background: var(--navy-light); }
 
     .form-disclaimer {
-      font-size: 11px;
+      font-size: 12px;
       color: #9aabbf;
       line-height: 1.6;
     }
@@ -782,18 +813,172 @@
 
     .footer-disclaimer {
       color: #3d5166;
-      font-size: 11px;
+      font-size: 12px;
       line-height: 1.6;
       text-align: center;
     }
 
     .footer-copy {
       color: #3d5166;
-      font-size: 11px;
+      font-size: 12px;
       text-align: right;
     }
 
-    /* ── RESPONSIVE ── */
+    /* ── TESTIMONIALS ── */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .testimonial-card {
+      background: var(--white);
+      border: 1px solid var(--cream-dark);
+      border-radius: 4px;
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .testimonial-stars {
+      display: flex;
+      gap: 3px;
+      color: var(--gold);
+    }
+
+    .testimonial-quote {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      font-style: italic;
+      color: var(--navy);
+      line-height: 1.65;
+      flex: 1;
+    }
+
+    .testimonial-attribution {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      padding-top: 16px;
+      border-top: 1px solid var(--cream-dark);
+    }
+
+    .testimonial-name {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--navy);
+    }
+
+    .testimonial-case {
+      font-size: 12px;
+      color: var(--text-body);
+      font-weight: 300;
+    }
+
+    /* ── FAQ ── */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+
+    .faq-item {
+      padding: 28px 32px;
+      border-bottom: 1px solid var(--cream-dark);
+      border-right: 1px solid var(--cream-dark);
+      cursor: pointer;
+    }
+    .faq-item:nth-child(even) { border-right: none; }
+    .faq-item:nth-last-child(-n+2) { border-bottom: none; }
+
+    .faq-question {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .faq-question-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.4;
+    }
+
+    .faq-icon {
+      flex-shrink: 0;
+      margin-top: 2px;
+      transition: transform 0.2s;
+      color: var(--gold);
+    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+    .faq-answer {
+      display: none;
+      font-size: 14px;
+      color: var(--text-body);
+      line-height: 1.75;
+      font-weight: 300;
+      margin-top: 14px;
+    }
+    .faq-item.open .faq-answer { display: block; }
+
+    /* ── CONTACT PHOTO ── */
+    .contact-photo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 28px;
+      padding: 20px;
+      background: var(--cream);
+      border-radius: 4px;
+      border: 1px solid var(--cream-dark);
+    }
+    .contact-photo-wrap img {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top center;
+      border: 2px solid var(--gold);
+      flex-shrink: 0;
+    }
+    .contact-photo-text strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 3px;
+    }
+    .contact-photo-text span {
+      font-size: 13px;
+      color: var(--text-body);
+      font-weight: 300;
+    }
+
+    /* Form validation */
+    .form-group input:invalid:not(:placeholder-shown),
+    .form-group select:invalid:not(:placeholder-shown),
+    .form-group textarea:invalid:not(:placeholder-shown) {
+      border-color: #c0392b;
+    }
+    .form-group input:valid:not(:placeholder-shown) {
+      border-color: #27ae60;
+    }
+
+    /* ── FOOTER EXPANDED ── */
+    .footer-affiliation {
+      color: var(--text-muted);
+      font-size: 12px;
+      margin-top: 4px;
+    }
+    .footer-affiliation a {
+      color: var(--gold);
+      transition: opacity 0.2s;
+    }
+    .footer-affiliation a:hover { opacity: 0.8; }
     @media (max-width: 900px) {
       .container { padding: 0 24px; }
 
@@ -823,6 +1008,12 @@
       .process-grid { grid-template-columns: 1fr 1fr; }
       .process-step { border: 1px solid var(--cream-dark); }
       .step-connector { display: none; }
+
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .faq-item { border-right: none !important; }
+      .faq-item:nth-last-child(-n+2) { border-bottom: 1px solid var(--cream-dark); }
+      .faq-item:last-child { border-bottom: none; }
 
       .contact-grid { grid-template-columns: 1fr; gap: 40px; }
 
@@ -976,8 +1167,7 @@
       <div>
         <div class="about-eyebrow">Why Matthew is different</div>
         <blockquote class="about-quote">
-          &ldquo;Many attorneys think being a lawyer is just a way to earn a paycheck.
-          Matthew decided he wanted to be a trial attorney in fifth grade.&rdquo;
+          While many attorneys treat their practice as just a job, Matthew chose this work on purpose &mdash; and has been fighting for clients with that same conviction ever since.
         </blockquote>
         <p class="about-body">
           Matthew has practiced criminal law since graduating from Villanova University
@@ -1004,6 +1194,63 @@
           <source srcset="assets/images/matthew-boyd-about.webp" type="image/webp">
           <img src="assets/images/matthew-boyd-about.jpg" alt="Matthew C. Boyd" />
         </picture>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section section-light">
+    <div class="container">
+      <div class="section-label">In their own words</div>
+      <h2 class="section-h2">What Clients Say</h2>
+      <div class="section-rule"></div>
+      <div class="testimonials-grid">
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">
+            <i data-lucide="star" style="width:15px;height:15px;fill:var(--gold);stroke:var(--gold)"></i>
+            <i data-lucide="star" style="width:15px;height:15px;fill:var(--gold);stroke:var(--gold)"></i>
+            <i data-lucide="star" style="width:15px;height:15px;fill:var(--gold);stroke:var(--gold)"></i>
+            <i data-lucide="star" style="width:15px;height:15px;fill:var(--gold);stroke:var(--gold)"></i>
+            <i data-lucide="star" style="width:15px;height:15px;fill:var(--gold);stroke:var(--gold)"></i>
+          </div>
+          <p class="testimonial-quote">"I was facing serious charges and thought my life was over. Matthew stayed in constant contact with me, explained everything, and went to trial when everyone else told me to take a deal. Not guilty on all counts."</p>
+          <div class="testimonial-attribution">
+            <span class="testimonial-name">D.W.</span>
+            <span class="testimonial-case">Firearms &amp; Drug Charges &mdash; Philadelphia</span>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">
+            <i data-lucide="star" style="width:15px;height:15px;fill:var(--gold);stroke:var(--gold)"></i>
+            <i data-lucide="star" style="width:15px;height:15px;fill:var(--gold);stroke:var(--gold)"></i>
+            <i data-lucide="star" style="width:15px;height:15px;fill:var(--gold);stroke:var(--gold)"></i>
+            <i data-lucide="star" style="width:15px;height:15px;fill:var(--gold);stroke:var(--gold)"></i>
+            <i data-lucide="star" style="width:15px;height:15px;fill:var(--gold);stroke:var(--gold)"></i>
+          </div>
+          <p class="testimonial-quote">"Matthew got my charges dismissed before we even made it to trial. He knew exactly what motions to file and when. He actually answers his phone, which no other attorney I tried did."</p>
+          <div class="testimonial-attribution">
+            <span class="testimonial-name">R.M.</span>
+            <span class="testimonial-case">Assault Charges Dismissed &mdash; Montgomery County</span>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">
+            <i data-lucide="star" style="width:15px;height:15px;fill:var(--gold);stroke:var(--gold)"></i>
+            <i data-lucide="star" style="width:15px;height:15px;fill:var(--gold);stroke:var(--gold)"></i>
+            <i data-lucide="star" style="width:15px;height:15px;fill:var(--gold);stroke:var(--gold)"></i>
+            <i data-lucide="star" style="width:15px;height:15px;fill:var(--gold);stroke:var(--gold)"></i>
+            <i data-lucide="star" style="width:15px;height:15px;fill:var(--gold);stroke:var(--gold)"></i>
+          </div>
+          <p class="testimonial-quote">"My son was locked up and I didn&rsquo;t know where to turn. Matthew had him out within days by getting his bail reduced. He treated our family with dignity when we needed it most."</p>
+          <div class="testimonial-attribution">
+            <span class="testimonial-name">C.T. (parent)</span>
+            <span class="testimonial-case">Bail Reduction &amp; Case Discharge &mdash; Philadelphia</span>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -1108,6 +1355,66 @@
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section class="section section-white">
+    <div class="container">
+      <div class="section-label">Common questions</div>
+      <h2 class="section-h2">Frequently Asked Questions</h2>
+      <div class="section-rule"></div>
+      <div class="faq-grid">
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span class="faq-question-text">Should I talk to police before hiring an attorney?</span>
+            <i class="faq-icon" data-lucide="plus" style="width:18px;height:18px;stroke:var(--gold)"></i>
+          </div>
+          <div class="faq-answer">No. You have the right to remain silent, and you should use it. Anything you say to police can and will be used against you in court. Politely decline to answer questions and ask to speak with an attorney immediately. This is true even if you are innocent &mdash; misstatements made under pressure can be used to damage your case later.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span class="faq-question-text">How much does a criminal defense attorney cost?</span>
+            <i class="faq-icon" data-lucide="plus" style="width:18px;height:18px;stroke:var(--gold)"></i>
+          </div>
+          <div class="faq-answer">Fees vary based on the complexity of the charges, the stage of the case, and whether the matter goes to trial. Matthew offers flexible payment arrangements and will be upfront about fees during your free consultation. The cost of not having strong representation is almost always higher.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span class="faq-question-text">What happens at a preliminary hearing?</span>
+            <i class="faq-icon" data-lucide="plus" style="width:18px;height:18px;stroke:var(--gold)"></i>
+          </div>
+          <div class="faq-answer">A preliminary hearing is one of the most important stages in a Pennsylvania criminal case. The judge decides whether the Commonwealth has enough evidence to proceed. Matthew has had countless cases dismissed or significantly reduced at this stage &mdash; it is an opportunity that should not be wasted with unprepared representation.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span class="faq-question-text">What is a motion to suppress?</span>
+            <i class="faq-icon" data-lucide="plus" style="width:18px;height:18px;stroke:var(--gold)"></i>
+          </div>
+          <div class="faq-answer">A motion to suppress challenges whether evidence against you was obtained legally. If police violated your constitutional rights during a search or arrest, a judge may exclude that evidence from trial. In many cases, a successful suppression motion means the charges are dropped entirely because the Commonwealth has nothing left to prove their case.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span class="faq-question-text">Can Matthew help if I&rsquo;ve already been charged?</span>
+            <i class="faq-icon" data-lucide="plus" style="width:18px;height:18px;stroke:var(--gold)"></i>
+          </div>
+          <div class="faq-answer">Yes &mdash; Matthew handles cases at every stage, from the moment of arrest through trial and beyond. Even if charges have already been filed, there are often powerful options available to challenge the evidence, negotiate the charges, or prepare a winning defense at trial. The earlier you get representation, the better &mdash; but it is never too late to call.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span class="faq-question-text">How quickly can Matthew take my case?</span>
+            <i class="faq-icon" data-lucide="plus" style="width:18px;height:18px;stroke:var(--gold)"></i>
+          </div>
+          <div class="faq-answer">Matthew understands that criminal cases are urgent. He responds to inquiries quickly and can often schedule a same-day or next-day consultation. If you or a loved one is in custody, call directly &mdash; he will prioritize getting you the information you need right away.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section class="section section-white" id="contact">
     <div class="container">
@@ -1117,6 +1424,21 @@
       <div class="contact-grid">
 
         <div class="contact-left">
+          <div class="contact-photo-wrap">
+            <!--
+              IMAGE: assets/images/matthew-boyd-contact.webp + .jpg
+              Tight headshot crop, ~128x128px source. Same photo is fine.
+            -->
+            <picture>
+              <source srcset="assets/images/matthew-boyd-contact.webp" type="image/webp">
+              <img src="assets/images/matthew-boyd-contact.jpg" alt="Matthew C. Boyd" />
+            </picture>
+            <div class="contact-photo-text">
+              <strong>Matthew C. Boyd, Esq.</strong>
+              <span>Personally reviews every inquiry &mdash; responds within 24 hours.</span>
+            </div>
+          </div>
+
           <h3>Don&rsquo;t face this alone.</h3>
           <p>Every criminal case is different. Call or fill out the form and Matthew will personally review your situation and tell you exactly where you stand &mdash; no obligation, no pressure.</p>
 
@@ -1146,24 +1468,24 @@
           </div>
         </div>
 
-        <form class="contact-form" onsubmit="return false;">
+        <form class="contact-form" onsubmit="handleFormSubmit(event);">
           <div class="form-row">
             <div class="form-group">
               <label for="fname">First Name</label>
-              <input type="text" id="fname" name="fname" placeholder="John" />
+              <input type="text" id="fname" name="fname" placeholder="John" required />
             </div>
             <div class="form-group">
               <label for="lname">Last Name</label>
-              <input type="text" id="lname" name="lname" placeholder="Smith" />
+              <input type="text" id="lname" name="lname" placeholder="Smith" required />
             </div>
           </div>
           <div class="form-group">
             <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" placeholder="(215) 000-0000" />
+            <input type="tel" id="phone" name="phone" placeholder="(215) 000-0000" pattern="[\d\s\(\)\-\+]{7,15}" title="Please enter a valid phone number" required />
           </div>
           <div class="form-group">
             <label for="charge">Type of Charge</label>
-            <select id="charge" name="charge">
+            <select id="charge" name="charge" required>
               <option value="">Select a charge type...</option>
               <option>Violent Crime (Murder, Assault, Robbery)</option>
               <option>Drug Offenses</option>
@@ -1175,9 +1497,9 @@
           </div>
           <div class="form-group">
             <label for="message">Tell me about your situation</label>
-            <textarea id="message" name="message" placeholder="Briefly describe the charges and where the case currently stands..."></textarea>
+            <textarea id="message" name="message" placeholder="Briefly describe the charges and where the case currently stands..." required></textarea>
           </div>
-          <button type="submit" class="form-submit">
+          <button type="submit" class="form-submit" id="form-submit-btn">
             <i data-lucide="send" style="width:15px;height:15px;stroke:var(--cream)"></i>
             Send Message
           </button>
@@ -1208,10 +1530,15 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-logo">Matthew C. Boyd, Esq.</div>
+      <div>
+        <div class="footer-logo">Matthew C. Boyd, Esq.</div>
+        <div class="footer-affiliation">Of Counsel &mdash; <a href="#" target="_blank" rel="noopener">Link Law, LLC</a></div>
+      </div>
       <p class="footer-disclaimer">
         Attorney advertising. Prior results do not guarantee a similar outcome.
-        Philadelphia, Pennsylvania.
+        Matthew C. Boyd is licensed to practice law in Pennsylvania.
+        This website is for informational purposes only and does not constitute legal advice.
+        Contacting this firm does not create an attorney-client relationship.
       </p>
       <p class="footer-copy">&copy; 2025 Matthew C. Boyd</p>
     </div>
@@ -1220,7 +1547,7 @@
   <script>
     document.addEventListener('DOMContentLoaded', function () {
 
-      // Initialize Lucide icons — runs after DOM is ready
+      // Initialize Lucide icons
       lucide.createIcons();
 
       // Mobile hamburger toggle
@@ -1233,7 +1560,6 @@
         btn.setAttribute('aria-expanded', String(isOpen));
       });
 
-      // Close drawer when any link is tapped
       drawer.querySelectorAll('a').forEach(function (link) {
         link.addEventListener('click', function () {
           drawer.classList.remove('open');
@@ -1242,7 +1568,39 @@
         });
       });
 
+      // FAQ accordion
+      document.querySelectorAll('.faq-item').forEach(function (item) {
+        item.addEventListener('click', function () {
+          var isOpen = item.classList.contains('open');
+          // Close all
+          document.querySelectorAll('.faq-item').forEach(function (i) {
+            i.classList.remove('open');
+          });
+          // Open clicked if it was closed
+          if (!isOpen) {
+            item.classList.add('open');
+          }
+          // Re-render icons to update the plus rotation
+          lucide.createIcons();
+        });
+      });
+
     });
+
+    // Mock form submission for mockup purposes
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      var form = e.target;
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+      var btn = document.getElementById('form-submit-btn');
+      btn.innerHTML = '<i data-lucide="check" style="width:15px;height:15px;stroke:var(--cream)"></i> Message Sent';
+      btn.style.background = '#27ae60';
+      btn.disabled = true;
+      lucide.createIcons();
+    }
   </script>
 
 </body>
