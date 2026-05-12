@@ -286,18 +286,16 @@
     .hero-h1 {
       font-family: 'Fraunces', serif;
       color: var(--bone);
-      font-size: clamp(62px, 8vw, 108px);
+      font-size: clamp(48px, 5.5vw, 76px);
       font-weight: 500;
-      line-height: 0.95;
-      letter-spacing: -0.04em;
+      line-height: 1.0;
+      letter-spacing: -0.035em;
       margin-bottom: 36px;
     }
     .hero-h1 .accent {
       font-style: italic;
       font-weight: 400;
       color: var(--gold-soft);
-      display: inline-block;
-      position: relative;
     }
 
     .hero-sub {
@@ -433,7 +431,26 @@
       background: var(--ink);
       border-top: 1px solid var(--gold);
       border-bottom: 1px solid var(--navy-line);
-      padding: 40px 0;
+      padding: 44px 0;
+    }
+    .stats .wrap {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      align-items: center;
+      max-width: 760px;
+    }
+    .stat-item {
+      padding: 0 48px 0 0;
+      border-right: 1px solid var(--navy-line);
+    }
+    .stat-item:last-child {
+      border-right: none;
+      padding-left: 48px;
+      padding-right: 0;
+    }
+    .stat-item:nth-child(2) {
+      padding-left: 48px;
     }
     .stats .wrap {
       display: grid;
@@ -458,26 +475,9 @@
       margin-top: 8px;
       font-weight: 500;
     }
-    .stats-divider {
-      width: 1px;
-      height: 56px;
-      background: var(--navy-line);
-    }
-    .stats-cta {
-      color: var(--gold);
-      font-family: 'Fraunces', serif;
-      font-size: 22px;
-      font-style: italic;
-      font-weight: 400;
-      letter-spacing: -0.01em;
-    }
-    .stats-cta-num {
-      font-family: 'Fraunces', serif;
-      color: var(--bone);
-      font-size: 24px;
-      font-weight: 500;
-      margin-left: 12px;
-    }
+    .stats-divider { display: none; }
+    .stats-cta { display: none; }
+    .stats-cta-num { display: none; }
 
     /* ═══════════ CASE RESULTS — EDITORIAL CENTERPIECE ═══════════ */
     .results {
@@ -536,22 +536,15 @@
     }
     .results-header-meta {
       text-align: right;
-      color: var(--text-light);
     }
     .results-header-meta-big {
       font-family: 'Fraunces', serif;
-      font-size: 64px;
-      color: var(--gold);
-      font-weight: 500;
+      font-size: 80px;
+      color: transparent;
+      font-weight: 700;
       line-height: 1;
-      opacity: 0.6;
-    }
-    .results-header-meta-big {
-      font-family: 'Fraunces', serif;
-      font-size: 56px;
-      color: var(--gold);
-      font-weight: 500;
-      line-height: 1;
+      -webkit-text-stroke: 1.5px var(--gold);
+      opacity: 0.5;
     }
     .results-header-meta-label {
       font-size: 11px;
@@ -561,79 +554,92 @@
       color: var(--text-mute);
     }
 
-    /* Editorial case treatment — magazine spread */
-    .case {
+    /* Editorial case treatment — scannable cards on dark */
+    .cases-grid {
       display: grid;
-      grid-template-columns: 200px 1fr;
-      gap: 64px;
-      padding: 56px 0;
-      border-bottom: 1px solid var(--navy-line);
-      position: relative;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
     }
-    .case:last-child { border-bottom: none; }
-    .case-meta {
-      padding-top: 8px;
+    .case {
+      background: var(--navy-mid);
+      border: 1px solid var(--navy-line);
+      padding: 40px 40px 44px;
+      position: relative;
+      transition: border-color 0.25s;
+    }
+    .case:hover {
+      border-color: rgba(196,154,60,0.35);
+    }
+    .case-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gold);
+      color: var(--ink);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 7px 14px;
+      margin-bottom: 28px;
+    }
+    .case-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--ink);
+      border-radius: 50%;
+      flex-shrink: 0;
     }
     .case-number {
       font-family: 'Fraunces', serif;
-      font-size: 14px;
-      color: var(--gold);
+      font-size: 11px;
+      color: var(--text-mute);
       font-weight: 400;
-      letter-spacing: 0.06em;
-      margin-bottom: 24px;
-    }
-    .case-verdict {
-      font-family: 'Fraunces', serif;
-      font-size: 20px;
-      color: var(--bone);
-      font-weight: 500;
-      font-style: italic;
-      line-height: 1.2;
-    }
-    .case-verdict-tag {
-      display: inline-block;
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--gold);
-      border-top: 1px solid var(--gold);
-      padding-top: 12px;
-      margin-top: 20px;
+      margin-bottom: 16px;
     }
     .case-body h3 {
       font-family: 'Fraunces', serif;
-      font-size: clamp(30px, 3.5vw, 46px);
+      font-size: clamp(22px, 2.5vw, 30px);
       color: var(--bone);
       font-weight: 500;
-      line-height: 1.08;
-      letter-spacing: -0.025em;
-      margin-bottom: 28px;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
     }
     .case-body p {
       color: var(--text-light);
-      font-size: 17px;
-      line-height: 1.8;
-      max-width: 640px;
+      font-size: 15px;
+      line-height: 1.75;
       font-weight: 400;
     }
-    /* First letter drop cap on case body */
-    .case-body p::first-letter {
+    .case-verdict-line {
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid var(--navy-line);
       font-family: 'Fraunces', serif;
-      font-size: 72px;
-      font-weight: 500;
-      float: left;
-      line-height: 0.82;
-      padding: 4px 14px 0 0;
-      color: var(--gold);
+      font-size: 17px;
       font-style: italic;
+      color: var(--gold-soft);
+      font-weight: 400;
+      line-height: 1.4;
     }
 
     /* ═══════════ ABOUT — EDITORIAL ═══════════ */
     .about {
-      background: var(--paper);
+      background: var(--bone);
       padding: 140px 0 120px;
       position: relative;
+    }
+    /* Subtle top rule in gold to separate from dark above */
+    .about::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold) 0%, transparent 60%);
     }
     .about .wrap {
       display: grid;
@@ -646,7 +652,8 @@
       top: 100px;
       aspect-ratio: 4/5;
       overflow: hidden;
-      background: var(--navy);
+      background: var(--bone-dim);
+      box-shadow: 24px 24px 0 var(--bone-dim);
     }
     .about-portrait img {
       width: 100%;
@@ -671,17 +678,17 @@
     .about-content .label { margin-bottom: 24px; display: block; }
     .about h2 {
       font-family: 'Fraunces', serif;
-      font-size: clamp(40px, 5vw, 64px);
+      font-size: clamp(40px, 5vw, 60px);
       font-weight: 500;
-      line-height: 1;
+      line-height: 1.0;
       letter-spacing: -0.03em;
-      margin-bottom: 48px;
+      margin-bottom: 44px;
       color: var(--ink);
     }
     .about h2 em {
       font-style: italic;
       font-weight: 400;
-      color: var(--gold);
+      color: var(--gold-ink);
     }
 
     .about-lead {
@@ -1010,6 +1017,67 @@
       background: var(--paper);
       padding: 140px 0 120px;
       border-top: 1px solid var(--bone-dim);
+    }
+    .process-head {
+      max-width: 720px;
+      margin-bottom: 80px;
+    }
+    .process-head h2 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(40px, 5vw, 64px);
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+      margin-top: 24px;
+    }
+    .process-head h2 em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--gold-ink);
+    }
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+    }
+    .process-line {
+      position: absolute;
+      top: 28px;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--bone-dim);
+      z-index: 0;
+    }
+    .process-step {
+      position: relative;
+      padding-right: 32px;
+      z-index: 1;
+    }
+    .process-dot {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--ink);
+      color: var(--gold);
+      font-family: 'Fraunces', serif;
+      font-size: 18px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 28px;
+      position: relative;
+    }
+    .process-dot::after {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      opacity: 0.3;
     }
     .process-head {
       max-width: 720px;
@@ -1419,10 +1487,10 @@
       .hero-deco { font-size: 380px; }
       .results-header { grid-template-columns: 1fr; gap: 24px; }
       .results-header-meta { text-align: left; }
-      .case { grid-template-columns: 1fr; gap: 24px; }
+      .cases-grid { grid-template-columns: 1fr; gap: 24px; }
       .about .wrap, .faq .wrap, .contact .wrap { grid-template-columns: 1fr; gap: 48px; }
-      .about-portrait { position: static; max-width: 360px; }
-      .testimonials-grid { grid-template-columns: 1fr; gap: 56px; }
+      .about-portrait { position: static; max-width: 360px; box-shadow: none; }
+      .testimonials-grid { grid-template-columns: 1fr; gap: 32px; }
       .practice-grid { grid-template-columns: repeat(2, 1fr); }
       .process-grid { grid-template-columns: repeat(2, 1fr); gap: 56px; }
       .process-line { display: none; }
@@ -1436,7 +1504,10 @@
       .hero { padding: 64px 0 80px; }
       .hero .wrap { grid-template-columns: 1fr; gap: 56px; }
       .hero-deco { font-size: 280px; opacity: 0.5; }
-      .stats .wrap { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .stats .wrap { grid-template-columns: 1fr 1fr; gap: 32px; max-width: 100%; }
+      .stat-item { padding: 0; border-right: none; }
+      .stat-item:last-child { padding-left: 0; }
+      .stat-item:nth-child(2) { padding-left: 0; }
       .stats-divider, .stats-cta, .stats-cta-num { display: none; }
       .results, .about, .testimonials, .practice, .process, .faq, .contact { padding: 80px 0; }
       .results-header { margin-bottom: 56px; }
@@ -1530,21 +1601,18 @@
   <!-- STATS -->
   <div class="stats">
     <div class="wrap">
-      <div>
-        <div class="stat-num">10<span class="small">+</span></div>
-        <div class="stat-label">Years Practicing</div>
-      </div>
-      <div>
+      <div class="stat-item">
         <div class="stat-num">100<span class="small">+</span></div>
-        <div class="stat-label">Jury Trials</div>
+        <div class="stat-label">Jury Trials Litigated</div>
       </div>
-      <div>
+      <div class="stat-item">
+        <div class="stat-num">10<span class="small">+</span></div>
+        <div class="stat-label">Years Criminal Defense</div>
+      </div>
+      <div class="stat-item">
         <div class="stat-num">1,000<span class="small">s</span></div>
         <div class="stat-label">Cases Handled</div>
       </div>
-      <div class="stats-divider"></div>
-      <div class="stats-cta">Available 24/7</div>
-      <a href="tel:2150000000" class="stats-cta-num">(215) 000-0000</a>
     </div>
   </div>
 
@@ -1560,29 +1628,29 @@
         </div>
       </div>
 
-      <article class="case">
-        <div class="case-meta">
-          <div class="case-number">Case No. 01</div>
-          <div class="case-verdict">Three eyewitnesses. <br>One acquittal.</div>
-          <div class="case-verdict-tag">Not Guilty · All Charges</div>
-        </div>
-        <div class="case-body">
-          <h3>Attempted Murder &amp; Aggravated Assault</h3>
-          <p>Three eyewitnesses took the stand and testified they personally saw the client commit the crime. Matthew exposed critical inconsistencies in their accounts and demonstrated to the jury that each witness had motive to falsely identify his client. The jury returned Not Guilty on every count.</p>
-        </div>
-      </article>
+      <div class="cases-grid">
 
-      <article class="case">
-        <div class="case-meta">
+        <article class="case">
+          <div class="case-badge">Not Guilty · All Charges</div>
+          <div class="case-number">Case No. 01</div>
+          <div class="case-body">
+            <h3>Attempted Murder &amp; Aggravated Assault</h3>
+            <p>Three eyewitnesses took the stand and testified they personally saw the client commit the crime. Matthew exposed critical inconsistencies in their accounts and demonstrated to the jury that each witness had motive to falsely identify his client. The jury returned Not Guilty on every count.</p>
+            <div class="case-verdict-line">Three eyewitnesses. One acquittal.</div>
+          </div>
+        </article>
+
+        <article class="case">
+          <div class="case-badge">Not Guilty · All Charges</div>
           <div class="case-number">Case No. 02</div>
-          <div class="case-verdict">The client's own DNA. <br>Still acquitted.</div>
-          <div class="case-verdict-tag">Not Guilty · All Charges</div>
-        </div>
-        <div class="case-body">
-          <h3>Narcotics Distribution &amp; Firearms</h3>
-          <p>The client's own DNA was found on both an illegal firearm and a large quantity of narcotics. Matthew proved to the jury that police contaminated the evidence by failing to wear gloves during the search, and the jury returned Not Guilty on all charges.</p>
-        </div>
-      </article>
+          <div class="case-body">
+            <h3>Narcotics Distribution &amp; Firearms</h3>
+            <p>The client's own DNA was found on both an illegal firearm and a large quantity of narcotics. Matthew proved to the jury that police contaminated the evidence by failing to wear gloves during the search, and the jury returned Not Guilty on all charges.</p>
+            <div class="case-verdict-line">The client's own DNA. Still acquitted.</div>
+          </div>
+        </article>
+
+      </div>
     </div>
   </section>
 
