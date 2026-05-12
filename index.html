@@ -7,130 +7,153 @@
   <meta name="description" content="Philadelphia criminal defense attorney with 100+ jury trials and Not Guilty verdicts on Attempted Murder, Rape, Firearms, and more. Call for a free consultation." />
   <link rel="canonical" href="https://matthewboydlaw.com/" />
 
-  <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
-  <!--
-    FAVICON FILES needed in assets/images/:
-    favicon-32.png (32x32), favicon-16.png (16x16), apple-touch-icon.png (180x180)
-    Generate all sizes free at: https://favicon.io — use initials "MB" or upload a logo
-  -->
 
-  <!-- Open Graph / Social sharing -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://matthewboydlaw.com/" />
   <meta property="og:title" content="Matthew C. Boyd | Philadelphia Criminal Defense Attorney" />
-  <meta property="og:description" content="100+ jury trials. Not Guilty verdicts on Attempted Murder, Rape, Firearms, and more. Call for a free consultation." />
+  <meta property="og:description" content="100+ jury trials. Not Guilty verdicts on Attempted Murder, Rape, Firearms, and more." />
   <meta property="og:image" content="https://matthewboydlaw.com/assets/images/og-image.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Matthew C. Boyd | Philadelphia Criminal Defense Attorney" />
-  <meta name="twitter:description" content="100+ jury trials. Not Guilty verdicts on Attempted Murder, Rape, Firearms, and more." />
-  <meta name="twitter:image" content="https://matthewboydlaw.com/assets/images/og-image.jpg" />
-  <!--
-    OG IMAGE: assets/images/og-image.jpg
-    1200x630px — ideally Matthew's photo on navy background with name/title.
-    This is what appears when the URL is shared on Facebook, iMessage, LinkedIn, etc.
-  -->
 
-  <!-- Preload hero image for faster LCP -->
   <link rel="preload" as="image" href="assets/images/matthew-boyd-hero.webp" type="image/webp" />
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
-  <!-- Lucide Icons — pinned to specific version to prevent breaking changes -->
   <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --navy:       #0f1c2e;
-      --navy-mid:   #1a2d44;
-      --navy-light: #243d5a;
-      --cream:      #f5f0e8;
-      --cream-dark: #e8e0d0;
-      --gold:       #c8a96e;
-      --gold-light: #dfc08a;
-      --white:      #ffffff;
-      --text-muted: #8a9ab0;
-      --text-body:  #4a5568;
+      /* Deep saturated navy palette — committed, no half-measures */
+      --ink:        #040d1a;
+      --navy:       #071422;
+      --navy-mid:   #0e1e30;
+      --navy-line:  #1a2e48;
+      --bone:       #f0e8d8;
+      --bone-dim:   #ddd0b8;
+      --paper:      #f9f5ee;
+      --gold:       #c49a3c;
+      --gold-soft:  #dbb96a;
+      --gold-ink:   #5c3d10;
+      --text-light: #ccd6e8;
+      --text-mute:  #7a8fa8;
+      --text-body:  #334055;
     }
 
     html { scroll-behavior: smooth; }
-
     body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--cream);
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--paper);
       color: var(--navy);
       line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
-    .container {
-      max-width: 1200px;
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; }
+
+    .wrap {
+      max-width: 1240px;
       margin: 0 auto;
-      padding: 0 48px;
+      padding: 0 56px;
+      width: 100%;
+    }
+    .wrap-tight {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 0 56px;
       width: 100%;
     }
 
-    a { text-decoration: none; }
-    img { display: block; max-width: 100%; }
+    /* Editorial type system */
+    .display {
+      font-family: 'Fraunces', Georgia, serif;
+      font-weight: 600;
+      letter-spacing: -0.025em;
+      line-height: 0.95;
+    }
+    .display-italic { font-style: italic; font-weight: 400; }
 
-    /* ── NAVIGATION ── */
+    .label {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    /* ═══════════ NAV ═══════════ */
     .nav {
-      background: var(--navy);
-      height: 68px;
+      background: var(--ink);
+      height: 76px;
       position: sticky;
       top: 0;
       z-index: 100;
+      border-bottom: 1px solid var(--navy-line);
     }
-    .nav .container {
+    .nav .wrap {
       display: flex;
       align-items: center;
       justify-content: space-between;
       height: 100%;
     }
-
     .nav-logo {
-      font-family: 'Playfair Display', serif;
-      color: var(--cream);
-      font-size: 18px;
-      font-weight: 600;
-      letter-spacing: 0.02em;
+      font-family: 'Fraunces', serif;
+      color: var(--bone);
+      font-size: 20px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
     }
-    .nav-logo span { color: var(--gold); }
-
+    .nav-logo .dot { color: var(--gold); font-style: italic; }
     .nav-links {
       display: flex;
-      gap: 32px;
+      gap: 36px;
       align-items: center;
       list-style: none;
     }
     .nav-links a {
-      color: #c8d4e0;
-      font-size: 14px;
+      color: var(--text-light);
+      font-size: 13px;
       font-weight: 400;
-      letter-spacing: 0.03em;
+      letter-spacing: 0.04em;
       transition: color 0.2s;
+      position: relative;
     }
-    .nav-links a:hover { color: var(--cream); }
-
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--gold);
+      transition: width 0.25s;
+    }
+    .nav-links a:hover::after { width: 100%; }
     .nav-cta {
       background: var(--gold);
-      color: var(--navy) !important;
+      color: var(--ink) !important;
       font-weight: 500 !important;
-      padding: 9px 20px;
-      border-radius: 3px;
-      transition: background 0.2s !important;
+      padding: 11px 22px;
+      border-radius: 2px;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: all 0.2s;
     }
-    .nav-cta:hover { background: var(--gold-light) !important; }
+    .nav-cta::after { display: none !important; }
+    .nav-cta:hover { background: var(--gold-soft); transform: translateY(-1px); }
 
-    /* Hamburger */
     .nav-hamburger {
       display: none;
       flex-direction: column;
@@ -141,10 +164,8 @@
       padding: 4px;
     }
     .nav-hamburger span {
-      display: block;
-      width: 22px;
-      height: 2px;
-      background: var(--cream);
+      display: block; width: 22px; height: 2px;
+      background: var(--bone);
       border-radius: 2px;
       transition: transform 0.25s, opacity 0.25s;
     }
@@ -152,732 +173,1110 @@
     .nav-hamburger.open span:nth-child(2) { opacity: 0; }
     .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-    /* Mobile drawer */
     .nav-drawer {
       display: none;
       flex-direction: column;
-      background: var(--navy-mid);
-      border-top: 1px solid var(--navy-light);
-      padding: 16px 24px 24px;
+      background: var(--navy);
+      border-bottom: 1px solid var(--navy-line);
+      padding: 20px 56px 28px;
       gap: 4px;
       position: sticky;
-      top: 68px;
+      top: 76px;
       z-index: 99;
     }
     .nav-drawer.open { display: flex; }
     .nav-drawer a {
-      color: #c8d4e0;
+      color: var(--text-light);
       font-size: 15px;
-      padding: 10px 0;
-      border-bottom: 1px solid var(--navy-light);
-      transition: color 0.2s;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--navy-line);
     }
     .nav-drawer a:last-child { border-bottom: none; }
-    .nav-drawer a:hover { color: var(--cream); }
     .nav-drawer .drawer-cta {
       margin-top: 12px;
       background: var(--gold);
-      color: var(--navy);
+      color: var(--ink);
       text-align: center;
-      padding: 12px;
-      border-radius: 3px;
+      padding: 14px;
+      border-radius: 2px;
       font-weight: 500;
-      border-bottom: none !important;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-size: 12px;
     }
 
-    /* ══════════════════════════════════════════
-       DEPTH SYSTEM
-       ══════════════════════════════════════════
-
-       Dark sections use a 3-layer stack:
-         1. Navy base color
-         2. Skyline photo — desaturated, ~10% opacity
-         3. SVG grain — 4% opacity, adds tactility
-       Light sections use a 2-layer stack:
-         1. Cream/white base
-         2. Very subtle paper grain
-    ══════════════════════════════════════════ */
-
-    /* SVG grain — inline data URI, no external file needed */
-    :root {
-      --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+    /* ═══════════ HERO ═══════════ */
+    .hero {
+      background: var(--ink);
+      position: relative;
+      overflow: hidden;
+      padding: 120px 0 100px;
     }
-
-    /* Shared pseudo-element grain overlay — applied to dark sections */
-    .hero::after,
-    .stats-bar::after,
-    .section-dark::after,
-    .about::after,
-    .cta-band::after,
-    .nav::after {
+    /* Atmospheric gold glow top-left */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      left: -100px;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(ellipse at center, rgba(196,154,60,0.07) 0%, transparent 65%);
+      z-index: 1;
+      pointer-events: none;
+    }
+    /* Subtle noise texture for depth */
+    .hero::after {
       content: '';
       position: absolute;
       inset: 0;
-      background-image: var(--grain);
-      background-size: 200px 200px;
-      opacity: 0.035;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+      opacity: 0.4;
+      z-index: 1;
       pointer-events: none;
-      z-index: 2;
-      mix-blend-mode: overlay;
     }
 
-    /* All dark sections need position relative for the pseudo-element */
-    .hero,
-    .stats-bar,
-    .section-dark,
-    .about,
-    .cta-band,
-    .nav { position: relative; }
-
-    /* Ensure content sits above grain and scrim */
-    .hero .container,
-    .stats-bar .container,
-    .section-dark .container,
-    .about .container,
-    .cta-band .container,
-    .nav .container { position: relative; z-index: 4; }
-
-    /* Skyline parallax — single fixed element behind all dark sections.
-       Using a fixed-position element avoids the overflow:hidden + background-attachment:fixed
-       browser bug that kills the effect on sections with overflow hidden. */
-    .skyline-parallax {
-      position: fixed;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url("assets/images/philadelphia-skyline.jpg");
-      background-size: cover;
-      background-position: center center;
-      background-repeat: no-repeat;
-      opacity: 0.2;
+    /* Decorative oversized number behind hero */
+    .hero-deco {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Fraunces', serif;
+      font-weight: 200;
+      font-style: italic;
+      font-size: 580px;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(196,154,60,0.12);
+      line-height: 0.8;
+      letter-spacing: -0.05em;
       z-index: 0;
       pointer-events: none;
-    }
-    @supports (background-image: url("x.webp")) {
-      .skyline-parallax {
-        background-image: url("assets/images/philadelphia-skyline.webp");
-      }
+      user-select: none;
+      white-space: nowrap;
     }
 
-    /* Dark sections sit above the fixed skyline.
-       0.93 opacity restores the deep navy while letting just enough
-       skyline texture bleed through at ~7% — subtle, not washed out */
-    .hero,
-    .stats-bar,
-    .section-dark,
-    .about,
-    .cta-band {
-      background-color: rgba(15, 28, 46, 0.93) !important;
+    .hero .wrap {
       position: relative;
-      z-index: 1;
-    }
-
-    /* Light sections need solid backgrounds to fully cover the fixed skyline */
-    .section-light { background: var(--cream) !important; position: relative; z-index: 1; }
-    .section-white { background: var(--white) !important; position: relative; z-index: 1; }
-    .philly-band   { position: relative; z-index: 1; }
-    .nav           { z-index: 100; }
-    .nav-drawer    { z-index: 99; }
-    .footer        { position: relative; z-index: 1; }
-
-    /* Section angle dividers */
-    .angle-bottom {
-      position: relative;
-    }
-    .angle-bottom::before {
-      content: '';
-      position: absolute;
-      bottom: -40px;
-      left: 0;
-      right: 0;
-      height: 80px;
-      background: inherit;
-      clip-path: polygon(0 0, 100% 0, 100% 40%, 0 100%);
-      z-index: 4;
-    }
-
-    .angle-top {
-      position: relative;
-      padding-top: 128px !important;
-    }
-    .angle-top::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 80px;
-      background: var(--navy);
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 40%);
-      z-index: 4;
-    }
-
-    /* ── HERO ── */
-    .hero {
-      overflow: hidden;
-    }
-    .hero .container {
+      z-index: 2;
       display: grid;
-      grid-template-columns: 1fr 420px;
-      min-height: 560px;
+      grid-template-columns: 1fr 480px;
+      gap: 80px;
+      align-items: center;
     }
 
-    .hero-left {
-      padding: 80px 0;
+    .hero-meta {
       display: flex;
-      flex-direction: column;
-      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 36px;
     }
-
-    .eyebrow {
-      color: var(--gold);
-      font-size: 13px;
-      font-weight: 500;
-      letter-spacing: 0.14em;
+    .hero-meta-line {
+      width: 48px;
+      height: 1px;
+      background: var(--gold);
+    }
+    .hero-meta-text {
+      font-size: 11px;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
-      margin-bottom: 20px;
+      color: var(--gold);
+      font-weight: 500;
     }
 
     .hero-h1 {
-      font-family: 'Playfair Display', serif;
-      color: var(--cream);
-      font-size: 44px;
-      line-height: 1.15;
-      font-weight: 700;
-      margin-bottom: 24px;
+      font-family: 'Fraunces', serif;
+      color: var(--bone);
+      font-size: clamp(62px, 8vw, 108px);
+      font-weight: 500;
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      margin-bottom: 36px;
     }
-    .hero-h1 em { color: var(--gold); font-style: normal; }
+    .hero-h1 .accent {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--gold-soft);
+      display: inline-block;
+      position: relative;
+    }
 
     .hero-sub {
-      color: #c8d4e0;
-      font-size: 16px;
-      line-height: 1.75;
-      max-width: 420px;
-      margin-bottom: 40px;
+      color: var(--text-light);
+      font-size: 17px;
+      line-height: 1.7;
+      max-width: 460px;
+      margin-bottom: 48px;
       font-weight: 400;
     }
 
     .hero-actions {
       display: flex;
       align-items: center;
-      gap: 24px;
+      gap: 28px;
     }
-
     .btn-primary {
       background: var(--gold);
-      color: var(--navy);
-      font-size: 14px;
-      font-weight: 500;
-      padding: 14px 28px;
-      border-radius: 3px;
-      letter-spacing: 0.04em;
-      transition: background 0.2s;
+      color: var(--ink);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 16px 32px;
+      border-radius: 2px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: all 0.2s;
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
     }
-    .btn-primary:hover { background: var(--gold-light); }
-
+    .btn-primary:hover {
+      background: var(--gold-soft);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(184,146,77,0.25);
+    }
     .btn-ghost {
-      color: var(--cream-dark);
-      font-size: 14px;
+      color: var(--bone);
+      font-size: 13px;
       font-weight: 400;
-      letter-spacing: 0.04em;
-      border-bottom: 1px solid var(--gold);
-      padding-bottom: 2px;
+      letter-spacing: 0.06em;
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      transition: color 0.2s;
-    }
-    .btn-ghost:hover { color: var(--gold); }
-
-    .hero-right {
+      gap: 10px;
       position: relative;
-      overflow: hidden;
     }
-    .hero-right img {
+    .btn-ghost::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--gold);
+      transform-origin: left;
+      transition: transform 0.25s;
+    }
+    .btn-ghost:hover::after { transform: scaleX(0.7); }
+
+    /* Hero photo — framed editorial treatment */
+    .hero-portrait {
+      position: relative;
+      align-self: stretch;
+      display: flex;
+      align-items: center;
+    }
+    .hero-portrait-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      background: var(--navy-mid);
+      box-shadow: 0 40px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(196,154,60,0.15);
+    }
+    .hero-portrait-frame img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: top center;
-      filter: brightness(0.88) contrast(1.05);
+      filter: contrast(1.08) brightness(0.97);
     }
-    .hero-right::before {
+    /* Gold corner accents — larger, bolder */
+    .hero-portrait::before,
+    .hero-portrait::after {
       content: '';
       position: absolute;
-      inset: 0;
-      background: linear-gradient(to right, var(--navy) 0%, transparent 35%);
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    /* ── STATS BAR ── */
-    .stats-bar {
-      border-top: 1px solid var(--navy-light);
-    }
-    .stats-bar .container {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .stat {
-      padding: 28px 32px;
-      border-right: 1px solid var(--navy-light);
-      text-align: center;
-    }
-    .stat:last-child { border-right: none; }
-
-    .stat-num {
-      font-family: 'Playfair Display', serif;
-      color: var(--gold);
-      font-size: 36px;
-      font-weight: 700;
-      line-height: 1;
-    }
-    .stat-label {
-      color: #c8d4e0;
-      font-size: 12px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-top: 6px;
-    }
-
-    /* ── SHARED SECTION STYLES ── */
-    .section { padding: 88px 0; }
-    .section-light { background: var(--cream); }
-    .section-white { background: var(--white); }
-    .section-dark { background: var(--navy); }
-
-    .section-label {
-      color: var(--gold);
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
-
-    .section-h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 32px;
-      color: var(--navy);
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-    .section-dark .section-h2 {
-      color: var(--cream);
-      text-shadow: 0 2px 12px rgba(0,0,0,0.4);
-    }
-    .about-quote { text-shadow: 0 1px 8px rgba(0,0,0,0.3); }
-
-    .section-rule {
-      width: 44px;
-      height: 2px;
-      background: var(--gold);
-      margin-bottom: 40px;
-    }
-
-    /* ── CASE RESULTS ── */
-    .results-intro {
-      font-size: 15px;
-      color: #c8d4e0;
-      font-weight: 400;
-      max-width: 560px;
-      line-height: 1.75;
-      margin-bottom: 48px;
-      margin-top: -24px;
-    }
-
-    .results-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-    }
-
-    .result-card {
-      background: var(--navy-mid);
-      border: 1px solid var(--navy-light);
-      border-left: 3px solid var(--gold);
-      border-radius: 4px;
-      padding: 36px 32px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.25), inset 1px 0 0 rgba(200,169,110,0.15);
-      transition: transform 0.25s, box-shadow 0.25s;
-      position: relative;
+      width: 72px;
+      height: 72px;
+      border: 1.5px solid var(--gold);
       z-index: 3;
     }
-    .result-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.4), inset 1px 0 0 rgba(200,169,110,0.35);
+    .hero-portrait::before {
+      top: -22px;
+      left: -22px;
+      border-right: none;
+      border-bottom: none;
     }
-
-    .result-verdict {
-      display: inline-block;
-      background: var(--gold);
-      color: var(--navy);
-      font-size: 11px;
+    .hero-portrait::after {
+      bottom: -22px;
+      right: -22px;
+      border-left: none;
+      border-top: none;
+    }
+    /* Floating credential card */
+    .hero-credential {
+      position: absolute;
+      bottom: -28px;
+      left: -40px;
+      background: var(--bone);
+      padding: 18px 24px;
+      z-index: 4;
+      box-shadow: 0 20px 48px rgba(0,0,0,0.35);
+      border-left: 3px solid var(--gold);
+    }
+    .hero-credential-num {
+      font-family: 'Fraunces', serif;
+      font-size: 36px;
       font-weight: 600;
-      letter-spacing: 0.12em;
+      color: var(--ink);
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+    .hero-credential-label {
+      font-size: 10px;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      padding: 5px 12px;
-      border-radius: 2px;
-      margin-bottom: 16px;
+      color: var(--text-body);
+      margin-top: 4px;
+      font-weight: 500;
     }
 
-    .result-charges {
-      font-family: 'Playfair Display', serif;
+    /* ═══════════ STATS RIBBON ═══════════ */
+    .stats {
+      background: var(--ink);
+      border-top: 1px solid var(--gold);
+      border-bottom: 1px solid var(--navy-line);
+      padding: 40px 0;
+    }
+    .stats .wrap {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr) 1px repeat(2, auto);
+      gap: 48px;
+      align-items: center;
+    }
+    .stat-num {
+      font-family: 'Fraunces', serif;
+      color: var(--bone);
+      font-size: 42px;
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+    .stat-num .small { font-size: 24px; vertical-align: top; color: var(--gold); }
+    .stat-label {
+      color: var(--text-light);
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-top: 8px;
+      font-weight: 500;
+    }
+    .stats-divider {
+      width: 1px;
+      height: 56px;
+      background: var(--navy-line);
+    }
+    .stats-cta {
+      color: var(--gold);
+      font-family: 'Fraunces', serif;
+      font-size: 22px;
+      font-style: italic;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+    }
+    .stats-cta-num {
+      font-family: 'Fraunces', serif;
+      color: var(--bone);
+      font-size: 24px;
+      font-weight: 500;
+      margin-left: 12px;
+    }
+
+    /* ═══════════ CASE RESULTS — EDITORIAL CENTERPIECE ═══════════ */
+    .results {
+      background: var(--ink);
+      padding: 140px 0 120px;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Atmospheric glow from gold on dark */
+    .results::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 100%;
+      background: radial-gradient(ellipse at 80% 20%, rgba(196,154,60,0.05) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 1;
+    }
+    .results-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url("assets/images/philadelphia-skyline.jpg");
+      background-size: cover;
+      background-position: center 30%;
+      opacity: 0.06;
+      filter: grayscale(100%) contrast(1.2);
+      pointer-events: none;
+    }
+    .results .wrap {
+      position: relative;
+      z-index: 2;
+    }
+    .results-header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 48px;
+      align-items: end;
+      margin-bottom: 88px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--navy-line);
+    }
+    .results-header h2 {
+      font-family: 'Fraunces', serif;
+      color: var(--bone);
+      font-size: clamp(52px, 6.5vw, 80px);
+      font-weight: 500;
+      line-height: 0.96;
+      letter-spacing: -0.035em;
+    }
+    .results-header h2 em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--gold-soft);
+    }
+    .results-header-meta {
+      text-align: right;
+      color: var(--text-light);
+    }
+    .results-header-meta-big {
+      font-family: 'Fraunces', serif;
+      font-size: 64px;
+      color: var(--gold);
+      font-weight: 500;
+      line-height: 1;
+      opacity: 0.6;
+    }
+    .results-header-meta-big {
+      font-family: 'Fraunces', serif;
+      font-size: 56px;
+      color: var(--gold);
+      font-weight: 500;
+      line-height: 1;
+    }
+    .results-header-meta-label {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-top: 8px;
+      color: var(--text-mute);
+    }
+
+    /* Editorial case treatment — magazine spread */
+    .case {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 64px;
+      padding: 56px 0;
+      border-bottom: 1px solid var(--navy-line);
+      position: relative;
+    }
+    .case:last-child { border-bottom: none; }
+    .case-meta {
+      padding-top: 8px;
+    }
+    .case-number {
+      font-family: 'Fraunces', serif;
+      font-size: 14px;
+      color: var(--gold);
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      margin-bottom: 24px;
+    }
+    .case-verdict {
+      font-family: 'Fraunces', serif;
       font-size: 20px;
-      color: var(--cream);
-      font-weight: 600;
-      margin-bottom: 14px;
-      line-height: 1.3;
+      color: var(--bone);
+      font-weight: 500;
+      font-style: italic;
+      line-height: 1.2;
     }
-
-    .result-body {
-      font-size: 15px;
-      color: #c8d4e0;
-      line-height: 1.75;
+    .case-verdict-tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border-top: 1px solid var(--gold);
+      padding-top: 12px;
+      margin-top: 20px;
+    }
+    .case-body h3 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(30px, 3.5vw, 46px);
+      color: var(--bone);
+      font-weight: 500;
+      line-height: 1.08;
+      letter-spacing: -0.025em;
+      margin-bottom: 28px;
+    }
+    .case-body p {
+      color: var(--text-light);
+      font-size: 17px;
+      line-height: 1.8;
+      max-width: 640px;
       font-weight: 400;
     }
+    /* First letter drop cap on case body */
+    .case-body p::first-letter {
+      font-family: 'Fraunces', serif;
+      font-size: 72px;
+      font-weight: 500;
+      float: left;
+      line-height: 0.82;
+      padding: 4px 14px 0 0;
+      color: var(--gold);
+      font-style: italic;
+    }
 
-    /* ── PHILADELPHIA BAND ── */
-    .philly-band {
+    /* ═══════════ ABOUT — EDITORIAL ═══════════ */
+    .about {
+      background: var(--paper);
+      padding: 140px 0 120px;
       position: relative;
-      min-height: 280px;
+    }
+    .about .wrap {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 100px;
+      align-items: start;
+    }
+    .about-portrait {
+      position: sticky;
+      top: 100px;
+      aspect-ratio: 4/5;
+      overflow: hidden;
+      background: var(--navy);
+    }
+    .about-portrait img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      filter: grayscale(20%);
+    }
+    .about-portrait-tag {
+      position: absolute;
+      top: 28px;
+      left: 28px;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--bone);
+      font-weight: 500;
+    }
+
+    .about-content .label { margin-bottom: 24px; display: block; }
+    .about h2 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(40px, 5vw, 64px);
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      margin-bottom: 48px;
+      color: var(--ink);
+    }
+    .about h2 em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--gold);
+    }
+
+    .about-lead {
+      font-family: 'Fraunces', serif;
+      font-size: 26px;
+      line-height: 1.4;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--ink);
+      margin-bottom: 40px;
+      padding-left: 24px;
+      border-left: 2px solid var(--gold);
+    }
+
+    .about-body {
+      font-size: 17px;
+      line-height: 1.8;
+      color: var(--text-body);
+      margin-bottom: 20px;
+      max-width: 580px;
+    }
+
+    .about-cred {
+      display: flex;
+      gap: 40px;
+      margin-top: 48px;
+      padding-top: 32px;
+      border-top: 1px solid var(--bone-dim);
+    }
+    .about-cred-item {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .about-cred-num {
+      font-family: 'Fraunces', serif;
+      font-size: 32px;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+    .about-cred-label {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-body);
+      font-weight: 500;
+    }
+
+    /* ═══════════ PHILADELPHIA — FULL BLEED ═══════════ */
+    .philly {
+      position: relative;
+      min-height: 520px;
       display: flex;
       align-items: center;
       overflow: hidden;
+      background: var(--ink);
     }
-    .philly-band-img {
+    .philly-bg {
       position: absolute;
       inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center 60%;
-      filter: brightness(0.22) saturate(0.4);
+      filter: brightness(0.22) saturate(0.5) contrast(1.15);
     }
-    /* Extra scrim on top of the image for guaranteed contrast */
-    .philly-band::before {
+    .philly::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: rgba(10, 20, 35, 0.6);
+      background: linear-gradient(135deg, rgba(4,13,26,0.92) 0%, rgba(4,13,26,0.6) 60%, transparent 100%);
+      z-index: 1;
+    }
+    /* "NOT GUILTY." oversized text on the right */
+    .philly::after {
+      content: 'NOT GUILTY.';
+      position: absolute;
+      right: -20px;
+      bottom: -10px;
+      font-family: 'Fraunces', serif;
+      font-size: clamp(60px, 9vw, 120px);
+      font-weight: 500;
+      font-style: italic;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(196,154,60,0.2);
+      letter-spacing: -0.03em;
+      line-height: 1;
       z-index: 1;
       pointer-events: none;
+      white-space: nowrap;
     }
-    .philly-band-overlay {
+    .philly .wrap {
       position: relative;
       z-index: 2;
-      width: 100%;
-      padding: 64px 0;
+      padding: 110px 56px;
     }
-    .philly-band-overlay .container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 48px;
+    .philly-content {
+      max-width: 680px;
     }
-    .philly-band-text h3 {
-      font-family: 'Playfair Display', serif;
-      color: #ffffff;
-      font-size: 26px;
-      font-weight: 700;
-      margin-bottom: 12px;
-      text-shadow: 0 1px 8px rgba(0,0,0,0.5);
-    }
-    .philly-band-text p {
-      color: #c8d4e0;
-      font-size: 15px;
-      font-weight: 400;
-      max-width: 500px;
-      line-height: 1.75;
-    }
-    .philly-band-stat { text-align: center; flex-shrink: 0; }
-    .philly-band-stat-num {
-      font-family: 'Playfair Display', serif;
-      color: var(--gold-light);
-      font-size: 44px;
-      font-weight: 700;
-      line-height: 1.1;
-      text-shadow: 0 2px 12px rgba(0,0,0,0.4);
-    }
-    .philly-band-stat-label {
-      color: #c8d4e0;
-      font-size: 12px;
-      letter-spacing: 0.12em;
+    .philly-label {
+      font-size: 11px;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
-      margin-top: 8px;
-    }
-
-    /* ── ABOUT ── */
-    .about {
-      padding: 88px 0;
-    }
-    .about .container {
-      display: grid;
-      grid-template-columns: 1fr 300px;
-      gap: 72px;
-      align-items: center;
-    }
-
-    .about-eyebrow {
       color: var(--gold);
-      font-size: 12px;
       font-weight: 500;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      margin-bottom: 18px;
+      margin-bottom: 24px;
     }
-
-    .about-quote {
-      font-family: 'Playfair Display', serif;
-      font-size: 22px;
-      color: var(--cream);
-      line-height: 1.55;
+    .philly h3 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(40px, 5.5vw, 64px);
+      color: var(--bone);
+      font-weight: 500;
+      line-height: 1.02;
+      letter-spacing: -0.03em;
+      margin-bottom: 28px;
+    }
+    .philly h3 em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--gold-soft);
+    }
+    .philly p {
+      color: rgba(240,232,216,0.8);
+      font-size: 17px;
+      line-height: 1.75;
+      max-width: 520px;
+      font-weight: 400;
+    }
+    .philly-counties {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-top: 36px;
+    }
+    .philly-county {
+      font-family: 'Fraunces', serif;
+      font-size: 18px;
+      color: var(--bone);
       font-weight: 400;
       font-style: italic;
-      margin-bottom: 28px;
-      border-left: 2px solid var(--gold);
-      padding-left: 24px;
+    }
+    .philly-county + .philly-county::before {
+      content: '·';
+      color: var(--gold);
+      margin-right: 24px;
+      font-style: normal;
     }
 
-    .about-body {
-      color: #c8d4e0;
-      font-size: 15px;
-      line-height: 1.8;
+    /* ═══════════ TESTIMONIALS — EDITORIAL ═══════════ */
+    .testimonials {
+      background: var(--bone);
+      padding: 140px 0 120px;
+    }
+    .testimonials-head {
+      max-width: 720px;
+      margin-bottom: 80px;
+    }
+    .testimonials-head h2 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(40px, 5vw, 64px);
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+      margin-top: 24px;
+    }
+    .testimonials-head h2 em {
+      font-style: italic;
       font-weight: 400;
+      color: var(--gold);
+    }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+    .testimonial {
+      position: relative;
+      padding: 40px 36px 36px;
+      background: var(--paper);
+      border-top: 2px solid var(--gold);
+    }
+    .testimonial::before {
+      content: '\201C';
+      position: absolute;
+      top: 16px;
+      right: 24px;
+      font-family: 'Fraunces', serif;
+      font-size: 100px;
+      color: var(--gold);
+      opacity: 0.15;
+      font-weight: 600;
+      line-height: 1;
+      font-style: italic;
+    }
+    .testimonial-stars {
+      display: flex;
+      gap: 3px;
       margin-bottom: 20px;
     }
-
-    .about-credential {
-      color: var(--gold);
-      font-size: 13px;
+    .testimonial-stars i {
+      fill: var(--gold);
+      stroke: var(--gold);
+      width: 14px;
+      height: 14px;
+    }
+    .testimonial-quote {
+      font-family: 'Fraunces', serif;
+      font-size: 18px;
+      line-height: 1.65;
+      color: var(--ink);
+      font-weight: 400;
+      margin-bottom: 28px;
+    }
+    .testimonial-attr {
+      padding-top: 20px;
+      border-top: 1px solid var(--bone-dim);
+    }
+    .testimonial-name {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--ink);
       letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .testimonial-case {
+      font-size: 12px;
+      color: var(--text-body);
+      font-weight: 400;
+      margin-top: 4px;
+      font-style: italic;
+    }
+
+    /* ═══════════ PRACTICE ═══════════ */
+    .practice {
+      background: var(--ink);
+      padding: 140px 0 120px;
+      position: relative;
+    }
+    .practice-head {
+      max-width: 720px;
+      margin-bottom: 72px;
+    }
+    .practice-head .label { color: var(--gold); }
+    .practice-head h2 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(40px, 5vw, 64px);
       font-weight: 500;
-      display: flex;
-      align-items: center;
-      gap: 8px;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      color: var(--bone);
+      margin-top: 24px;
     }
-
-    .about-img-wrap {
-      border-radius: 4px;
-      overflow: hidden;
-      border: 2px solid var(--navy-light);
-      box-shadow: 8px 8px 0 rgba(200,169,110,0.2), 0 16px 48px rgba(0,0,0,0.35);
+    .practice-head h2 em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--gold-soft);
     }
-    .about-img-wrap img {
-      width: 100%;
-      filter: grayscale(15%) brightness(0.88);
-    }
-
-    /* ── PRACTICE AREAS ── */
     .practice-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      gap: 1px;
+      background: var(--navy-line);
+      border: 1px solid var(--navy-line);
     }
-
-    .prac-card {
-      background: var(--white);
-      border: 1px solid var(--cream-dark);
-      border-radius: 4px;
-      padding: 28px 24px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+    .prac {
+      background: var(--navy-mid);
+      padding: 44px 36px;
+      transition: background 0.3s;
       position: relative;
-      overflow: hidden;
     }
-    .prac-card::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      width: 0;
-      background: var(--gold);
-      transition: width 0.25s;
-    }
-    .prac-card:hover {
-      border-color: var(--gold);
-      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-      transform: translateY(-3px);
-    }
-    .prac-card:hover::before { width: 3px; }
-
-    .prac-icon {
-      width: 40px;
-      height: 40px;
+    .prac:hover {
       background: var(--navy);
-      border-radius: 4px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 16px;
     }
-
+    .prac:hover .prac-title {
+      color: var(--bone);
+    }
+    .prac:hover .prac-body {
+      color: var(--text-light);
+    }
+    .prac:hover .prac-arrow {
+      opacity: 1;
+      transform: translateX(0);
+      color: var(--gold);
+    }
+    .prac-num {
+      font-family: 'Fraunces', serif;
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+      margin-bottom: 32px;
+      transition: color 0.25s;
+    }
     .prac-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 16px;
-      color: var(--navy);
-      font-weight: 600;
-      margin-bottom: 10px;
+      font-family: 'Fraunces', serif;
+      font-size: 26px;
+      color: var(--text-light);
+      font-weight: 500;
+      margin-bottom: 16px;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      transition: color 0.25s;
     }
-
     .prac-body {
       font-size: 14px;
-      color: var(--text-body);
-      line-height: 1.65;
-      font-weight: 300;
+      color: var(--text-mute);
+      line-height: 1.7;
+      font-weight: 400;
+      transition: color 0.25s;
+    }
+    .prac-arrow {
+      position: absolute;
+      bottom: 36px;
+      right: 36px;
+      opacity: 0;
+      transform: translateX(-8px);
+      transition: all 0.25s;
+      color: var(--gold);
     }
 
+    /* ═══════════ PROCESS — TIMELINE ═══════════ */
+    .process {
+      background: var(--paper);
+      padding: 140px 0 120px;
+      border-top: 1px solid var(--bone-dim);
+    }
+    .process-head {
+      max-width: 720px;
+      margin-bottom: 80px;
+    }
+    .process-head h2 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(40px, 5vw, 64px);
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+      margin-top: 24px;
+    }
     .process-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-      border-radius: 4px;
-      overflow: hidden;
-    }
-
-    .process-step {
-      padding: 40px 32px;
-      background: var(--white);
-      border: 1px solid var(--cream-dark);
-      border-right: none;
+      gap: 0;
       position: relative;
-      transition: background 0.2s;
     }
-    .process-step:hover { background: #fdfcf9; }
-    .process-step:last-child { border-right: 1px solid var(--cream-dark); }
-
-    .step-connector {
+    .process-line {
       position: absolute;
-      top: 48px;
-      right: -12px;
-      width: 24px;
-      height: 24px;
-      background: var(--cream);
-      border: 1px solid var(--cream-dark);
+      top: 28px;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--bone-dim);
+      z-index: 0;
+    }
+    .process-step {
+      position: relative;
+      padding-right: 32px;
+      z-index: 1;
+    }
+    .process-dot {
+      width: 56px;
+      height: 56px;
       border-radius: 50%;
+      background: var(--ink);
+      color: var(--gold);
+      font-family: 'Fraunces', serif;
+      font-size: 18px;
+      font-weight: 500;
       display: flex;
       align-items: center;
       justify-content: center;
-      z-index: 2;
+      margin-bottom: 28px;
+      position: relative;
     }
-    .process-step:last-child .step-connector { display: none; }
-
-    .step-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 48px;
-      color: var(--gold);
-      font-weight: 700;
-      line-height: 1;
-      margin-bottom: 16px;
-      opacity: 0.45;
+    .process-dot::after {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      opacity: 0.4;
     }
-
-    .step-title {
-      font-size: 15px;
+    .process-title {
+      font-family: 'Fraunces', serif;
+      font-size: 22px;
+      color: var(--ink);
       font-weight: 500;
-      color: var(--navy);
-      margin-bottom: 10px;
+      margin-bottom: 14px;
+      letter-spacing: -0.01em;
     }
-
-    .step-body {
+    .process-body {
       font-size: 14px;
       color: var(--text-body);
-      line-height: 1.65;
-      font-weight: 300;
+      line-height: 1.7;
+      font-weight: 400;
     }
 
-    /* ── CONTACT ── */
-    .contact-grid {
+    /* ═══════════ FAQ ═══════════ */
+    .faq {
+      background: var(--bone);
+      padding: 140px 0 120px;
+    }
+    .faq .wrap {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 100px;
       align-items: start;
     }
+    .faq-aside h2 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(40px, 4.5vw, 56px);
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+      margin-top: 24px;
+      margin-bottom: 24px;
+    }
+    .faq-aside h2 em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--gold);
+    }
+    .faq-aside p {
+      color: var(--text-body);
+      font-size: 16px;
+      line-height: 1.7;
+      max-width: 360px;
+    }
+    .faq-list { border-top: 1px solid var(--bone-dim); }
+    .faq-item {
+      border-bottom: 1px solid var(--bone-dim);
+      padding: 24px 0;
+      cursor: pointer;
+    }
+    .faq-q {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .faq-q-text {
+      font-family: 'Fraunces', serif;
+      font-size: 19px;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.4;
+      letter-spacing: -0.01em;
+    }
+    .faq-icon {
+      flex-shrink: 0;
+      margin-top: 4px;
+      color: var(--gold);
+      transition: transform 0.25s;
+    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-a {
+      display: none;
+      font-size: 15px;
+      color: var(--text-body);
+      line-height: 1.75;
+      font-weight: 400;
+      margin-top: 16px;
+      padding-right: 40px;
+    }
+    .faq-item.open .faq-a { display: block; }
 
-    .contact-left h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 26px;
-      color: var(--navy);
-      font-weight: 700;
-      margin-bottom: 12px;
+    /* ═══════════ CONTACT ═══════════ */
+    .contact {
+      background: var(--ink);
+      padding: 140px 0 120px;
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url("assets/images/philadelphia-skyline.jpg");
+      background-size: cover;
+      background-position: center 30%;
+      opacity: 0.06;
+      filter: grayscale(100%);
+    }
+    .contact .wrap {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 100px;
+      align-items: start;
+    }
+    .contact-left h2 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(40px, 5vw, 64px);
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      color: var(--bone);
+      margin-top: 24px;
+      margin-bottom: 32px;
+    }
+    .contact-left h2 em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--gold-soft);
+    }
+    .contact-left > p {
+      color: var(--text-light);
+      font-size: 17px;
+      line-height: 1.75;
+      max-width: 460px;
+      margin-bottom: 48px;
     }
 
-    .contact-left p {
-      color: var(--text-body);
-      font-size: 15px;
-      line-height: 1.75;
-      font-weight: 300;
-      margin-bottom: 32px;
+    .contact-photo {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 22px 24px;
+      background: rgba(255,255,255,0.04);
+      border-left: 2px solid var(--gold);
+      margin-bottom: 36px;
+      max-width: 460px;
+    }
+    .contact-photo img {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top center;
+      flex-shrink: 0;
+    }
+    .contact-photo strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--bone);
+      margin-bottom: 3px;
+    }
+    .contact-photo span {
+      font-size: 13px;
+      color: var(--text-light);
+      font-weight: 400;
     }
 
     .contact-detail {
       display: flex;
       align-items: center;
-      gap: 12px;
-      margin-bottom: 16px;
+      gap: 14px;
+      margin-bottom: 18px;
+      color: var(--bone);
     }
-    .contact-detail-icon {
-      width: 36px;
-      height: 36px;
-      background: var(--navy);
-      border-radius: 4px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
+    .contact-detail i { color: var(--gold); }
+    .contact-detail a {
+      color: var(--bone);
+      font-size: 15px;
+      transition: color 0.2s;
     }
-    .contact-detail-text {
-      font-size: 14px;
-      color: var(--navy);
-    }
-    .contact-detail-text a { color: var(--navy); transition: color 0.2s; }
-    .contact-detail-text a:hover { color: var(--gold); }
+    .contact-detail a:hover { color: var(--gold); }
+    .contact-detail span { font-size: 15px; }
 
     .contact-form {
+      background: var(--bone);
+      padding: 40px;
       display: flex;
       flex-direction: column;
-      gap: 16px;
-      background: var(--cream);
-      border: 1px solid var(--cream-dark);
-      border-radius: 4px;
-      padding: 32px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+      gap: 18px;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.4);
     }
-
     .form-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 16px;
+      gap: 18px;
     }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
+    .form-group { display: flex; flex-direction: column; gap: 8px; }
     .form-group label {
-      font-size: 12px;
-      font-weight: 500;
-      color: var(--navy);
-      letter-spacing: 0.06em;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--ink);
+      letter-spacing: 0.1em;
       text-transform: uppercase;
     }
-
     .form-group input,
     .form-group select,
     .form-group textarea {
-      background: var(--cream);
-      border: 1px solid var(--cream-dark);
-      border-radius: 3px;
-      padding: 11px 14px;
-      font-family: 'DM Sans', sans-serif;
+      background: var(--paper);
+      border: 1px solid var(--bone-dim);
+      border-radius: 0;
+      padding: 13px 16px;
+      font-family: 'Inter', sans-serif;
       font-size: 14px;
-      color: var(--navy);
+      color: var(--ink);
       transition: border-color 0.2s;
       outline: none;
     }
@@ -885,576 +1284,411 @@
     .form-group select:focus,
     .form-group textarea:focus { border-color: var(--gold); }
     .form-group textarea { resize: vertical; min-height: 120px; }
-
     .form-submit {
-      background: var(--navy);
-      color: var(--cream);
-      font-family: 'DM Sans', sans-serif;
-      font-size: 14px;
-      font-weight: 500;
-      padding: 14px 28px;
+      background: var(--ink);
+      color: var(--bone);
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 16px 28px;
       border: none;
-      border-radius: 3px;
+      border-radius: 2px;
       cursor: pointer;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
       transition: background 0.2s;
       align-self: flex-start;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
     }
-    .form-submit:hover { background: var(--navy-light); }
-
+    .form-submit:hover { background: var(--navy); }
     .form-disclaimer {
-      font-size: 12px;
-      color: #9aabbf;
+      font-size: 11px;
+      color: var(--text-body);
       line-height: 1.6;
     }
 
-    /* ── CTA BAND ── */
-    .cta-band {
+    /* ═══════════ FOOTER ═══════════ */
+    .footer-cta {
+      background: var(--ink);
       padding: 72px 0;
+      color: var(--bone);
+      border-top: 1px solid var(--gold);
     }
-    .cta-band .container {
+    .footer-cta .wrap {
       display: grid;
       grid-template-columns: 1fr auto;
       align-items: center;
       gap: 48px;
     }
-
-    .cta-band h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 28px;
-      color: var(--cream);
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-
-    .cta-band p {
-      color: #c8d4e0;
-      font-size: 15px;
-      font-weight: 400;
-    }
-
-    .cta-right { text-align: center; }
-
-    .cta-phone {
-      color: var(--gold);
-      font-family: 'Playfair Display', serif;
-      font-size: 30px;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      margin-bottom: 14px;
-    }
-
-    .btn-cta {
-      background: var(--gold);
-      color: var(--navy);
-      font-size: 14px;
+    .footer-cta h3 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(28px, 3vw, 42px);
       font-weight: 500;
-      padding: 13px 26px;
-      border-radius: 3px;
-      letter-spacing: 0.04em;
-      display: inline-block;
-      transition: background 0.2s;
+      line-height: 1.08;
+      letter-spacing: -0.025em;
+      color: var(--bone);
     }
-    .btn-cta:hover { background: var(--gold-light); }
-
-    /* Light section subtle grain */
-    .section-light::after,
-    .section-white::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: var(--grain);
-      background-size: 200px 200px;
-      opacity: 0.02;
-      pointer-events: none;
-      z-index: 0;
-    }
-    .section-light, .section-white { position: relative; }
-    .section-light .container,
-    .section-white .container { position: relative; z-index: 1; }
-
-    /* ── FOOTER ── */
-    .footer {
-      background: var(--navy);
-      padding: 36px 0;
-      border-top: 2px solid var(--gold);
-      position: relative;
-    }
-    .footer::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: var(--grain);
-      background-size: 200px 200px;
-      opacity: 0.03;
-      pointer-events: none;
-    }
-    .footer .container { position: relative; z-index: 1; }
-    .footer .container {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      align-items: center;
-      gap: 24px;
-    }
-
-    .footer-logo {
-      font-family: 'Playfair Display', serif;
-      color: #c8d4e0;
-      font-size: 15px;
-    }
-
-    .footer-disclaimer {
-      color: #7a93aa;
-      font-size: 12px;
-      line-height: 1.6;
-      text-align: center;
-    }
-
-    .footer-copy {
-      color: #7a93aa;
-      font-size: 12px;
+    .footer-cta h3 em { font-style: italic; font-weight: 400; color: var(--gold-soft); }
+    .footer-cta-phone {
       text-align: right;
     }
-
-    /* ── TESTIMONIALS ── */
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .testimonial-card {
-      background: var(--white);
-      border: 1px solid var(--cream-dark);
-      border-radius: 4px;
-      padding: 32px 28px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      box-shadow: 0 3px 16px rgba(0,0,0,0.07);
-      transition: transform 0.25s, box-shadow 0.25s;
-    }
-    .testimonial-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 36px rgba(0,0,0,0.11);
-    }
-
-    .testimonial-stars {
-      display: flex;
-      gap: 3px;
-      color: var(--gold);
-    }
-
-    .testimonial-quote {
-      font-family: 'Playfair Display', serif;
-      font-size: 16px;
-      font-style: italic;
-      color: var(--navy);
-      line-height: 1.65;
-      flex: 1;
-    }
-
-    .testimonial-attribution {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-      padding-top: 16px;
-      border-top: 1px solid var(--cream-dark);
-    }
-
-    .testimonial-name {
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--navy);
-    }
-
-    .testimonial-case {
-      font-size: 12px;
-      color: var(--text-body);
-      font-weight: 300;
-    }
-
-    /* ── FAQ ── */
-    .faq-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
-    }
-
-    .faq-item {
-      padding: 28px 32px;
-      border-bottom: 1px solid var(--cream-dark);
-      border-right: 1px solid var(--cream-dark);
-      cursor: pointer;
-    }
-    .faq-item:nth-child(even) { border-right: none; }
-    .faq-item:nth-last-child(-n+2) { border-bottom: none; }
-
-    .faq-question {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 16px;
-    }
-
-    .faq-question-text {
-      font-family: 'Playfair Display', serif;
-      font-size: 16px;
+    .footer-cta-phone-label {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
       font-weight: 600;
-      color: var(--navy);
-      line-height: 1.4;
-    }
-
-    .faq-icon {
-      flex-shrink: 0;
-      margin-top: 2px;
-      transition: transform 0.2s;
+      margin-bottom: 8px;
       color: var(--gold);
     }
-    .faq-item.open .faq-icon { transform: rotate(45deg); }
-
-    .faq-answer {
-      display: none;
-      font-size: 14px;
-      color: var(--text-body);
-      line-height: 1.75;
-      font-weight: 300;
-      margin-top: 14px;
-    }
-    .faq-item.open .faq-answer { display: block; }
-
-    /* ── CONTACT PHOTO ── */
-    .contact-photo-wrap {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 28px;
-      padding: 20px;
-      background: var(--cream);
-      border-radius: 4px;
-      border: 1px solid var(--cream-dark);
-    }
-    .contact-photo-wrap img {
-      width: 64px;
-      height: 64px;
-      border-radius: 50%;
-      object-fit: cover;
-      object-position: top center;
-      border: 2px solid var(--gold);
-      flex-shrink: 0;
-    }
-    .contact-photo-text strong {
-      display: block;
-      font-size: 14px;
+    .footer-cta-phone-num {
+      font-family: 'Fraunces', serif;
+      font-size: 40px;
       font-weight: 500;
-      color: var(--navy);
-      margin-bottom: 3px;
+      line-height: 1;
+      letter-spacing: -0.025em;
+      color: var(--bone);
+      transition: color 0.2s;
     }
-    .contact-photo-text span {
-      font-size: 13px;
-      color: var(--text-body);
-      font-weight: 300;
-    }
+    .footer-cta-phone-num:hover { color: var(--gold-soft); }
 
-    /* Form validation */
-    .form-group input:invalid:not(:placeholder-shown),
-    .form-group select:invalid:not(:placeholder-shown),
-    .form-group textarea:invalid:not(:placeholder-shown) {
-      border-color: #c0392b;
+    .footer {
+      background: var(--ink);
+      padding: 80px 0 32px;
+      color: var(--text-light);
     }
-    .form-group input:valid:not(:placeholder-shown) {
-      border-color: #27ae60;
+    .footer-main {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 64px;
+      padding-bottom: 56px;
+      border-bottom: 1px solid var(--navy-line);
     }
-
-    /* ── FOOTER EXPANDED ── */
-    .footer-affiliation {
-      color: #7a93aa;
-      font-size: 12px;
-      margin-top: 4px;
+    .footer-brand .nav-logo {
+      font-size: 24px;
+      display: block;
+      margin-bottom: 16px;
     }
-    .footer-affiliation a {
+    .footer-brand p {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--text-light);
+      max-width: 320px;
+    }
+    .footer-col h5 {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
       color: var(--gold);
-      transition: opacity 0.2s;
+      font-weight: 600;
+      margin-bottom: 24px;
     }
-    .footer-affiliation a:hover { opacity: 0.8; }
-    @media (max-width: 900px) {
-      .container { padding: 0 24px; }
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .footer-col a {
+      color: var(--text-light);
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+    .footer-col a:hover { color: var(--gold); }
+    .footer-col p {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--text-light);
+    }
+    .footer-bottom {
+      padding-top: 32px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 32px;
+      align-items: start;
+      font-size: 11px;
+      color: var(--text-mute);
+    }
+    .footer-bottom .left { text-align: left; }
+    .footer-bottom .mid { text-align: center; max-width: 460px; line-height: 1.6; }
+    .footer-bottom .right { text-align: right; }
 
+    /* ═══════════ RESPONSIVE ═══════════ */
+    @media (max-width: 1100px) {
+      .hero-deco { font-size: 380px; }
+      .results-header { grid-template-columns: 1fr; gap: 24px; }
+      .results-header-meta { text-align: left; }
+      .case { grid-template-columns: 1fr; gap: 24px; }
+      .about .wrap, .faq .wrap, .contact .wrap { grid-template-columns: 1fr; gap: 48px; }
+      .about-portrait { position: static; max-width: 360px; }
+      .testimonials-grid { grid-template-columns: 1fr; gap: 56px; }
+      .practice-grid { grid-template-columns: repeat(2, 1fr); }
+      .process-grid { grid-template-columns: repeat(2, 1fr); gap: 56px; }
+      .process-line { display: none; }
+      .footer-main { grid-template-columns: 1fr 1fr; gap: 48px; }
+    }
+    @media (max-width: 900px) {
+      .wrap, .wrap-tight { padding: 0 24px; }
+      .nav { padding: 0; }
       .nav-links { display: none; }
       .nav-hamburger { display: flex; }
-
-      .hero .container { grid-template-columns: 1fr; }
-      .hero-right { height: 360px; }
-      .hero-left { padding: 48px 0; }
-      .hero-h1 { font-size: 32px; }
-
-      .stats-bar .container { grid-template-columns: 1fr; }
-      .stat { border-right: none; border-bottom: 1px solid var(--navy-light); }
-      .stat:last-child { border-bottom: none; }
-
-      .section { padding: 64px 0; }
-
-      .results-grid { grid-template-columns: 1fr; }
-
-      .philly-band-overlay .container { flex-direction: column; text-align: center; gap: 32px; }
-
-      .about .container { grid-template-columns: 1fr; gap: 40px; }
-      .about-img-wrap { max-width: 260px; }
-
-      .practice-grid { grid-template-columns: 1fr 1fr; }
-
-      .process-grid { grid-template-columns: 1fr 1fr; }
-      .process-step { border: 1px solid var(--cream-dark); }
-      .step-connector { display: none; }
-
-      .testimonials-grid { grid-template-columns: 1fr; }
-      .faq-grid { grid-template-columns: 1fr; }
-      .faq-item { border-right: none !important; }
-      .faq-item:nth-last-child(-n+2) { border-bottom: 1px solid var(--cream-dark); }
-      .faq-item:last-child { border-bottom: none; }
-
-      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-
-      .cta-band .container { grid-template-columns: 1fr; text-align: center; }
-      .cta-phone { justify-content: center; }
-
-      .footer .container { grid-template-columns: 1fr; text-align: center; gap: 16px; }
-      .footer-copy { text-align: center; }
+      .hero { padding: 64px 0 80px; }
+      .hero .wrap { grid-template-columns: 1fr; gap: 56px; }
+      .hero-deco { font-size: 280px; opacity: 0.5; }
+      .stats .wrap { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .stats-divider, .stats-cta, .stats-cta-num { display: none; }
+      .results, .about, .testimonials, .practice, .process, .faq, .contact { padding: 80px 0; }
+      .results-header { margin-bottom: 56px; }
+      .case { padding: 36px 0; }
+      .hero-credential { left: 0; bottom: -20px; }
+      .footer-cta .wrap { grid-template-columns: 1fr; text-align: center; gap: 24px; }
+      .footer-cta-phone { text-align: center; }
+      .footer-main { grid-template-columns: 1fr; gap: 40px; padding-bottom: 40px; }
+      .footer-bottom { grid-template-columns: 1fr; text-align: center; gap: 12px; }
+      .footer-bottom .left, .footer-bottom .right { text-align: center; }
     }
-
     @media (max-width: 600px) {
+      .stats .wrap { grid-template-columns: 1fr; gap: 24px; }
       .practice-grid { grid-template-columns: 1fr; }
       .process-grid { grid-template-columns: 1fr; }
       .form-row { grid-template-columns: 1fr; }
-      .hero-h1 { font-size: 28px; }
+      .case-body p::first-letter { font-size: 48px; }
+      .about-cred { gap: 28px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Fixed skyline background — sits behind all dark sections via z-index -->
-  <div class="skyline-parallax" aria-hidden="true"></div>
-
-  <!-- NAVIGATION -->
   <nav class="nav">
-    <div class="container">
-      <div class="nav-logo">Matthew C. <span>Boyd</span></div>
+    <div class="wrap">
+      <a href="#" class="nav-logo">Matthew C. Boyd<span class="dot">.</span></a>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
-        <li><a href="#results">Case Results</a></li>
-        <li><a href="#practice">Practice Areas</a></li>
+        <li><a href="#results">Verdicts</a></li>
+        <li><a href="#practice">Practice</a></li>
+        <li><a href="#faq">FAQ</a></li>
         <li><a href="#contact" class="nav-cta">Free Consultation</a></li>
       </ul>
-      <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <button class="nav-hamburger" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
-  <!-- MOBILE DRAWER -->
   <div class="nav-drawer" id="nav-drawer">
     <a href="#about">About</a>
-    <a href="#results">Case Results</a>
-    <a href="#practice">Practice Areas</a>
+    <a href="#results">Verdicts</a>
+    <a href="#practice">Practice</a>
+    <a href="#faq">FAQ</a>
     <a href="#contact" class="drawer-cta">Free Consultation</a>
   </div>
 
   <!-- HERO -->
   <section class="hero">
-    <div class="container">
+    <div class="hero-deco">100</div>
+    <div class="wrap">
       <div class="hero-left">
-        <div class="eyebrow">Philadelphia Criminal Defense Attorney</div>
+        <div class="hero-meta">
+          <div class="hero-meta-line"></div>
+          <span class="hero-meta-text">Philadelphia Criminal Defense</span>
+        </div>
         <h1 class="hero-h1">
-          When the stakes are<br>
-          <em>everything</em>, you need<br>
-          someone who goes to trial.
+          When the stakes<br>
+          are <span class="accent">everything</span>,<br>
+          you need a fighter.
         </h1>
         <p class="hero-sub">
-          Over a decade fighting Philadelphia's criminal cases. 100+ jury trials.
-          Not Guilty verdicts on Attempted Murder, Rape, Firearms, and more.
+          Over a decade in Philadelphia's criminal courts. 100+ jury trials. Not Guilty verdicts on Attempted Murder, Rape, Firearms, and the most serious charges prosecutors can bring.
         </p>
         <div class="hero-actions">
           <a href="#contact" class="btn-primary">
-            <i data-lucide="phone" style="width:16px;height:16px"></i>
-            Call Now
+            <i data-lucide="phone" style="width:14px;height:14px"></i>
+            Free Consultation
           </a>
           <a href="#results" class="btn-ghost">
-            See Case Results
+            View Notable Verdicts
             <i data-lucide="arrow-right" style="width:14px;height:14px"></i>
           </a>
         </div>
       </div>
-      <div class="hero-right">
-        <!--
-          IMAGE: assets/images/matthew-boyd-hero.webp + .jpg
-          Portrait crop ~600x780px, object-position: top center
-        -->
-        <picture>
-          <source srcset="assets/images/matthew-boyd-hero.webp" type="image/webp">
-          <img src="assets/images/matthew-boyd-hero.jpg" alt="Matthew C. Boyd, Philadelphia Criminal Defense Attorney" />
-        </picture>
+      <div class="hero-portrait">
+        <div class="hero-portrait-frame">
+          <picture>
+            <source srcset="assets/images/matthew-boyd-hero.webp" type="image/webp">
+            <img src="assets/images/matthew-boyd-hero.jpg" alt="Matthew C. Boyd, Philadelphia Criminal Defense Attorney" />
+          </picture>
+        </div>
+        <div class="hero-credential">
+          <div class="hero-credential-num">100+</div>
+          <div class="hero-credential-label">Jury Trials</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- STATS BAR -->
-  <div class="stats-bar">
-    <div class="container">
-      <div class="stat">
-        <div class="stat-num">100+</div>
-        <div class="stat-label">Jury Trials Litigated</div>
+  <!-- STATS -->
+  <div class="stats">
+    <div class="wrap">
+      <div>
+        <div class="stat-num">10<span class="small">+</span></div>
+        <div class="stat-label">Years Practicing</div>
       </div>
-      <div class="stat">
-        <div class="stat-num">10+</div>
-        <div class="stat-label">Years Criminal Defense</div>
+      <div>
+        <div class="stat-num">100<span class="small">+</span></div>
+        <div class="stat-label">Jury Trials</div>
       </div>
-      <div class="stat">
-        <div class="stat-num">1,000s</div>
+      <div>
+        <div class="stat-num">1,000<span class="small">s</span></div>
         <div class="stat-label">Cases Handled</div>
       </div>
+      <div class="stats-divider"></div>
+      <div class="stats-cta">Available 24/7</div>
+      <a href="tel:2150000000" class="stats-cta-num">(215) 000-0000</a>
     </div>
   </div>
 
-  <!-- CASE RESULTS -->
-  <section class="section section-dark" id="results">
-    <div class="container">
-      <div class="section-label">Verdicts that speak for themselves</div>
-      <h2 class="section-h2">Notable Case Results</h2>
-      <div class="section-rule"></div>
-      <p class="results-intro">Matthew has secured Not Guilty verdicts on virtually every major criminal charge. Below are two recent examples that illustrate what he is capable of in a courtroom.</p>
-      <div class="results-grid">
-        <div class="result-card">
-          <div class="result-verdict">Not Guilty: All Charges</div>
-          <div class="result-charges">Attempted Murder &amp; Aggravated Assault</div>
-          <p class="result-body">Three eyewitnesses testified they personally saw the client commit the crime. Matthew exposed critical inconsistencies in their accounts and demonstrated to the jury that each witness had motive to falsely identify his client. The jury returned Not Guilty on every count.</p>
-        </div>
-        <div class="result-card">
-          <div class="result-verdict">Not Guilty: All Charges</div>
-          <div class="result-charges">Narcotics Distribution &amp; Firearms Offenses</div>
-          <p class="result-body">The client's own DNA was found on both an illegal firearm and a large quantity of narcotics. Matthew proved that police contaminated the evidence by failing to wear gloves during the search, and the jury returned Not Guilty on all charges.</p>
+  <!-- CASE RESULTS — EDITORIAL CENTERPIECE -->
+  <section class="results" id="results">
+    <div class="results-bg"></div>
+    <div class="wrap">
+      <div class="results-header">
+        <h2>Notable<br><em>verdicts.</em></h2>
+        <div class="results-header-meta">
+          <div class="results-header-meta-big">02</div>
+          <div class="results-header-meta-label">Selected Cases</div>
         </div>
       </div>
+
+      <article class="case">
+        <div class="case-meta">
+          <div class="case-number">Case No. 01</div>
+          <div class="case-verdict">Three eyewitnesses. <br>One acquittal.</div>
+          <div class="case-verdict-tag">Not Guilty · All Charges</div>
+        </div>
+        <div class="case-body">
+          <h3>Attempted Murder &amp; Aggravated Assault</h3>
+          <p>Three eyewitnesses took the stand and testified they personally saw the client commit the crime. Matthew exposed critical inconsistencies in their accounts and demonstrated to the jury that each witness had motive to falsely identify his client. The jury returned Not Guilty on every count.</p>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="case-meta">
+          <div class="case-number">Case No. 02</div>
+          <div class="case-verdict">The client's own DNA. <br>Still acquitted.</div>
+          <div class="case-verdict-tag">Not Guilty · All Charges</div>
+        </div>
+        <div class="case-body">
+          <h3>Narcotics Distribution &amp; Firearms</h3>
+          <p>The client's own DNA was found on both an illegal firearm and a large quantity of narcotics. Matthew proved to the jury that police contaminated the evidence by failing to wear gloves during the search, and the jury returned Not Guilty on all charges.</p>
+        </div>
+      </article>
     </div>
   </section>
-
-  <!-- PHILADELPHIA BAND -->
-  <div class="philly-band">
-    <!--
-      IMAGE: assets/images/philadelphia-skyline.webp + .jpg
-      Unsplash search: "Philadelphia skyline" or "Philadelphia city hall"
-      Wide landscape ~1800x600px
-    -->
-    <picture>
-      <source srcset="assets/images/philadelphia-skyline.webp" type="image/webp">
-      <img class="philly-band-img" src="assets/images/philadelphia-skyline.jpg" alt="Philadelphia skyline" />
-    </picture>
-    <div class="philly-band-overlay">
-      <div class="container">
-        <div class="philly-band-text">
-          <h3>Serving Philadelphia and surrounding counties</h3>
-          <p>Matthew handles cases throughout Philadelphia, Montgomery, Delaware, Bucks, and Chester counties. He knows the courts, the prosecutors, and the process. He is ready to fight for you wherever your case is heard.</p>
-        </div>
-        <div class="philly-band-stat">
-          <div class="philly-band-stat-num">Not<br>Guilty.</div>
-          <div class="philly-band-stat-label">The only verdict that matters</div>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- ABOUT -->
   <section class="about" id="about">
-    <div class="container">
-      <div>
-        <div class="about-eyebrow">Why Matthew is different</div>
-        <blockquote class="about-quote">
-          While many attorneys treat their practice as just a job, Matthew chose this work on purpose and has been fighting for clients with that same conviction ever since.
-        </blockquote>
-        <p class="about-body">
-          Matthew has practiced criminal law since graduating from Villanova University
-          School of Law in 2014. He has handled thousands of cases, including pretrial hearings,
-          bail and detainer hearings, motions to suppress, and over 100 jury trials. He
-          cares about his clients. He returns calls. And he actually goes to trial when
-          that is what it takes to win.
-        </p>
-        <p class="about-body">
-          He is dedicated to standing up to a criminal justice system that too often
-          over-prosecutes and dehumanizes those it was built to serve.
-        </p>
-        <div class="about-credential">
-          <i data-lucide="graduation-cap" style="width:16px;height:16px;stroke:var(--gold)"></i>
-          Matthew C. Boyd, Esq. &nbsp;&middot;&nbsp; Villanova Law, 2014
-        </div>
-      </div>
-      <div class="about-img-wrap">
-        <!--
-          IMAGE: assets/images/matthew-boyd-about.webp + .jpg
-          Same source photo as hero is fine.
-        -->
+    <div class="wrap">
+      <div class="about-portrait">
         <picture>
           <source srcset="assets/images/matthew-boyd-about.webp" type="image/webp">
           <img src="assets/images/matthew-boyd-about.jpg" alt="Matthew C. Boyd" />
         </picture>
       </div>
+      <div class="about-content">
+        <span class="label">About</span>
+        <h2>A trial attorney <em>by design,</em><br>not by default.</h2>
+
+        <p class="about-lead">
+          Matthew decided he wanted to be a trial attorney in fifth grade. He has been fighting for clients in that same spirit since the day he was sworn in.
+        </p>
+
+        <p class="about-body">
+          Matthew has practiced criminal law since graduating from Villanova University School of Law in 2014. He has handled thousands of cases, including pretrial hearings, bail and detainer hearings, motions to suppress, and over 100 jury trials.
+        </p>
+        <p class="about-body">
+          He cares about his clients. He returns calls. And he actually goes to trial when that is what it takes to win. He is dedicated to standing up to a criminal justice system that too often over-prosecutes and dehumanizes those it was built to serve.
+        </p>
+
+        <div class="about-cred">
+          <div class="about-cred-item">
+            <div class="about-cred-num">2014</div>
+            <div class="about-cred-label">Villanova Law</div>
+          </div>
+          <div class="about-cred-item">
+            <div class="about-cred-num">PA</div>
+            <div class="about-cred-label">Bar Admission</div>
+          </div>
+          <div class="about-cred-item">
+            <div class="about-cred-num">10+</div>
+            <div class="about-cred-label">Years in Practice</div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
+
+  <!-- PHILADELPHIA -->
+  <div class="philly">
+    <picture>
+      <source srcset="assets/images/philadelphia-skyline.webp" type="image/webp">
+      <img class="philly-bg" src="assets/images/philadelphia-skyline.jpg" alt="" role="presentation" />
+    </picture>
+    <div class="wrap">
+      <div class="philly-content">
+        <div class="philly-label">Service Area</div>
+        <h3>Defending the accused across <em>greater Philadelphia.</em></h3>
+        <p>Matthew handles serious criminal cases throughout the city and surrounding counties. He knows the courts, the prosecutors, and the rhythm of how cases are won and lost in this region.</p>
+        <div class="philly-counties">
+          <span class="philly-county">Philadelphia</span>
+          <span class="philly-county">Montgomery</span>
+          <span class="philly-county">Delaware</span>
+          <span class="philly-county">Bucks</span>
+          <span class="philly-county">Chester</span>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- TESTIMONIALS -->
-  <section class="section section-light">
-    <div class="container">
-      <div class="section-label">In their own words</div>
-      <h2 class="section-h2">What Clients Say</h2>
-      <div class="section-rule"></div>
+  <section class="testimonials">
+    <div class="wrap">
+      <div class="testimonials-head">
+        <span class="label">In Their Own Words</span>
+        <h2>The stories <em>behind the verdicts.</em></h2>
+      </div>
       <div class="testimonials-grid">
 
-        <div class="testimonial-card">
+        <div class="testimonial">
           <div class="testimonial-stars">
-            <i data-lucide="star" style="width:15px;height:15px;fill:var(--gold);stroke:var(--gold)"></i>
-            <i data-lucide="star" style="width:15px;height:15px;fill:var(--gold);stroke:var(--gold)"></i>
-            <i data-lucide="star" style="width:15px;height:15px;fill:var(--gold);stroke:var(--gold)"></i>
-            <i data-lucide="star" style="width:15px;height:15px;fill:var(--gold);stroke:var(--gold)"></i>
-            <i data-lucide="star" style="width:15px;height:15px;fill:var(--gold);stroke:var(--gold)"></i>
+            <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
           </div>
-          <p class="testimonial-quote">"I was facing serious charges and thought my life was over. Matthew stayed in constant contact with me, explained everything, and went to trial when everyone else told me to take a deal. Not guilty on all counts."</p>
-          <div class="testimonial-attribution">
-            <span class="testimonial-name">D.W.</span>
-            <span class="testimonial-case">Firearms &amp; Drug Charges, Philadelphia</span>
+          <p class="testimonial-quote">I was facing serious charges and thought my life was over. Matthew stayed in constant contact, explained everything, and went to trial when everyone else told me to take a deal. Not guilty on all counts.</p>
+          <div class="testimonial-attr">
+            <div class="testimonial-name">D.W.</div>
+            <div class="testimonial-case">Firearms &amp; Drug Charges, Philadelphia</div>
           </div>
         </div>
 
-        <div class="testimonial-card">
+        <div class="testimonial">
           <div class="testimonial-stars">
-            <i data-lucide="star" style="width:15px;height:15px;fill:var(--gold);stroke:var(--gold)"></i>
-            <i data-lucide="star" style="width:15px;height:15px;fill:var(--gold);stroke:var(--gold)"></i>
-            <i data-lucide="star" style="width:15px;height:15px;fill:var(--gold);stroke:var(--gold)"></i>
-            <i data-lucide="star" style="width:15px;height:15px;fill:var(--gold);stroke:var(--gold)"></i>
-            <i data-lucide="star" style="width:15px;height:15px;fill:var(--gold);stroke:var(--gold)"></i>
+            <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
           </div>
-          <p class="testimonial-quote">"Matthew got my charges dismissed before we even made it to trial. He knew exactly what motions to file and when. He actually answers his phone, which no other attorney I tried did."</p>
-          <div class="testimonial-attribution">
-            <span class="testimonial-name">R.M.</span>
-            <span class="testimonial-case">Assault Charges Dismissed, Montgomery County</span>
+          <p class="testimonial-quote">Matthew got my charges dismissed before we even made it to trial. He knew exactly what motions to file and when. He actually answers his phone, which no other attorney I tried did.</p>
+          <div class="testimonial-attr">
+            <div class="testimonial-name">R.M.</div>
+            <div class="testimonial-case">Assault Charges Dismissed, Montgomery County</div>
           </div>
         </div>
 
-        <div class="testimonial-card">
+        <div class="testimonial">
           <div class="testimonial-stars">
-            <i data-lucide="star" style="width:15px;height:15px;fill:var(--gold);stroke:var(--gold)"></i>
-            <i data-lucide="star" style="width:15px;height:15px;fill:var(--gold);stroke:var(--gold)"></i>
-            <i data-lucide="star" style="width:15px;height:15px;fill:var(--gold);stroke:var(--gold)"></i>
-            <i data-lucide="star" style="width:15px;height:15px;fill:var(--gold);stroke:var(--gold)"></i>
-            <i data-lucide="star" style="width:15px;height:15px;fill:var(--gold);stroke:var(--gold)"></i>
+            <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
           </div>
-          <p class="testimonial-quote">"My son was locked up and I didn&rsquo;t know where to turn. Matthew had him out within days by getting his bail reduced. He treated our family with dignity when we needed it most."</p>
-          <div class="testimonial-attribution">
-            <span class="testimonial-name">C.T. (parent)</span>
-            <span class="testimonial-case">Bail Reduction &amp; Case Discharge, Philadelphia</span>
+          <p class="testimonial-quote">My son was locked up and I didn't know where to turn. Matthew had him out within days by getting his bail reduced. He treated our family with dignity when we needed it most.</p>
+          <div class="testimonial-attr">
+            <div class="testimonial-name">C.T.</div>
+            <div class="testimonial-case">Bail Reduction &amp; Case Discharge, Philadelphia</div>
           </div>
         </div>
 
@@ -1462,316 +1696,301 @@
     </div>
   </section>
 
-  <!-- PRACTICE AREAS -->
-  <section class="section section-light" id="practice">
-    <div class="container">
-      <div class="section-label">What Matthew handles</div>
-      <h2 class="section-h2">Practice Areas</h2>
-      <div class="section-rule"></div>
+  <!-- PRACTICE -->
+  <section class="practice" id="practice">
+    <div class="wrap">
+      <div class="practice-head">
+        <span class="label">What Matthew Handles</span>
+        <h2>Built for <em>serious cases.</em></h2>
+      </div>
       <div class="practice-grid">
 
-        <div class="prac-card">
-          <div class="prac-icon">
-            <i data-lucide="shield-alert" style="width:18px;height:18px;stroke:var(--gold)"></i>
-          </div>
-          <div class="prac-title">Violent Crimes</div>
-          <p class="prac-body">Attempted Murder, Aggravated Assault, Robbery, Kidnapping. Matthew has won Not Guilty verdicts on the most serious charges Philadelphia prosecutors bring.</p>
+        <div class="prac">
+          <div class="prac-num">01</div>
+          <div class="prac-title">Violent<br>Crimes</div>
+          <p class="prac-body">Attempted Murder, Aggravated Assault, Robbery, Kidnapping. Matthew has won Not Guilty verdicts on the most serious charges prosecutors bring.</p>
+          <i class="prac-arrow" data-lucide="arrow-up-right" style="width:20px;height:20px"></i>
         </div>
 
-        <div class="prac-card">
-          <div class="prac-icon">
-            <i data-lucide="lock" style="width:18px;height:18px;stroke:var(--gold)"></i>
-          </div>
-          <div class="prac-title">Drug &amp; Firearms Offenses</div>
-          <p class="prac-body">Possession, distribution, and firearms charges. Matthew challenges the evidence, the search, and the stop and wins cases others would plead out.</p>
+        <div class="prac">
+          <div class="prac-num">02</div>
+          <div class="prac-title">Drug &amp;<br>Firearms</div>
+          <p class="prac-body">Possession, distribution, and firearms charges. Matthew challenges the evidence, the search, and the stop, and wins cases others would plead out.</p>
+          <i class="prac-arrow" data-lucide="arrow-up-right" style="width:20px;height:20px"></i>
         </div>
 
-        <div class="prac-card">
-          <div class="prac-icon">
-            <i data-lucide="car" style="width:18px;height:18px;stroke:var(--gold)"></i>
-          </div>
-          <div class="prac-title">DUI Defense</div>
+        <div class="prac">
+          <div class="prac-num">03</div>
+          <div class="prac-title">DUI<br>Defense</div>
           <p class="prac-body">Challenging traffic stops, field sobriety tests, and breath test results. Matthew protects your license, your record, and your future.</p>
+          <i class="prac-arrow" data-lucide="arrow-up-right" style="width:20px;height:20px"></i>
         </div>
 
-        <div class="prac-card">
-          <div class="prac-icon">
-            <i data-lucide="gavel" style="width:18px;height:18px;stroke:var(--gold)"></i>
-          </div>
-          <div class="prac-title">Pretrial &amp; Bail Hearings</div>
-          <p class="prac-body">Matthew has represented clients at thousands of preliminary hearings and regularly gets clients out of custody before trial by challenging bail and detainers.</p>
+        <div class="prac">
+          <div class="prac-num">04</div>
+          <div class="prac-title">Pretrial &amp;<br>Bail</div>
+          <p class="prac-body">Matthew has represented clients at thousands of preliminary hearings and regularly gets clients out of custody before trial.</p>
+          <i class="prac-arrow" data-lucide="arrow-up-right" style="width:20px;height:20px"></i>
         </div>
 
-        <div class="prac-card">
-          <div class="prac-icon">
-            <i data-lucide="home" style="width:18px;height:18px;stroke:var(--gold)"></i>
-          </div>
-          <div class="prac-title">Burglary &amp; Theft</div>
+        <div class="prac">
+          <div class="prac-num">05</div>
+          <div class="prac-title">Burglary<br>&amp; Theft</div>
           <p class="prac-body">Burglary, Robbery, Receiving Stolen Property. Strategic defense from the moment of arrest through trial.</p>
+          <i class="prac-arrow" data-lucide="arrow-up-right" style="width:20px;height:20px"></i>
         </div>
 
-        <div class="prac-card">
-          <div class="prac-icon">
-            <i data-lucide="message-circle" style="width:18px;height:18px;stroke:var(--gold)"></i>
-          </div>
-          <div class="prac-title">Free Consultation</div>
-          <p class="prac-body">Not sure if you need an attorney? Call Matthew. He will tell you honestly what you are facing and what your options are, with no pressure and no obligation.</p>
+        <div class="prac">
+          <div class="prac-num">06</div>
+          <div class="prac-title">Free<br>Consultation</div>
+          <p class="prac-body">Not sure if you need an attorney? Call Matthew. He will tell you honestly what you are facing and what your options are.</p>
+          <i class="prac-arrow" data-lucide="arrow-up-right" style="width:20px;height:20px"></i>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- WHAT TO EXPECT -->
-  <section class="section section-light">
-    <div class="container">
-      <div class="section-label">From first call to verdict</div>
-      <h2 class="section-h2">What to Expect</h2>
-      <div class="section-rule"></div>
+  <!-- PROCESS -->
+  <section class="process">
+    <div class="wrap">
+      <div class="process-head">
+        <span class="label">From First Call to Verdict</span>
+        <h2>What to <em>expect.</em></h2>
+      </div>
       <div class="process-grid">
+        <div class="process-line"></div>
         <div class="process-step">
-          <div class="step-connector">
-            <i data-lucide="chevron-right" style="width:12px;height:12px;stroke:var(--text-body)"></i>
-          </div>
-          <div class="step-num">01</div>
-          <div class="step-title">Free Consultation</div>
-          <p class="step-body">Call or text Matthew directly. He will review the charges, explain your rights, and give you an honest read on your situation at no cost.</p>
+          <div class="process-dot">01</div>
+          <div class="process-title">Free Consultation</div>
+          <p class="process-body">Call or text Matthew directly. He will review the charges, explain your rights, and give you an honest read on your situation at no cost.</p>
         </div>
         <div class="process-step">
-          <div class="step-connector">
-            <i data-lucide="chevron-right" style="width:12px;height:12px;stroke:var(--text-body)"></i>
-          </div>
-          <div class="step-num">02</div>
-          <div class="step-title">Case Investigation</div>
-          <p class="step-body">Matthew digs into the evidence, the stop, the search, and the witnesses. He looks for every angle before the first hearing.</p>
+          <div class="process-dot">02</div>
+          <div class="process-title">Investigation</div>
+          <p class="process-body">Matthew digs into the evidence, the stop, the search, and the witnesses. He looks for every angle before the first hearing.</p>
         </div>
         <div class="process-step">
-          <div class="step-connector">
-            <i data-lucide="chevron-right" style="width:12px;height:12px;stroke:var(--text-body)"></i>
-          </div>
-          <div class="step-num">03</div>
-          <div class="step-title">Pretrial Strategy</div>
-          <p class="step-body">Motions to suppress, bail hearings, preliminary hearings. Many cases are won or lost before trial. Matthew knows this and prepares accordingly.</p>
+          <div class="process-dot">03</div>
+          <div class="process-title">Pretrial Strategy</div>
+          <p class="process-body">Motions to suppress, bail hearings, preliminary hearings. Many cases are won or lost before trial. Matthew knows this.</p>
         </div>
         <div class="process-step">
-          <div class="step-num">04</div>
-          <div class="step-title">Trial Ready</div>
-          <p class="step-body">If the case goes to trial, Matthew is ready. Over 100 jury trials. A winning record. He does not back down when it matters most.</p>
+          <div class="process-dot">04</div>
+          <div class="process-title">Trial Ready</div>
+          <p class="process-body">If the case goes to trial, Matthew is ready. Over 100 jury trials. A winning record. He does not back down when it matters most.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section class="section section-white">
-    <div class="container">
-      <div class="section-label">Common questions</div>
-      <h2 class="section-h2">Frequently Asked Questions</h2>
-      <div class="section-rule"></div>
-      <div class="faq-grid">
-
+  <section class="faq" id="faq">
+    <div class="wrap">
+      <div class="faq-aside">
+        <span class="label">Common Questions</span>
+        <h2>Answers, before <em>you ask.</em></h2>
+        <p>Criminal cases raise hundreds of questions. Here are the ones most clients ask first. For anything else, call directly.</p>
+      </div>
+      <div class="faq-list">
         <div class="faq-item">
-          <div class="faq-question">
-            <span class="faq-question-text">Should I talk to police before hiring an attorney?</span>
-            <i class="faq-icon" data-lucide="plus" style="width:18px;height:18px;stroke:var(--gold)"></i>
+          <div class="faq-q">
+            <span class="faq-q-text">Should I talk to police before hiring an attorney?</span>
+            <i class="faq-icon" data-lucide="plus" style="width:20px;height:20px"></i>
           </div>
-          <div class="faq-answer">No. You have the right to remain silent, and you should use it. Anything you say to police can and will be used against you in court. Politely decline to answer questions and ask to speak with an attorney immediately. This is true even if you are innocent. Misstatements made under pressure can be used to damage your case later.</div>
+          <div class="faq-a">No. You have the right to remain silent, and you should use it. Anything you say to police can and will be used against you in court. Politely decline to answer questions and ask to speak with an attorney immediately. This is true even if you are innocent. Misstatements made under pressure can be used to damage your case later.</div>
         </div>
 
         <div class="faq-item">
-          <div class="faq-question">
-            <span class="faq-question-text">How much does a criminal defense attorney cost?</span>
-            <i class="faq-icon" data-lucide="plus" style="width:18px;height:18px;stroke:var(--gold)"></i>
+          <div class="faq-q">
+            <span class="faq-q-text">How much does a criminal defense attorney cost?</span>
+            <i class="faq-icon" data-lucide="plus" style="width:20px;height:20px"></i>
           </div>
-          <div class="faq-answer">Fees vary based on the complexity of the charges, the stage of the case, and whether the matter goes to trial. Matthew offers flexible payment arrangements and will be upfront about fees during your free consultation. The cost of not having strong representation is almost always higher.</div>
+          <div class="faq-a">Fees vary based on the complexity of the charges, the stage of the case, and whether the matter goes to trial. Matthew offers flexible payment arrangements and will be upfront about fees during your free consultation. The cost of not having strong representation is almost always higher.</div>
         </div>
 
         <div class="faq-item">
-          <div class="faq-question">
-            <span class="faq-question-text">What happens at a preliminary hearing?</span>
-            <i class="faq-icon" data-lucide="plus" style="width:18px;height:18px;stroke:var(--gold)"></i>
+          <div class="faq-q">
+            <span class="faq-q-text">What happens at a preliminary hearing?</span>
+            <i class="faq-icon" data-lucide="plus" style="width:20px;height:20px"></i>
           </div>
-          <div class="faq-answer">A preliminary hearing is one of the most important stages in a Pennsylvania criminal case. The judge decides whether the Commonwealth has enough evidence to proceed. Matthew has had countless cases dismissed or significantly reduced at this stage. It is an opportunity that should not be wasted with unprepared representation.</div>
+          <div class="faq-a">A preliminary hearing is one of the most important stages in a Pennsylvania criminal case. The judge decides whether the Commonwealth has enough evidence to proceed. Matthew has had countless cases dismissed or significantly reduced at this stage.</div>
         </div>
 
         <div class="faq-item">
-          <div class="faq-question">
-            <span class="faq-question-text">What is a motion to suppress?</span>
-            <i class="faq-icon" data-lucide="plus" style="width:18px;height:18px;stroke:var(--gold)"></i>
+          <div class="faq-q">
+            <span class="faq-q-text">What is a motion to suppress?</span>
+            <i class="faq-icon" data-lucide="plus" style="width:20px;height:20px"></i>
           </div>
-          <div class="faq-answer">A motion to suppress challenges whether evidence against you was obtained legally. If police violated your constitutional rights during a search or arrest, a judge may exclude that evidence from trial. In many cases, a successful suppression motion means the charges are dropped entirely because the Commonwealth has nothing left to prove their case.</div>
+          <div class="faq-a">A motion to suppress challenges whether evidence against you was obtained legally. If police violated your constitutional rights during a search or arrest, a judge may exclude that evidence from trial. In many cases, a successful suppression motion means the charges are dropped entirely.</div>
         </div>
 
         <div class="faq-item">
-          <div class="faq-question">
-            <span class="faq-question-text">Can Matthew help if I&rsquo;ve already been charged?</span>
-            <i class="faq-icon" data-lucide="plus" style="width:18px;height:18px;stroke:var(--gold)"></i>
+          <div class="faq-q">
+            <span class="faq-q-text">Can Matthew help if I've already been charged?</span>
+            <i class="faq-icon" data-lucide="plus" style="width:20px;height:20px"></i>
           </div>
-          <div class="faq-answer">Yes. Matthew handles cases at every stage, from the moment of arrest through trial and beyond. Even if charges have already been filed, there are often powerful options available to challenge the evidence, negotiate the charges, or prepare a winning defense at trial. The earlier you get representation the better, but it is never too late to call.</div>
+          <div class="faq-a">Yes. Matthew handles cases at every stage, from the moment of arrest through trial and beyond. The earlier you get representation the better, but it is never too late to call.</div>
         </div>
 
         <div class="faq-item">
-          <div class="faq-question">
-            <span class="faq-question-text">How quickly can Matthew take my case?</span>
-            <i class="faq-icon" data-lucide="plus" style="width:18px;height:18px;stroke:var(--gold)"></i>
+          <div class="faq-q">
+            <span class="faq-q-text">How quickly can Matthew take my case?</span>
+            <i class="faq-icon" data-lucide="plus" style="width:20px;height:20px"></i>
           </div>
-          <div class="faq-answer">Matthew understands that criminal cases are urgent. He responds to inquiries quickly and can often schedule a same-day or next-day consultation. If you or a loved one is in custody, call directly and he will prioritize getting you the information you need right away.</div>
+          <div class="faq-a">Matthew understands that criminal cases are urgent. He responds to inquiries quickly and can often schedule a same-day or next-day consultation. If you or a loved one is in custody, call directly and he will prioritize getting you the information you need right away.</div>
         </div>
-
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section class="section section-white" id="contact">
-    <div class="container">
-      <div class="section-label">Get in touch</div>
-      <h2 class="section-h2">Free Consultation</h2>
-      <div class="section-rule"></div>
-      <div class="contact-grid">
+  <section class="contact" id="contact">
+    <div class="contact-bg"></div>
+    <div class="wrap">
+      <div class="contact-left">
+        <span class="label">Get in Touch</span>
+        <h2>Don't face this <em>alone.</em></h2>
+        <p>Every criminal case is different. Call or fill out the form and Matthew will personally review your situation and tell you exactly where you stand.</p>
 
-        <div class="contact-left">
-          <div class="contact-photo-wrap">
-            <!--
-              IMAGE: assets/images/matthew-boyd-contact.webp + .jpg
-              Tight headshot crop, ~128x128px source. Same photo is fine.
-            -->
-            <picture>
-              <source srcset="assets/images/matthew-boyd-contact.webp" type="image/webp">
-              <img src="assets/images/matthew-boyd-contact.jpg" alt="Matthew C. Boyd" />
-            </picture>
-            <div class="contact-photo-text">
-              <strong>Matthew C. Boyd, Esq.</strong>
-              <span>Personally reviews every inquiry and responds within 24 hours.</span>
-            </div>
-          </div>
-
-          <h3>Don&rsquo;t face this alone.</h3>
-          <p>Every criminal case is different. Call or fill out the form and Matthew will personally review your situation and tell you exactly where you stand, with no obligation and no pressure.</p>
-
-          <div class="contact-detail">
-            <div class="contact-detail-icon">
-              <i data-lucide="phone" style="width:16px;height:16px;stroke:var(--gold)"></i>
-            </div>
-            <div class="contact-detail-text">
-              <a href="tel:2150000000">(215) 000-0000</a>
-            </div>
-          </div>
-
-          <div class="contact-detail">
-            <div class="contact-detail-icon">
-              <i data-lucide="mail" style="width:16px;height:16px;stroke:var(--gold)"></i>
-            </div>
-            <div class="contact-detail-text">
-              <a href="mailto:matthew@matthewboydlaw.com">matthew@matthewboydlaw.com</a>
-            </div>
-          </div>
-
-          <div class="contact-detail">
-            <div class="contact-detail-icon">
-              <i data-lucide="map-pin" style="width:16px;height:16px;stroke:var(--gold)"></i>
-            </div>
-            <div class="contact-detail-text">Philadelphia, Pennsylvania</div>
+        <div class="contact-photo">
+          <picture>
+            <source srcset="assets/images/matthew-boyd-contact.webp" type="image/webp">
+            <img src="assets/images/matthew-boyd-contact.jpg" alt="Matthew C. Boyd" />
+          </picture>
+          <div>
+            <strong>Matthew C. Boyd, Esq.</strong>
+            <span>Personally responds within 24 hours.</span>
           </div>
         </div>
 
-        <form class="contact-form" onsubmit="handleFormSubmit(event);">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="fname">First Name</label>
-              <input type="text" id="fname" name="fname" placeholder="John" required />
-            </div>
-            <div class="form-group">
-              <label for="lname">Last Name</label>
-              <input type="text" id="lname" name="lname" placeholder="Smith" required />
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" placeholder="(215) 000-0000" pattern="[\d\s\(\)\-\+]{7,15}" title="Please enter a valid phone number" required />
-          </div>
-          <div class="form-group">
-            <label for="charge">Type of Charge</label>
-            <select id="charge" name="charge" required>
-              <option value="">Select a charge type...</option>
-              <option>Violent Crime (Murder, Assault, Robbery)</option>
-              <option>Drug Offenses</option>
-              <option>Firearms Offenses</option>
-              <option>DUI</option>
-              <option>Burglary / Theft</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="message">Tell me about your situation</label>
-            <textarea id="message" name="message" placeholder="Briefly describe the charges and where the case currently stands..." required></textarea>
-          </div>
-          <button type="submit" class="form-submit" id="form-submit-btn">
-            <i data-lucide="send" style="width:15px;height:15px;stroke:var(--cream)"></i>
-            Send Message
-          </button>
-          <p class="form-disclaimer">This form does not create an attorney-client relationship. Do not include confidential information. For urgent matters, please call directly.</p>
-        </form>
-
+        <div class="contact-detail">
+          <i data-lucide="phone" style="width:18px;height:18px"></i>
+          <a href="tel:2150000000">(215) 000-0000</a>
+        </div>
+        <div class="contact-detail">
+          <i data-lucide="mail" style="width:18px;height:18px"></i>
+          <a href="mailto:matthew@matthewboydlaw.com">matthew@matthewboydlaw.com</a>
+        </div>
+        <div class="contact-detail">
+          <i data-lucide="map-pin" style="width:18px;height:18px"></i>
+          <span>Philadelphia, Pennsylvania</span>
+        </div>
       </div>
+
+      <form class="contact-form" onsubmit="handleFormSubmit(event);">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="fname" required />
+          </div>
+          <div class="form-group">
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lname" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" required />
+        </div>
+        <div class="form-group">
+          <label for="charge">Type of Charge</label>
+          <select id="charge" name="charge" required>
+            <option value="">Select a charge type...</option>
+            <option>Violent Crime</option>
+            <option>Drug Offenses</option>
+            <option>Firearms Offenses</option>
+            <option>DUI</option>
+            <option>Burglary / Theft</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Tell me about your situation</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit" class="form-submit" id="form-submit-btn">
+          <i data-lucide="send" style="width:14px;height:14px"></i>
+          Send Message
+        </button>
+        <p class="form-disclaimer">This form does not create an attorney-client relationship. Do not include confidential information. For urgent matters, please call directly.</p>
+      </form>
     </div>
   </section>
 
-  <!-- CTA BAND -->
-  <section class="cta-band">
-    <div class="container">
-      <div>
-        <h2>Facing charges? Don&rsquo;t wait.</h2>
-        <p>Every day matters in a criminal case. Matthew is available and responds quickly.</p>
-      </div>
-      <div class="cta-right">
-        <div class="cta-phone">
-          <i data-lucide="phone" style="width:22px;height:22px;stroke:var(--gold)"></i>
-          (215) 000-0000
-        </div>
-        <a href="#contact" class="btn-cta">Schedule a Free Consultation</a>
+  <!-- FOOTER CTA -->
+  <section class="footer-cta">
+    <div class="wrap">
+      <h3>Facing charges? <em>Don't wait.</em></h3>
+      <div class="footer-cta-phone">
+        <div class="footer-cta-phone-label">Call Anytime</div>
+        <a href="tel:2150000000" class="footer-cta-phone-num">(215) 000-0000</a>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <div class="container">
-      <div>
-        <div class="footer-logo">Matthew C. Boyd, Esq.</div>
-        <div class="footer-affiliation">Of Counsel at <a href="#" target="_blank" rel="noopener">Link Law, LLC</a></div>
+    <div class="wrap">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <span class="nav-logo">Matthew C. Boyd<span class="dot">.</span></span>
+          <p>Criminal defense attorney serving Philadelphia and the surrounding counties. Of Counsel at Link Law, LLC.</p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Practice</h5>
+          <ul>
+            <li><a href="#practice">Violent Crimes</a></li>
+            <li><a href="#practice">Drug &amp; Firearms</a></li>
+            <li><a href="#practice">DUI Defense</a></li>
+            <li><a href="#practice">Pretrial &amp; Bail</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Firm</h5>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#results">Verdicts</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <p>
+            (215) 000-0000<br>
+            matthew@matthewboydlaw.com<br>
+            Philadelphia, PA
+          </p>
+        </div>
       </div>
-      <p class="footer-disclaimer">
-        Attorney advertising. Prior results do not guarantee a similar outcome.
-        Matthew C. Boyd is licensed to practice law in Pennsylvania.
-        This website is for informational purposes only and does not constitute legal advice.
-        Contacting this firm does not create an attorney-client relationship.
-      </p>
-      <p class="footer-copy">&copy; 2025 Matthew C. Boyd</p>
+
+      <div class="footer-bottom">
+        <div class="left">&copy; 2025 Matthew C. Boyd, Esq.</div>
+        <div class="mid">Attorney advertising. Prior results do not guarantee a similar outcome. Matthew C. Boyd is licensed to practice law in Pennsylvania. This website is for informational purposes only and does not constitute legal advice.</div>
+        <div class="right">Of Counsel · <a href="#" style="color:var(--gold)">Link Law, LLC</a></div>
+      </div>
     </div>
   </footer>
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-
-      // Initialize Lucide icons
       lucide.createIcons();
 
-      // Mobile hamburger toggle
+      // Mobile nav
       var btn = document.querySelector('.nav-hamburger');
       var drawer = document.getElementById('nav-drawer');
-
       btn.addEventListener('click', function () {
         var isOpen = drawer.classList.toggle('open');
         btn.classList.toggle('open', isOpen);
-        btn.setAttribute('aria-expanded', String(isOpen));
       });
-
       drawer.querySelectorAll('a').forEach(function (link) {
         link.addEventListener('click', function () {
           drawer.classList.remove('open');
           btn.classList.remove('open');
-          btn.setAttribute('aria-expanded', 'false');
         });
       });
 
@@ -1779,36 +1998,63 @@
       document.querySelectorAll('.faq-item').forEach(function (item) {
         item.addEventListener('click', function () {
           var isOpen = item.classList.contains('open');
-          // Close all
-          document.querySelectorAll('.faq-item').forEach(function (i) {
-            i.classList.remove('open');
-          });
-          // Open clicked if it was closed
-          if (!isOpen) {
-            item.classList.add('open');
-          }
-          // Re-render icons to update the plus rotation
+          document.querySelectorAll('.faq-item').forEach(function (i) { i.classList.remove('open'); });
+          if (!isOpen) item.classList.add('open');
           lucide.createIcons();
         });
       });
 
+      // Scroll reveal
+      var revealEls = document.querySelectorAll(
+        '.stat-num, .case, .prac, .testimonial, .process-step, .about-content, .about-portrait, .results-header, .philly-content, .faq-aside, .faq-list'
+      );
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+      revealEls.forEach(function (el) {
+        el.classList.add('reveal-pending');
+        observer.observe(el);
+      });
+
+      // Stagger children inside grids
+      document.querySelectorAll('.testimonials-grid, .practice-grid, .process-grid').forEach(function (grid) {
+        Array.from(grid.children).forEach(function (child, i) {
+          child.style.transitionDelay = (i * 0.07) + 's';
+        });
+      });
     });
 
-    // Mock form submission for mockup purposes
     function handleFormSubmit(e) {
       e.preventDefault();
       var form = e.target;
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
+      if (!form.checkValidity()) { form.reportValidity(); return; }
       var btn = document.getElementById('form-submit-btn');
-      btn.innerHTML = '<i data-lucide="check" style="width:15px;height:15px;stroke:var(--cream)"></i> Message Sent';
-      btn.style.background = '#27ae60';
+      btn.innerHTML = '<i data-lucide="check" style="width:14px;height:14px"></i> Message Sent';
+      btn.style.background = '#2a6a3a';
       btn.disabled = true;
       lucide.createIcons();
     }
   </script>
+
+  <style>
+    /* Scroll reveal */
+    .reveal-pending {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* Nav active link highlight on scroll */
+    .nav-links a.active { color: var(--gold); }
+  </style>
 
 </body>
 </html>
