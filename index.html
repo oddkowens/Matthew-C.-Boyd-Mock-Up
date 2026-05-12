@@ -1192,6 +1192,7 @@
       .hero-portrait { display: none; }
       .hero-h1 { font-size: 42px; }
       .hero-sub { font-size: 15px; margin-bottom: 32px; }
+      .btn-primary i { width: 20px !important; height: 20px !important; }
 
       /* Stats — compact horizontal row instead of full-height stacked blocks */
       .stats .wrap {
@@ -1326,6 +1327,23 @@
       .hero-h1 { font-size: 36px; }
       .practice-grid { grid-template-columns: 1fr; }
       .form-row { grid-template-columns: 1fr; }
+      .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+      .btn-primary {
+        width: 100%;
+        justify-content: center;
+        padding: 17px 30px;
+        font-size: 13px;
+        white-space: nowrap;
+      }
+      .btn-ghost {
+        white-space: nowrap;
+        font-size: 13px;
+        padding-bottom: 4px;
+      }
     }
   </style>
 </head>
