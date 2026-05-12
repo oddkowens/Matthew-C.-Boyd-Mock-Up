@@ -24,7 +24,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
 
@@ -32,89 +32,62 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      /* Deep saturated navy palette — committed, no half-measures */
-      --ink:        #06101e;
-      --navy:       #0a1628;
-      --navy-mid:   #122035;
-      --navy-line:  #1e3050;
-      --bone:       #f2ece1;
-      --bone-dim:   #e3d9c8;
-      --paper:      #fbf8f3;
+      --ink:        #07111f;
+      --navy:       #0c1d30;
+      --navy-mid:   #152840;
+      --navy-line:  #1e3554;
+      --cream:      #f4efe6;
+      --cream-dim:  #e6ddd0;
+      --white:      #faf8f5;
       --gold:       #b8924d;
-      --gold-soft:  #d4b173;
-      --gold-ink:   #5c4318;
-      --text-light: #d6dde8;
-      --text-mute:  #8a9bb4;
-      --text-body:  #3a4a5e;
+      --gold-light: #ceac6e;
+      --text-on-dark: #c8d4e2;
+      --text-body:  #3d4f62;
     }
 
     html { scroll-behavior: smooth; }
+
     body {
       font-family: 'Inter', -apple-system, sans-serif;
-      background: var(--paper);
+      background: var(--white);
       color: var(--navy);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
     }
 
     a { text-decoration: none; color: inherit; }
     img { display: block; max-width: 100%; }
 
     .wrap {
-      max-width: 1240px;
-      margin: 0 auto;
-      padding: 0 56px;
-      width: 100%;
-    }
-    .wrap-tight {
-      max-width: 1040px;
+      max-width: 1200px;
       margin: 0 auto;
       padding: 0 56px;
       width: 100%;
     }
 
-    /* Editorial type system */
-    .display {
-      font-family: 'Fraunces', Georgia, serif;
-      font-weight: 600;
-      letter-spacing: -0.025em;
-      line-height: 0.95;
-    }
-    .display-italic { font-style: italic; font-weight: 400; }
-
-    .label {
-      font-family: 'Inter', sans-serif;
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gold);
-    }
-
-    /* ═══════════ NAV ═══════════ */
+    /* ─── NAVIGATION ─── */
     .nav {
       background: var(--ink);
-      height: 76px;
+      height: 72px;
       position: sticky;
       top: 0;
       z-index: 100;
-      border-bottom: 1px solid var(--navy-line);
     }
     .nav .wrap {
       display: flex;
       align-items: center;
       justify-content: space-between;
       height: 100%;
+      border-bottom: 1px solid var(--navy-line);
     }
     .nav-logo {
-      font-family: 'Fraunces', serif;
-      color: var(--bone);
-      font-size: 20px;
+      font-family: 'Playfair Display', serif;
+      color: var(--cream);
+      font-size: 18px;
       font-weight: 500;
-      letter-spacing: -0.01em;
+      letter-spacing: 0.01em;
     }
-    .nav-logo .dot { color: var(--gold); font-style: italic; }
+    .nav-logo span { color: var(--gold); }
     .nav-links {
       display: flex;
       gap: 36px;
@@ -122,37 +95,25 @@
       list-style: none;
     }
     .nav-links a {
-      color: var(--text-light);
+      color: var(--text-on-dark);
       font-size: 13px;
       font-weight: 400;
       letter-spacing: 0.04em;
       transition: color 0.2s;
-      position: relative;
     }
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 0;
-      height: 1px;
-      background: var(--gold);
-      transition: width 0.25s;
-    }
-    .nav-links a:hover::after { width: 100%; }
+    .nav-links a:hover { color: var(--cream); }
     .nav-cta {
       background: var(--gold);
       color: var(--ink) !important;
       font-weight: 500 !important;
-      padding: 11px 22px;
-      border-radius: 2px;
       font-size: 12px;
+      padding: 10px 22px;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      transition: all 0.2s;
+      transition: background 0.2s;
+      border-radius: 2px;
     }
-    .nav-cta::after { display: none !important; }
-    .nav-cta:hover { background: var(--gold-soft); transform: translateY(-1px); }
+    .nav-cta:hover { background: var(--gold-light) !important; }
 
     .nav-hamburger {
       display: none;
@@ -165,8 +126,7 @@
     }
     .nav-hamburger span {
       display: block; width: 22px; height: 2px;
-      background: var(--bone);
-      border-radius: 2px;
+      background: var(--cream); border-radius: 2px;
       transition: transform 0.25s, opacity 0.25s;
     }
     .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
@@ -178,19 +138,21 @@
       flex-direction: column;
       background: var(--navy);
       border-bottom: 1px solid var(--navy-line);
-      padding: 20px 56px 28px;
+      padding: 16px 24px 24px;
       gap: 4px;
       position: sticky;
-      top: 76px;
+      top: 72px;
       z-index: 99;
     }
     .nav-drawer.open { display: flex; }
     .nav-drawer a {
-      color: var(--text-light);
+      color: var(--text-on-dark);
       font-size: 15px;
       padding: 12px 0;
       border-bottom: 1px solid var(--navy-line);
+      transition: color 0.2s;
     }
+    .nav-drawer a:hover { color: var(--cream); }
     .nav-drawer a:last-child { border-bottom: none; }
     .nav-drawer .drawer-cta {
       margin-top: 12px;
@@ -198,88 +160,69 @@
       color: var(--ink);
       text-align: center;
       padding: 14px;
-      border-radius: 2px;
       font-weight: 500;
+      font-size: 12px;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      font-size: 12px;
+      border-bottom: none !important;
+      border-radius: 2px;
     }
 
-    /* ═══════════ HERO ═══════════ */
+    /* ─── HERO ─── */
     .hero {
       background: var(--ink);
       position: relative;
       overflow: hidden;
-      padding: 120px 0 100px;
     }
-
-    /* Decorative oversized number behind hero */
-    .hero-deco {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-family: 'Fraunces', serif;
-      font-weight: 200;
-      font-style: italic;
-      font-size: 580px;
-      color: #0f1c2e;
-      line-height: 0.8;
-      letter-spacing: -0.05em;
-      z-index: 0;
-      pointer-events: none;
-      user-select: none;
-      white-space: nowrap;
-    }
-
     .hero .wrap {
-      position: relative;
-      z-index: 2;
       display: grid;
-      grid-template-columns: 1fr 480px;
-      gap: 80px;
+      grid-template-columns: 1fr 440px;
+      min-height: 620px;
       align-items: center;
+      gap: 80px;
+      padding-top: 100px;
+      padding-bottom: 100px;
     }
 
-    .hero-meta {
+    .hero-eyebrow {
       display: flex;
       align-items: center;
       gap: 16px;
-      margin-bottom: 36px;
+      margin-bottom: 32px;
     }
-    .hero-meta-line {
-      width: 48px;
+    .hero-eyebrow-line {
+      width: 40px;
       height: 1px;
       background: var(--gold);
     }
-    .hero-meta-text {
+    .hero-eyebrow-text {
       font-size: 11px;
-      letter-spacing: 0.22em;
+      font-weight: 500;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--gold);
-      font-weight: 500;
     }
 
     .hero-h1 {
-      font-family: 'Fraunces', serif;
-      color: var(--bone);
-      font-size: clamp(56px, 7.5vw, 96px);
-      font-weight: 500;
-      line-height: 0.98;
-      letter-spacing: -0.035em;
-      margin-bottom: 36px;
+      font-family: 'Playfair Display', serif;
+      color: var(--cream);
+      font-size: clamp(48px, 5.5vw, 76px);
+      font-weight: 600;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 28px;
     }
-    .hero-h1 .accent {
+    .hero-h1 .hero-italic {
       font-style: italic;
-      font-weight: 400;
-      color: var(--gold-soft);
+      font-weight: 500;
+      color: var(--gold-light);
     }
 
     .hero-sub {
-      color: var(--text-light);
+      color: var(--text-on-dark);
       font-size: 17px;
-      line-height: 1.7;
-      max-width: 460px;
+      line-height: 1.75;
+      max-width: 440px;
       margin-bottom: 48px;
       font-weight: 400;
     }
@@ -294,405 +237,235 @@
       color: var(--ink);
       font-size: 12px;
       font-weight: 600;
-      padding: 16px 32px;
+      padding: 15px 30px;
       border-radius: 2px;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      transition: all 0.2s;
+      transition: background 0.2s;
       display: inline-flex;
       align-items: center;
       gap: 10px;
     }
-    .btn-primary:hover {
-      background: var(--gold-soft);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(184,146,77,0.25);
-    }
+    .btn-primary:hover { background: var(--gold-light); }
     .btn-ghost {
-      color: var(--bone);
+      color: var(--text-on-dark);
       font-size: 13px;
       font-weight: 400;
-      letter-spacing: 0.06em;
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      position: relative;
+      transition: color 0.2s;
+      border-bottom: 1px solid var(--navy-line);
+      padding-bottom: 3px;
     }
-    .btn-ghost::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: var(--gold);
-      transform-origin: left;
-      transition: transform 0.25s;
-    }
-    .btn-ghost:hover::after { transform: scaleX(0.7); }
+    .btn-ghost:hover { color: var(--cream); border-color: var(--gold); }
 
-    /* Hero photo — framed editorial treatment */
     .hero-portrait {
       position: relative;
-      align-self: stretch;
-      display: flex;
-      align-items: center;
+      align-self: end;
     }
-    .hero-portrait-frame {
-      position: relative;
+    .hero-portrait-img {
       width: 100%;
-      aspect-ratio: 4 / 5;
-      overflow: hidden;
-      background: var(--navy);
-    }
-    .hero-portrait-frame img {
-      width: 100%;
-      height: 100%;
+      aspect-ratio: 3/4;
       object-fit: cover;
       object-position: top center;
-      filter: contrast(1.05);
+      display: block;
+      filter: contrast(1.05) brightness(0.96);
     }
-    /* Gold corner accents */
-    .hero-portrait::before,
-    .hero-portrait::after {
+    /* Subtle left gradient blending portrait into background */
+    .hero-portrait::before {
       content: '';
       position: absolute;
-      width: 60px;
-      height: 60px;
-      border: 2px solid var(--gold);
-      z-index: 3;
+      inset: 0;
+      background: linear-gradient(to right, var(--ink) 0%, transparent 20%);
+      z-index: 1;
+      pointer-events: none;
     }
-    .hero-portrait::before {
-      top: -18px;
-      left: -18px;
-      border-right: none;
-      border-bottom: none;
-    }
-    .hero-portrait::after {
-      bottom: -18px;
-      right: -18px;
-      border-left: none;
-      border-top: none;
-    }
-    /* Floating credential card */
-    .hero-credential {
+    /* Floating stat card */
+    .hero-stat {
       position: absolute;
-      bottom: -28px;
-      left: -40px;
-      background: var(--bone);
-      padding: 18px 24px;
-      z-index: 4;
-      box-shadow: 0 20px 48px rgba(0,0,0,0.35);
-      border-left: 3px solid var(--gold);
+      bottom: -1px;
+      left: -36px;
+      background: var(--cream);
+      padding: 20px 28px;
+      z-index: 3;
+      border-top: 2px solid var(--gold);
     }
-    .hero-credential-num {
-      font-family: 'Fraunces', serif;
-      font-size: 36px;
+    .hero-stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 40px;
       font-weight: 600;
       color: var(--ink);
       line-height: 1;
       letter-spacing: -0.02em;
     }
-    .hero-credential-label {
+    .hero-stat-label {
       font-size: 10px;
+      font-weight: 600;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--text-body);
-      margin-top: 4px;
-      font-weight: 500;
+      margin-top: 6px;
     }
 
-    /* ═══════════ STATS RIBBON ═══════════ */
+    /* ─── STATS BAR ─── */
     .stats {
-      background: var(--ink);
+      background: var(--navy);
       border-top: 1px solid var(--navy-line);
-      padding: 36px 0;
     }
     .stats .wrap {
       display: grid;
-      grid-template-columns: repeat(3, 1fr) 1px repeat(2, auto);
-      gap: 48px;
-      align-items: center;
+      grid-template-columns: repeat(3, 1fr);
     }
+    .stat {
+      padding: 36px 0;
+      text-align: center;
+      border-right: 1px solid var(--navy-line);
+    }
+    .stat:last-child { border-right: none; }
     .stat-num {
-      font-family: 'Fraunces', serif;
-      color: var(--bone);
-      font-size: 42px;
-      font-weight: 500;
+      font-family: 'Playfair Display', serif;
+      font-size: 40px;
+      font-weight: 600;
+      color: var(--cream);
       line-height: 1;
       letter-spacing: -0.02em;
     }
-    .stat-num .small { font-size: 24px; vertical-align: top; color: var(--gold); }
+    .stat-num sup {
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--gold);
+      vertical-align: super;
+    }
     .stat-label {
-      color: var(--text-light);
       font-size: 11px;
+      font-weight: 500;
       letter-spacing: 0.16em;
       text-transform: uppercase;
+      color: var(--text-on-dark);
       margin-top: 8px;
-      font-weight: 500;
-    }
-    .stats-divider {
-      width: 1px;
-      height: 56px;
-      background: var(--navy-line);
-    }
-    .stats-cta {
-      color: var(--gold);
-      font-family: 'Fraunces', serif;
-      font-size: 22px;
-      font-style: italic;
-      font-weight: 400;
-      letter-spacing: -0.01em;
-    }
-    .stats-cta-num {
-      font-family: 'Fraunces', serif;
-      color: var(--bone);
-      font-size: 24px;
-      font-weight: 500;
-      margin-left: 12px;
     }
 
-    /* ═══════════ CASE RESULTS — EDITORIAL CENTERPIECE ═══════════ */
-    .results {
-      background: var(--ink);
-      padding: 140px 0 120px;
-      position: relative;
-      overflow: hidden;
-    }
-    .results-bg {
-      position: absolute;
-      inset: 0;
-      background-image: url("assets/images/philadelphia-skyline.jpg");
-      background-size: cover;
-      background-position: center 30%;
-      opacity: 0.08;
-      filter: grayscale(100%);
-      pointer-events: none;
-    }
-    .results .wrap {
-      position: relative;
-      z-index: 2;
-    }
-    .results-header {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 48px;
-      align-items: end;
-      margin-bottom: 88px;
-      padding-bottom: 40px;
-      border-bottom: 1px solid var(--navy-line);
-    }
-    .results-header h2 {
-      font-family: 'Fraunces', serif;
-      color: var(--bone);
-      font-size: clamp(48px, 6vw, 72px);
-      font-weight: 500;
-      line-height: 0.98;
-      letter-spacing: -0.03em;
-    }
-    .results-header h2 em {
-      font-style: italic;
-      font-weight: 400;
-      color: var(--gold-soft);
-    }
-    .results-header-meta {
-      text-align: right;
-      color: var(--text-light);
-    }
-    .results-header-meta-big {
-      font-family: 'Fraunces', serif;
-      font-size: 56px;
-      color: var(--gold);
-      font-weight: 500;
-      line-height: 1;
-    }
-    .results-header-meta-label {
+    /* ─── SECTION COMMONS ─── */
+    .section { padding: 112px 0; }
+    .section-dark { background: var(--ink); }
+    .section-light { background: var(--cream); }
+    .section-white { background: var(--white); }
+    .section-mid { background: var(--navy); }
+
+    .section-label {
       font-size: 11px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      margin-top: 8px;
-      color: var(--text-mute);
-    }
-
-    /* Editorial case treatment — magazine spread */
-    .case {
-      display: grid;
-      grid-template-columns: 200px 1fr;
-      gap: 64px;
-      padding: 56px 0;
-      border-bottom: 1px solid var(--navy-line);
-      position: relative;
-    }
-    .case:last-child { border-bottom: none; }
-    .case-meta {
-      padding-top: 8px;
-    }
-    .case-number {
-      font-family: 'Fraunces', serif;
-      font-size: 14px;
-      color: var(--gold);
-      font-weight: 400;
-      letter-spacing: 0.06em;
-      margin-bottom: 24px;
-    }
-    .case-verdict {
-      font-family: 'Fraunces', serif;
-      font-size: 20px;
-      color: var(--bone);
       font-weight: 500;
-      font-style: italic;
-      line-height: 1.2;
-    }
-    .case-verdict-tag {
-      display: inline-block;
-      font-size: 10px;
-      font-weight: 600;
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--gold);
-      border-top: 1px solid var(--gold);
-      padding-top: 12px;
-      margin-top: 20px;
+      margin-bottom: 20px;
+      display: block;
     }
-    .case-body h3 {
-      font-family: 'Fraunces', serif;
-      font-size: clamp(28px, 3vw, 40px);
-      color: var(--bone);
-      font-weight: 500;
-      line-height: 1.1;
+    .section-h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(36px, 4vw, 52px);
+      font-weight: 600;
+      line-height: 1.05;
       letter-spacing: -0.02em;
-      margin-bottom: 28px;
+      color: var(--navy);
+      margin-bottom: 16px;
     }
-    .case-body p {
-      color: var(--text-light);
-      font-size: 17px;
+    .section-h2-light { color: var(--cream); }
+    .section-rule {
+      width: 40px;
+      height: 2px;
+      background: var(--gold);
+      margin-bottom: 56px;
+    }
+
+    /* ─── CASE RESULTS ─── */
+    .results {
+      background: var(--ink);
+      padding: 112px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .results-skyline {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+      filter: grayscale(100%) brightness(0.15);
+      opacity: 0.7;
+      pointer-events: none;
+    }
+    .results .wrap { position: relative; z-index: 2; }
+
+    .results-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: end;
+      margin-bottom: 72px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--navy-line);
+    }
+
+    .results-cases { display: flex; flex-direction: column; gap: 0; }
+
+    .case-item {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 40px;
+      padding: 56px 0;
+      border-bottom: 1px solid var(--navy-line);
+      align-items: start;
+    }
+    .case-item:last-child { border-bottom: none; }
+
+    .case-index {
+      font-family: 'Playfair Display', serif;
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--gold);
+      padding-top: 8px;
+      letter-spacing: 0.04em;
+    }
+
+    .case-content {}
+    .case-verdict-pill {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--ink);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      margin-bottom: 20px;
+    }
+    .case-charges {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(24px, 2.5vw, 34px);
+      font-weight: 600;
+      color: var(--cream);
+      line-height: 1.15;
+      letter-spacing: -0.015em;
+      margin-bottom: 20px;
+    }
+    .case-body {
+      font-size: 16px;
+      color: var(--text-on-dark);
       line-height: 1.75;
       max-width: 640px;
       font-weight: 400;
     }
-    /* First letter drop cap on case body */
-    .case-body p::first-letter {
-      font-family: 'Fraunces', serif;
-      font-size: 64px;
-      font-weight: 500;
-      float: left;
-      line-height: 0.85;
-      padding: 4px 12px 0 0;
-      color: var(--gold);
-      font-style: italic;
-    }
 
-    /* ═══════════ ABOUT — EDITORIAL ═══════════ */
-    .about {
-      background: var(--paper);
-      padding: 140px 0 120px;
-      position: relative;
-    }
-    .about .wrap {
-      display: grid;
-      grid-template-columns: 1fr 1.4fr;
-      gap: 100px;
-      align-items: start;
-    }
-    .about-portrait {
-      position: sticky;
-      top: 100px;
-      aspect-ratio: 4/5;
-      overflow: hidden;
-      background: var(--navy);
-    }
-    .about-portrait img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top center;
-      filter: grayscale(20%);
-    }
-    .about-portrait-tag {
-      position: absolute;
-      top: 28px;
-      left: 28px;
-      writing-mode: vertical-rl;
-      transform: rotate(180deg);
-      font-size: 11px;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--bone);
-      font-weight: 500;
-    }
-
-    .about-content .label { margin-bottom: 24px; display: block; }
-    .about h2 {
-      font-family: 'Fraunces', serif;
-      font-size: clamp(40px, 5vw, 64px);
-      font-weight: 500;
-      line-height: 1;
-      letter-spacing: -0.03em;
-      margin-bottom: 48px;
-      color: var(--ink);
-    }
-    .about h2 em {
-      font-style: italic;
-      font-weight: 400;
-      color: var(--gold);
-    }
-
-    .about-lead {
-      font-family: 'Fraunces', serif;
-      font-size: 26px;
-      line-height: 1.4;
-      font-weight: 400;
-      font-style: italic;
-      color: var(--ink);
-      margin-bottom: 40px;
-      padding-left: 24px;
-      border-left: 2px solid var(--gold);
-    }
-
-    .about-body {
-      font-size: 17px;
-      line-height: 1.8;
-      color: var(--text-body);
-      margin-bottom: 20px;
-      max-width: 580px;
-    }
-
-    .about-cred {
-      display: flex;
-      gap: 40px;
-      margin-top: 48px;
-      padding-top: 32px;
-      border-top: 1px solid var(--bone-dim);
-    }
-    .about-cred-item {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-    .about-cred-num {
-      font-family: 'Fraunces', serif;
-      font-size: 32px;
-      font-weight: 500;
-      color: var(--ink);
-      line-height: 1;
-      letter-spacing: -0.02em;
-    }
-    .about-cred-label {
-      font-size: 11px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--text-body);
-      font-weight: 500;
-    }
-
-    /* ═══════════ PHILADELPHIA — FULL BLEED ═══════════ */
+    /* ─── PHILLY BAND ─── */
     .philly {
       position: relative;
-      min-height: 460px;
+      min-height: 420px;
       display: flex;
       align-items: center;
       overflow: hidden;
-      background: var(--ink);
     }
     .philly-bg {
       position: absolute;
@@ -700,223 +473,203 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center 60%;
-      filter: brightness(0.32) saturate(0.6) contrast(1.1);
+      object-position: center 50%;
+      filter: brightness(0.25) saturate(0.5);
     }
-    .philly::before {
+    .philly::after {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, rgba(6,16,30,0.85) 0%, rgba(6,16,30,0.55) 100%);
+      background: rgba(7, 17, 31, 0.55);
       z-index: 1;
     }
     .philly .wrap {
       position: relative;
       z-index: 2;
-      padding: 100px 56px;
-    }
-    .philly-content {
-      max-width: 760px;
-    }
-    .philly-label {
-      font-size: 11px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--gold);
-      font-weight: 500;
-      margin-bottom: 24px;
+      padding-top: 80px;
+      padding-bottom: 80px;
     }
     .philly h3 {
-      font-family: 'Fraunces', serif;
-      font-size: clamp(36px, 5vw, 56px);
-      color: var(--bone);
-      font-weight: 500;
-      line-height: 1.05;
-      letter-spacing: -0.025em;
-      margin-bottom: 32px;
-    }
-    .philly h3 em {
-      font-style: italic;
-      font-weight: 400;
-      color: var(--gold-soft);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 600;
+      color: var(--cream);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+      max-width: 680px;
     }
     .philly p {
-      color: #ffffff;
       font-size: 17px;
+      color: var(--text-on-dark);
       line-height: 1.75;
-      max-width: 600px;
-      font-weight: 400;
+      max-width: 560px;
+      margin-bottom: 36px;
     }
     .philly-counties {
       display: flex;
       flex-wrap: wrap;
-      gap: 24px;
-      margin-top: 36px;
+      gap: 8px;
     }
     .philly-county {
-      font-family: 'Fraunces', serif;
-      font-size: 18px;
-      color: var(--bone);
-      font-weight: 400;
-      font-style: italic;
-    }
-    .philly-county + .philly-county::before {
-      content: '·';
-      color: var(--gold);
-      margin-right: 24px;
-      font-style: normal;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      color: var(--cream);
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      padding: 6px 16px;
     }
 
-    /* ═══════════ TESTIMONIALS — EDITORIAL ═══════════ */
-    .testimonials {
-      background: var(--paper);
-      padding: 140px 0 120px;
+    /* ─── ABOUT ─── */
+    .about .wrap {
+      display: grid;
+      grid-template-columns: 380px 1fr;
+      gap: 96px;
+      align-items: start;
     }
-    .testimonials-head {
-      max-width: 720px;
-      margin-bottom: 80px;
+    .about-img-wrap {
+      position: sticky;
+      top: 96px;
+      overflow: hidden;
     }
-    .testimonials-head h2 {
-      font-family: 'Fraunces', serif;
-      font-size: clamp(40px, 5vw, 64px);
-      font-weight: 500;
-      line-height: 1;
-      letter-spacing: -0.03em;
-      color: var(--ink);
-      margin-top: 24px;
+    .about-img-wrap img {
+      width: 100%;
+      display: block;
+      filter: grayscale(15%);
     }
-    .testimonials-head h2 em {
+    .about-content .section-label { display: block; margin-bottom: 20px; }
+    .about-content .section-h2 { margin-bottom: 0; }
+    .about-content .section-rule { margin-top: 20px; }
+    .about-lead {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
       font-style: italic;
       font-weight: 400;
-      color: var(--gold);
+      color: var(--navy);
+      line-height: 1.5;
+      margin-bottom: 36px;
+      padding-left: 24px;
+      border-left: 2px solid var(--gold);
     }
+    .about-body {
+      font-size: 17px;
+      line-height: 1.8;
+      color: var(--text-body);
+      margin-bottom: 20px;
+    }
+    .about-creds {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 48px;
+      padding-top: 40px;
+      border-top: 1px solid var(--cream-dim);
+    }
+    .about-cred-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+    .about-cred-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-body);
+    }
+
+    /* ─── TESTIMONIALS ─── */
     .testimonials-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 48px;
+      gap: 32px;
+      margin-top: 0;
     }
     .testimonial {
-      position: relative;
-      padding-top: 56px;
+      background: var(--white);
+      padding: 36px 32px;
+      border-top: 2px solid var(--gold);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      transition: box-shadow 0.25s, transform 0.25s;
     }
-    .testimonial::before {
-      content: '"';
-      position: absolute;
-      top: -20px;
-      left: -16px;
-      font-family: 'Fraunces', serif;
-      font-size: 140px;
-      color: var(--gold);
-      opacity: 0.18;
-      font-weight: 600;
-      line-height: 1;
-      font-style: italic;
+    .testimonial:hover {
+      box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+      transform: translateY(-4px);
     }
     .testimonial-stars {
       display: flex;
       gap: 3px;
-      margin-bottom: 20px;
-    }
-    .testimonial-stars i {
-      fill: var(--gold);
-      stroke: var(--gold);
-      width: 14px;
-      height: 14px;
     }
     .testimonial-quote {
-      font-family: 'Fraunces', serif;
-      font-size: 19px;
-      line-height: 1.6;
-      color: var(--ink);
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      font-style: italic;
+      color: var(--navy);
+      line-height: 1.65;
+      flex: 1;
       font-weight: 400;
-      margin-bottom: 28px;
-      min-height: 140px;
     }
     .testimonial-attr {
       padding-top: 20px;
-      border-top: 1px solid var(--bone-dim);
+      border-top: 1px solid var(--cream-dim);
     }
     .testimonial-name {
       font-size: 13px;
       font-weight: 600;
-      color: var(--ink);
-      letter-spacing: 0.04em;
+      color: var(--navy);
+      margin-bottom: 4px;
     }
     .testimonial-case {
-      font-size: 13px;
+      font-size: 12px;
       color: var(--text-body);
       font-weight: 400;
-      margin-top: 4px;
-      font-style: italic;
     }
 
-    /* ═══════════ PRACTICE ═══════════ */
-    .practice {
-      background: var(--bone);
-      padding: 140px 0 120px;
-      position: relative;
-    }
-    .practice-head {
-      max-width: 720px;
-      margin-bottom: 72px;
-    }
-    .practice-head h2 {
-      font-family: 'Fraunces', serif;
-      font-size: clamp(40px, 5vw, 64px);
-      font-weight: 500;
-      line-height: 1;
-      letter-spacing: -0.03em;
-      color: var(--ink);
-      margin-top: 24px;
-    }
-    .practice-head h2 em {
-      font-style: italic;
-      font-weight: 400;
-      color: var(--gold);
-    }
+    /* ─── PRACTICE ─── */
     .practice-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1px;
-      background: var(--bone-dim);
-      border: 1px solid var(--bone-dim);
+      background: var(--cream-dim);
+      border: 1px solid var(--cream-dim);
+      margin-top: 0;
     }
     .prac {
-      background: var(--paper);
-      padding: 44px 36px;
-      transition: background 0.25s;
+      background: var(--white);
+      padding: 44px 36px 52px;
       position: relative;
+      transition: background 0.25s;
+      overflow: hidden;
     }
-    .prac:hover {
-      background: var(--ink);
-    }
-    .prac:hover .prac-num,
-    .prac:hover .prac-title,
-    .prac:hover .prac-body {
-      color: var(--bone);
-    }
-    .prac:hover .prac-arrow {
-      opacity: 1;
-      transform: translateX(0);
-      color: var(--gold);
-    }
+    .prac:hover { background: var(--ink); }
+    .prac:hover .prac-num { color: var(--gold); }
+    .prac:hover .prac-title { color: var(--cream); }
+    .prac:hover .prac-body { color: var(--text-on-dark); }
+    .prac:hover .prac-arrow { opacity: 1; transform: translate(0,0); color: var(--gold); }
     .prac-num {
-      font-family: 'Fraunces', serif;
-      font-size: 14px;
-      font-weight: 400;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
       color: var(--gold);
-      letter-spacing: 0.06em;
-      margin-bottom: 32px;
+      margin-bottom: 20px;
       transition: color 0.25s;
     }
     .prac-title {
-      font-family: 'Fraunces', serif;
-      font-size: 26px;
-      color: var(--ink);
-      font-weight: 500;
-      margin-bottom: 16px;
-      line-height: 1.15;
-      letter-spacing: -0.02em;
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 14px;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
       transition: color 0.25s;
     }
     .prac-body {
@@ -928,81 +681,52 @@
     }
     .prac-arrow {
       position: absolute;
-      bottom: 36px;
-      right: 36px;
+      bottom: 32px;
+      right: 32px;
       opacity: 0;
-      transform: translateX(-8px);
+      transform: translate(-6px, 6px);
       transition: all 0.25s;
-      color: var(--gold);
     }
 
-    /* ═══════════ PROCESS — TIMELINE ═══════════ */
-    .process {
-      background: var(--paper);
-      padding: 140px 0 120px;
-    }
-    .process-head {
-      max-width: 720px;
-      margin-bottom: 80px;
-    }
-    .process-head h2 {
-      font-family: 'Fraunces', serif;
-      font-size: clamp(40px, 5vw, 64px);
-      font-weight: 500;
-      line-height: 1;
-      letter-spacing: -0.03em;
-      color: var(--ink);
-      margin-top: 24px;
-    }
+    /* ─── PROCESS ─── */
     .process-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 0;
+      gap: 48px;
       position: relative;
+      padding-top: 64px;
     }
-    .process-line {
+    .process-grid::before {
+      content: '';
       position: absolute;
       top: 28px;
-      left: 0;
-      right: 0;
+      left: 28px;
+      right: 28px;
       height: 1px;
-      background: var(--bone-dim);
-      z-index: 0;
+      background: var(--cream-dim);
     }
-    .process-step {
-      position: relative;
-      padding-right: 32px;
-      z-index: 1;
-    }
+    .process-step {}
     .process-dot {
       width: 56px;
       height: 56px;
       border-radius: 50%;
-      background: var(--ink);
-      color: var(--gold);
-      font-family: 'Fraunces', serif;
-      font-size: 18px;
-      font-weight: 500;
+      background: var(--navy);
+      border: 1px solid var(--cream-dim);
       display: flex;
       align-items: center;
       justify-content: center;
       margin-bottom: 28px;
-      position: relative;
-    }
-    .process-dot::after {
-      content: '';
-      position: absolute;
-      inset: -6px;
-      border: 1px solid var(--gold);
-      border-radius: 50%;
-      opacity: 0.4;
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--gold);
     }
     .process-title {
-      font-family: 'Fraunces', serif;
-      font-size: 22px;
-      color: var(--ink);
-      font-weight: 500;
-      margin-bottom: 14px;
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 12px;
       letter-spacing: -0.01em;
     }
     .process-body {
@@ -1012,41 +736,23 @@
       font-weight: 400;
     }
 
-    /* ═══════════ FAQ ═══════════ */
-    .faq {
-      background: var(--bone);
-      padding: 140px 0 120px;
-    }
+    /* ─── FAQ ─── */
     .faq .wrap {
       display: grid;
-      grid-template-columns: 1fr 1.4fr;
-      gap: 100px;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 96px;
       align-items: start;
     }
-    .faq-aside h2 {
-      font-family: 'Fraunces', serif;
-      font-size: clamp(40px, 4.5vw, 56px);
-      font-weight: 500;
-      line-height: 1;
-      letter-spacing: -0.03em;
-      color: var(--ink);
-      margin-top: 24px;
-      margin-bottom: 24px;
-    }
-    .faq-aside h2 em {
-      font-style: italic;
-      font-weight: 400;
-      color: var(--gold);
-    }
+    .faq-aside { position: sticky; top: 96px; }
+    .faq-aside .section-h2 { margin-bottom: 20px; }
     .faq-aside p {
-      color: var(--text-body);
       font-size: 16px;
-      line-height: 1.7;
-      max-width: 360px;
+      color: var(--text-body);
+      line-height: 1.75;
     }
-    .faq-list { border-top: 1px solid var(--bone-dim); }
+    .faq-list { border-top: 1px solid var(--cream-dim); }
     .faq-item {
-      border-bottom: 1px solid var(--bone-dim);
+      border-bottom: 1px solid var(--cream-dim);
       padding: 24px 0;
       cursor: pointer;
     }
@@ -1057,11 +763,11 @@
       gap: 24px;
     }
     .faq-q-text {
-      font-family: 'Fraunces', serif;
-      font-size: 19px;
-      font-weight: 500;
-      color: var(--ink);
-      line-height: 1.4;
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.35;
       letter-spacing: -0.01em;
     }
     .faq-icon {
@@ -1076,72 +782,37 @@
       font-size: 15px;
       color: var(--text-body);
       line-height: 1.75;
-      font-weight: 400;
       margin-top: 16px;
       padding-right: 40px;
     }
     .faq-item.open .faq-a { display: block; }
 
-    /* ═══════════ CONTACT ═══════════ */
-    .contact {
-      background: var(--ink);
-      padding: 140px 0 120px;
-      position: relative;
-      overflow: hidden;
-    }
-    .contact-bg {
-      position: absolute;
-      inset: 0;
-      background-image: url("assets/images/philadelphia-skyline.jpg");
-      background-size: cover;
-      background-position: center 30%;
-      opacity: 0.06;
-      filter: grayscale(100%);
-    }
+    /* ─── CONTACT ─── */
     .contact .wrap {
-      position: relative;
-      z-index: 2;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 100px;
+      gap: 96px;
       align-items: start;
     }
-    .contact-left h2 {
-      font-family: 'Fraunces', serif;
-      font-size: clamp(40px, 5vw, 64px);
-      font-weight: 500;
-      line-height: 1;
-      letter-spacing: -0.03em;
-      color: var(--bone);
-      margin-top: 24px;
-      margin-bottom: 32px;
-    }
-    .contact-left h2 em {
-      font-style: italic;
-      font-weight: 400;
-      color: var(--gold-soft);
-    }
-    .contact-left > p {
-      color: var(--text-light);
+    .contact .section-h2-light { margin-bottom: 20px; }
+    .contact-sub {
+      color: var(--text-on-dark);
       font-size: 17px;
       line-height: 1.75;
-      max-width: 460px;
-      margin-bottom: 48px;
+      margin-bottom: 40px;
     }
-
     .contact-photo {
       display: flex;
       align-items: center;
-      gap: 18px;
-      padding: 22px 24px;
-      background: rgba(255,255,255,0.04);
+      gap: 16px;
+      padding: 20px 22px;
       border-left: 2px solid var(--gold);
+      background: rgba(255,255,255,0.04);
       margin-bottom: 36px;
-      max-width: 460px;
     }
     .contact-photo img {
-      width: 56px;
-      height: 56px;
+      width: 52px;
+      height: 52px;
       border-radius: 50%;
       object-fit: cover;
       object-position: top center;
@@ -1151,78 +822,75 @@
       display: block;
       font-size: 14px;
       font-weight: 500;
-      color: var(--bone);
+      color: var(--cream);
       margin-bottom: 3px;
     }
     .contact-photo span {
       font-size: 13px;
-      color: var(--text-light);
-      font-weight: 400;
+      color: var(--text-on-dark);
     }
-
     .contact-detail {
       display: flex;
       align-items: center;
       gap: 14px;
-      margin-bottom: 18px;
-      color: var(--bone);
+      margin-bottom: 16px;
     }
-    .contact-detail i { color: var(--gold); }
-    .contact-detail a {
-      color: var(--bone);
+    .contact-detail i { color: var(--gold); flex-shrink: 0; }
+    .contact-detail a,
+    .contact-detail span {
       font-size: 15px;
+      color: var(--text-on-dark);
       transition: color 0.2s;
     }
     .contact-detail a:hover { color: var(--gold); }
-    .contact-detail span { font-size: 15px; }
 
     .contact-form {
-      background: var(--bone);
+      background: var(--cream);
       padding: 40px;
       display: flex;
       flex-direction: column;
       gap: 18px;
-      box-shadow: 0 24px 60px rgba(0,0,0,0.4);
+      box-shadow: 0 24px 64px rgba(0,0,0,0.35);
     }
     .form-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 18px;
     }
-    .form-group { display: flex; flex-direction: column; gap: 8px; }
+    .form-group { display: flex; flex-direction: column; gap: 7px; }
     .form-group label {
       font-size: 11px;
       font-weight: 600;
-      color: var(--ink);
+      color: var(--navy);
       letter-spacing: 0.1em;
       text-transform: uppercase;
     }
     .form-group input,
     .form-group select,
     .form-group textarea {
-      background: var(--paper);
-      border: 1px solid var(--bone-dim);
+      background: var(--white);
+      border: 1px solid var(--cream-dim);
       border-radius: 0;
       padding: 13px 16px;
       font-family: 'Inter', sans-serif;
       font-size: 14px;
-      color: var(--ink);
+      color: var(--navy);
       transition: border-color 0.2s;
       outline: none;
+      -webkit-appearance: none;
     }
     .form-group input:focus,
     .form-group select:focus,
     .form-group textarea:focus { border-color: var(--gold); }
     .form-group textarea { resize: vertical; min-height: 120px; }
     .form-submit {
-      background: var(--ink);
-      color: var(--bone);
+      background: var(--navy);
+      color: var(--cream);
       font-family: 'Inter', sans-serif;
       font-size: 12px;
       font-weight: 600;
-      padding: 16px 28px;
+      padding: 15px 28px;
       border: none;
-      border-radius: 2px;
       cursor: pointer;
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -1231,56 +899,72 @@
       display: flex;
       align-items: center;
       gap: 10px;
+      border-radius: 2px;
     }
-    .form-submit:hover { background: var(--navy); }
+    .form-submit:hover { background: var(--ink); }
     .form-disclaimer {
       font-size: 11px;
       color: var(--text-body);
       line-height: 1.6;
     }
 
-    /* ═══════════ FOOTER ═══════════ */
-    .footer-cta {
-      background: var(--gold);
-      padding: 64px 0;
-      color: var(--ink);
+    /* ─── CTA BAND ─── */
+    .cta-band {
+      background: var(--navy);
+      padding: 72px 0;
+      border-top: 1px solid var(--navy-line);
     }
-    .footer-cta .wrap {
+    .cta-band .wrap {
       display: grid;
       grid-template-columns: 1fr auto;
       align-items: center;
       gap: 48px;
     }
-    .footer-cta h3 {
-      font-family: 'Fraunces', serif;
-      font-size: clamp(28px, 3vw, 38px);
-      font-weight: 500;
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-    }
-    .footer-cta h3 em { font-style: italic; font-weight: 400; }
-    .footer-cta-phone {
-      text-align: right;
-    }
-    .footer-cta-phone-label {
-      font-size: 11px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
+    .cta-band h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 3vw, 40px);
       font-weight: 600;
-      margin-bottom: 8px;
-    }
-    .footer-cta-phone-num {
-      font-family: 'Fraunces', serif;
-      font-size: 36px;
-      font-weight: 500;
-      line-height: 1;
+      color: var(--cream);
       letter-spacing: -0.02em;
+      line-height: 1.1;
     }
+    .cta-band p {
+      color: var(--text-on-dark);
+      font-size: 16px;
+      margin-top: 10px;
+    }
+    .cta-right { text-align: center; }
+    .cta-phone {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .btn-cta {
+      background: var(--gold);
+      color: var(--ink);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 13px 28px;
+      border-radius: 2px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      display: inline-block;
+      transition: background 0.2s;
+    }
+    .btn-cta:hover { background: var(--gold-light); }
 
+    /* ─── FOOTER ─── */
     .footer {
       background: var(--ink);
-      padding: 80px 0 32px;
-      color: var(--text-light);
+      padding: 72px 0 32px;
+      border-top: 2px solid var(--gold);
     }
     .footer-main {
       display: grid;
@@ -1289,15 +973,19 @@
       padding-bottom: 56px;
       border-bottom: 1px solid var(--navy-line);
     }
-    .footer-brand .nav-logo {
-      font-size: 24px;
-      display: block;
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      color: var(--cream);
+      font-size: 18px;
+      font-weight: 500;
       margin-bottom: 16px;
+      display: block;
     }
-    .footer-brand p {
+    .footer-logo span { color: var(--gold); }
+    .footer-desc {
       font-size: 14px;
       line-height: 1.7;
-      color: var(--text-light);
+      color: var(--text-on-dark);
       max-width: 320px;
     }
     .footer-col h5 {
@@ -1306,87 +994,82 @@
       text-transform: uppercase;
       color: var(--gold);
       font-weight: 600;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
-    .footer-col ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
     .footer-col a {
-      color: var(--text-light);
+      color: var(--text-on-dark);
       font-size: 14px;
       transition: color 0.2s;
     }
     .footer-col a:hover { color: var(--gold); }
     .footer-col p {
       font-size: 14px;
-      line-height: 1.7;
-      color: var(--text-light);
+      line-height: 1.8;
+      color: var(--text-on-dark);
     }
     .footer-bottom {
       padding-top: 32px;
       display: grid;
-      grid-template-columns: 1fr auto 1fr;
+      grid-template-columns: 1fr 1.4fr 1fr;
       gap: 32px;
       align-items: start;
       font-size: 11px;
-      color: var(--text-mute);
+      color: #5a7290;
+      line-height: 1.6;
     }
-    .footer-bottom .left { text-align: left; }
-    .footer-bottom .mid { text-align: center; max-width: 460px; line-height: 1.6; }
+    .footer-bottom .mid { text-align: center; }
     .footer-bottom .right { text-align: right; }
+    .footer-bottom a { color: var(--gold); transition: opacity 0.2s; }
+    .footer-bottom a:hover { opacity: 0.8; }
 
-    /* ═══════════ RESPONSIVE ═══════════ */
-    @media (max-width: 1100px) {
-      .hero-deco { font-size: 380px; }
-      .results-header { grid-template-columns: 1fr; gap: 24px; }
-      .results-header-meta { text-align: left; }
-      .case { grid-template-columns: 1fr; gap: 24px; }
-      .about .wrap, .faq .wrap, .contact .wrap { grid-template-columns: 1fr; gap: 48px; }
-      .about-portrait { position: static; max-width: 360px; }
-      .testimonials-grid { grid-template-columns: 1fr; gap: 56px; }
-      .practice-grid { grid-template-columns: repeat(2, 1fr); }
-      .process-grid { grid-template-columns: repeat(2, 1fr); gap: 56px; }
-      .process-line { display: none; }
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1024px) {
+      .about .wrap { grid-template-columns: 320px 1fr; gap: 64px; }
+      .results-intro { grid-template-columns: 1fr; gap: 24px; }
       .footer-main { grid-template-columns: 1fr 1fr; gap: 48px; }
     }
     @media (max-width: 900px) {
-      .wrap, .wrap-tight { padding: 0 24px; }
-      .nav { padding: 0; }
+      .wrap { padding: 0 24px; }
       .nav-links { display: none; }
       .nav-hamburger { display: flex; }
-      .hero { padding: 64px 0 80px; }
-      .hero .wrap { grid-template-columns: 1fr; gap: 56px; }
-      .hero-deco { font-size: 280px; opacity: 0.5; }
-      .stats .wrap { grid-template-columns: 1fr 1fr; gap: 32px; }
-      .stats-divider, .stats-cta, .stats-cta-num { display: none; }
-      .results, .about, .testimonials, .practice, .process, .faq, .contact { padding: 80px 0; }
-      .results-header { margin-bottom: 56px; }
-      .case { padding: 36px 0; }
-      .hero-credential { left: 0; bottom: -20px; }
-      .footer-cta .wrap { grid-template-columns: 1fr; text-align: center; gap: 24px; }
-      .footer-cta-phone { text-align: center; }
+      .hero .wrap { grid-template-columns: 1fr; gap: 56px; padding-top: 64px; padding-bottom: 72px; }
+      .hero-portrait { max-width: 360px; }
+      .hero-stat { left: 0; }
+      .stats .wrap { grid-template-columns: 1fr; }
+      .stat { border-right: none; border-bottom: 1px solid var(--navy-line); }
+      .stat:last-child { border-bottom: none; }
+      .section { padding: 72px 0; }
+      .case-item { grid-template-columns: 1fr; gap: 16px; }
+      .about .wrap { grid-template-columns: 1fr; }
+      .about-img-wrap { position: static; max-width: 320px; }
+      .testimonials-grid { grid-template-columns: 1fr; gap: 24px; }
+      .practice-grid { grid-template-columns: 1fr 1fr; }
+      .process-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+      .process-grid::before { display: none; }
+      .faq .wrap { grid-template-columns: 1fr; gap: 48px; }
+      .faq-aside { position: static; }
+      .contact .wrap { grid-template-columns: 1fr; gap: 48px; }
+      .cta-band .wrap { grid-template-columns: 1fr; text-align: center; gap: 32px; }
+      .cta-phone { justify-content: center; }
       .footer-main { grid-template-columns: 1fr; gap: 40px; padding-bottom: 40px; }
       .footer-bottom { grid-template-columns: 1fr; text-align: center; gap: 12px; }
-      .footer-bottom .left, .footer-bottom .right { text-align: center; }
+      .footer-bottom .mid, .footer-bottom .right { text-align: center; }
     }
     @media (max-width: 600px) {
-      .stats .wrap { grid-template-columns: 1fr; gap: 24px; }
       .practice-grid { grid-template-columns: 1fr; }
       .process-grid { grid-template-columns: 1fr; }
       .form-row { grid-template-columns: 1fr; }
-      .case-body p::first-letter { font-size: 48px; }
-      .about-cred { gap: 28px; }
+      .about-creds { grid-template-columns: 1fr 1fr; }
     }
   </style>
 </head>
 <body>
 
+  <!-- NAV -->
   <nav class="nav">
     <div class="wrap">
-      <a href="#" class="nav-logo">Matthew C. Boyd<span class="dot">.</span></a>
+      <div class="nav-logo">Matthew C. <span>Boyd</span></div>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#results">Verdicts</a></li>
@@ -1410,17 +1093,16 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-deco">100</div>
     <div class="wrap">
       <div class="hero-left">
-        <div class="hero-meta">
-          <div class="hero-meta-line"></div>
-          <span class="hero-meta-text">Philadelphia Criminal Defense</span>
+        <div class="hero-eyebrow">
+          <div class="hero-eyebrow-line"></div>
+          <span class="hero-eyebrow-text">Philadelphia Criminal Defense</span>
         </div>
         <h1 class="hero-h1">
           When the stakes<br>
-          are <span class="accent">everything</span>,<br>
-          you need a fighter.
+          are <span class="hero-italic">everything</span>,<br>
+          go to trial.
         </h1>
         <p class="hero-sub">
           Over a decade in Philadelphia's criminal courts. 100+ jury trials. Not Guilty verdicts on Attempted Murder, Rape, Firearms, and the most serious charges prosecutors can bring.
@@ -1437,15 +1119,17 @@
         </div>
       </div>
       <div class="hero-portrait">
-        <div class="hero-portrait-frame">
-          <picture>
-            <source srcset="assets/images/matthew-boyd-hero.webp" type="image/webp">
-            <img src="assets/images/matthew-boyd-hero.jpg" alt="Matthew C. Boyd, Philadelphia Criminal Defense Attorney" />
-          </picture>
-        </div>
-        <div class="hero-credential">
-          <div class="hero-credential-num">100+</div>
-          <div class="hero-credential-label">Jury Trials</div>
+        <!--
+          IMAGE: assets/images/matthew-boyd-hero.webp + .jpg
+          Portrait crop. Place in assets/images/
+        -->
+        <picture>
+          <source srcset="assets/images/matthew-boyd-hero.webp" type="image/webp">
+          <img class="hero-portrait-img" src="assets/images/matthew-boyd-hero.jpg" alt="Matthew C. Boyd, Philadelphia Criminal Defense Attorney" />
+        </picture>
+        <div class="hero-stat">
+          <div class="hero-stat-num">100+</div>
+          <div class="hero-stat-label">Jury Trials</div>
         </div>
       </div>
     </div>
@@ -1454,96 +1138,97 @@
   <!-- STATS -->
   <div class="stats">
     <div class="wrap">
-      <div>
-        <div class="stat-num">10<span class="small">+</span></div>
-        <div class="stat-label">Years Practicing</div>
+      <div class="stat">
+        <div class="stat-num">100<sup>+</sup></div>
+        <div class="stat-label">Jury Trials Litigated</div>
       </div>
-      <div>
-        <div class="stat-num">100<span class="small">+</span></div>
-        <div class="stat-label">Jury Trials</div>
+      <div class="stat">
+        <div class="stat-num">10<sup>+</sup></div>
+        <div class="stat-label">Years Criminal Defense</div>
       </div>
-      <div>
-        <div class="stat-num">1,000<span class="small">s</span></div>
+      <div class="stat">
+        <div class="stat-num">1,000<sup>s</sup></div>
         <div class="stat-label">Cases Handled</div>
       </div>
-      <div class="stats-divider"></div>
-      <div class="stats-cta">Available 24/7</div>
-      <a href="tel:2150000000" class="stats-cta-num">(215) 000-0000</a>
     </div>
   </div>
 
-  <!-- CASE RESULTS — EDITORIAL CENTERPIECE -->
+  <!-- CASE RESULTS -->
   <section class="results" id="results">
-    <div class="results-bg"></div>
+    <picture>
+      <source srcset="assets/images/philadelphia-skyline.webp" type="image/webp">
+      <img class="results-skyline" src="assets/images/philadelphia-skyline.jpg" alt="" role="presentation" />
+    </picture>
     <div class="wrap">
-      <div class="results-header">
-        <h2>Notable<br><em>verdicts.</em></h2>
-        <div class="results-header-meta">
-          <div class="results-header-meta-big">02</div>
-          <div class="results-header-meta-label">Selected Cases</div>
+      <div class="results-intro">
+        <div>
+          <span class="section-label">Verdicts</span>
+          <h2 class="section-h2 section-h2-light">Notable Case Results</h2>
+          <div class="section-rule"></div>
         </div>
+        <p style="color:var(--text-on-dark);font-size:17px;line-height:1.75;font-weight:400;">
+          Matthew has secured Not Guilty verdicts on virtually every major criminal charge. These cases illustrate what he is capable of in a courtroom.
+        </p>
       </div>
 
-      <article class="case">
-        <div class="case-meta">
-          <div class="case-number">Case No. 01</div>
-          <div class="case-verdict">Three eyewitnesses. <br>One acquittal.</div>
-          <div class="case-verdict-tag">Not Guilty · All Charges</div>
+      <div class="results-cases">
+        <div class="case-item">
+          <div class="case-index">01</div>
+          <div class="case-content">
+            <div class="case-verdict-pill">Not Guilty — All Charges</div>
+            <div class="case-charges">Attempted Murder &amp; Aggravated Assault</div>
+            <p class="case-body">Three eyewitnesses testified they personally saw the client commit the crime. Matthew exposed critical inconsistencies in their accounts and demonstrated to the jury that each witness had motive to falsely identify his client. The jury returned Not Guilty on every count.</p>
+          </div>
         </div>
-        <div class="case-body">
-          <h3>Attempted Murder &amp; Aggravated Assault</h3>
-          <p>Three eyewitnesses took the stand and testified they personally saw the client commit the crime. Matthew exposed critical inconsistencies in their accounts and demonstrated to the jury that each witness had motive to falsely identify his client. The jury returned Not Guilty on every count.</p>
-        </div>
-      </article>
 
-      <article class="case">
-        <div class="case-meta">
-          <div class="case-number">Case No. 02</div>
-          <div class="case-verdict">The client's own DNA. <br>Still acquitted.</div>
-          <div class="case-verdict-tag">Not Guilty · All Charges</div>
+        <div class="case-item">
+          <div class="case-index">02</div>
+          <div class="case-content">
+            <div class="case-verdict-pill">Not Guilty — All Charges</div>
+            <div class="case-charges">Narcotics Distribution &amp; Firearms Offenses</div>
+            <p class="case-body">The client's own DNA was found on both an illegal firearm and a large quantity of narcotics. Matthew proved that police contaminated the evidence by failing to wear gloves during the search, and the jury returned Not Guilty on all charges.</p>
+          </div>
         </div>
-        <div class="case-body">
-          <h3>Narcotics Distribution &amp; Firearms</h3>
-          <p>The client's own DNA was found on both an illegal firearm and a large quantity of narcotics. Matthew proved to the jury that police contaminated the evidence by failing to wear gloves during the search, and the jury returned Not Guilty on all charges.</p>
-        </div>
-      </article>
+      </div>
     </div>
   </section>
 
   <!-- ABOUT -->
-  <section class="about" id="about">
+  <section class="about section section-white" id="about">
     <div class="wrap">
-      <div class="about-portrait">
+      <div class="about-img-wrap">
+        <!--
+          IMAGE: assets/images/matthew-boyd-about.webp + .jpg
+          Same source photo. Place in assets/images/
+        -->
         <picture>
           <source srcset="assets/images/matthew-boyd-about.webp" type="image/webp">
           <img src="assets/images/matthew-boyd-about.jpg" alt="Matthew C. Boyd" />
         </picture>
       </div>
       <div class="about-content">
-        <span class="label">About</span>
-        <h2>A trial attorney <em>by design,</em><br>not by default.</h2>
-
+        <span class="section-label">About Matthew</span>
+        <h2 class="section-h2">A trial attorney by conviction, not convention.</h2>
+        <div class="section-rule"></div>
         <p class="about-lead">
-          Matthew decided he wanted to be a trial attorney in fifth grade. He has been fighting for clients in that same spirit since the day he was sworn in.
+          Matthew decided he wanted to be a trial attorney in fifth grade. He has been fighting for clients in that same spirit ever since.
         </p>
-
         <p class="about-body">
           Matthew has practiced criminal law since graduating from Villanova University School of Law in 2014. He has handled thousands of cases, including pretrial hearings, bail and detainer hearings, motions to suppress, and over 100 jury trials.
         </p>
         <p class="about-body">
-          He cares about his clients. He returns calls. And he actually goes to trial when that is what it takes to win. He is dedicated to standing up to a criminal justice system that too often over-prosecutes and dehumanizes those it was built to serve.
+          He cares about his clients. He returns calls. He goes to trial when that is what it takes to win. He is dedicated to standing up to a criminal justice system that too often over-prosecutes and dehumanizes those it was built to serve.
         </p>
-
-        <div class="about-cred">
-          <div class="about-cred-item">
+        <div class="about-creds">
+          <div>
             <div class="about-cred-num">2014</div>
             <div class="about-cred-label">Villanova Law</div>
           </div>
-          <div class="about-cred-item">
+          <div>
             <div class="about-cred-num">PA</div>
             <div class="about-cred-label">Bar Admission</div>
           </div>
-          <div class="about-cred-item">
+          <div>
             <div class="about-cred-num">10+</div>
             <div class="about-cred-label">Years in Practice</div>
           </div>
@@ -1554,40 +1239,45 @@
 
   <!-- PHILADELPHIA -->
   <div class="philly">
+    <!--
+      IMAGE: assets/images/philadelphia-skyline.webp + .jpg
+      Wide landscape ~1800x600px. Place in assets/images/
+    -->
     <picture>
       <source srcset="assets/images/philadelphia-skyline.webp" type="image/webp">
       <img class="philly-bg" src="assets/images/philadelphia-skyline.jpg" alt="" role="presentation" />
     </picture>
     <div class="wrap">
-      <div class="philly-content">
-        <div class="philly-label">Service Area</div>
-        <h3>Defending the accused across <em>greater Philadelphia.</em></h3>
-        <p>Matthew handles serious criminal cases throughout the city and surrounding counties. He knows the courts, the prosecutors, and the rhythm of how cases are won and lost in this region.</p>
-        <div class="philly-counties">
-          <span class="philly-county">Philadelphia</span>
-          <span class="philly-county">Montgomery</span>
-          <span class="philly-county">Delaware</span>
-          <span class="philly-county">Bucks</span>
-          <span class="philly-county">Chester</span>
-        </div>
+      <span class="section-label">Service Area</span>
+      <h3>Defending the accused across greater Philadelphia.</h3>
+      <p>Matthew handles serious criminal cases throughout the city and surrounding counties. He knows the courts, the prosecutors, and the process.</p>
+      <div class="philly-counties">
+        <span class="philly-county">Philadelphia</span>
+        <span class="philly-county">Montgomery</span>
+        <span class="philly-county">Delaware</span>
+        <span class="philly-county">Bucks</span>
+        <span class="philly-county">Chester</span>
       </div>
     </div>
   </div>
 
   <!-- TESTIMONIALS -->
-  <section class="testimonials">
+  <section class="section section-light">
     <div class="wrap">
-      <div class="testimonials-head">
-        <span class="label">In Their Own Words</span>
-        <h2>The stories <em>behind the verdicts.</em></h2>
-      </div>
+      <span class="section-label">In Their Own Words</span>
+      <h2 class="section-h2">What Clients Say</h2>
+      <div class="section-rule"></div>
       <div class="testimonials-grid">
 
         <div class="testimonial">
           <div class="testimonial-stars">
-            <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+            <i data-lucide="star" style="width:14px;height:14px;fill:var(--gold);stroke:var(--gold)"></i>
+            <i data-lucide="star" style="width:14px;height:14px;fill:var(--gold);stroke:var(--gold)"></i>
+            <i data-lucide="star" style="width:14px;height:14px;fill:var(--gold);stroke:var(--gold)"></i>
+            <i data-lucide="star" style="width:14px;height:14px;fill:var(--gold);stroke:var(--gold)"></i>
+            <i data-lucide="star" style="width:14px;height:14px;fill:var(--gold);stroke:var(--gold)"></i>
           </div>
-          <p class="testimonial-quote">I was facing serious charges and thought my life was over. Matthew stayed in constant contact, explained everything, and went to trial when everyone else told me to take a deal. Not guilty on all counts.</p>
+          <p class="testimonial-quote">"I was facing serious charges and thought my life was over. Matthew stayed in constant contact, explained everything, and went to trial when everyone else told me to take a deal. Not guilty on all counts."</p>
           <div class="testimonial-attr">
             <div class="testimonial-name">D.W.</div>
             <div class="testimonial-case">Firearms &amp; Drug Charges, Philadelphia</div>
@@ -1596,9 +1286,13 @@
 
         <div class="testimonial">
           <div class="testimonial-stars">
-            <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+            <i data-lucide="star" style="width:14px;height:14px;fill:var(--gold);stroke:var(--gold)"></i>
+            <i data-lucide="star" style="width:14px;height:14px;fill:var(--gold);stroke:var(--gold)"></i>
+            <i data-lucide="star" style="width:14px;height:14px;fill:var(--gold);stroke:var(--gold)"></i>
+            <i data-lucide="star" style="width:14px;height:14px;fill:var(--gold);stroke:var(--gold)"></i>
+            <i data-lucide="star" style="width:14px;height:14px;fill:var(--gold);stroke:var(--gold)"></i>
           </div>
-          <p class="testimonial-quote">Matthew got my charges dismissed before we even made it to trial. He knew exactly what motions to file and when. He actually answers his phone, which no other attorney I tried did.</p>
+          <p class="testimonial-quote">"Matthew got my charges dismissed before we even made it to trial. He knew exactly what motions to file and when. He actually answers his phone, which no other attorney I tried did."</p>
           <div class="testimonial-attr">
             <div class="testimonial-name">R.M.</div>
             <div class="testimonial-case">Assault Charges Dismissed, Montgomery County</div>
@@ -1607,9 +1301,13 @@
 
         <div class="testimonial">
           <div class="testimonial-stars">
-            <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+            <i data-lucide="star" style="width:14px;height:14px;fill:var(--gold);stroke:var(--gold)"></i>
+            <i data-lucide="star" style="width:14px;height:14px;fill:var(--gold);stroke:var(--gold)"></i>
+            <i data-lucide="star" style="width:14px;height:14px;fill:var(--gold);stroke:var(--gold)"></i>
+            <i data-lucide="star" style="width:14px;height:14px;fill:var(--gold);stroke:var(--gold)"></i>
+            <i data-lucide="star" style="width:14px;height:14px;fill:var(--gold);stroke:var(--gold)"></i>
           </div>
-          <p class="testimonial-quote">My son was locked up and I didn't know where to turn. Matthew had him out within days by getting his bail reduced. He treated our family with dignity when we needed it most.</p>
+          <p class="testimonial-quote">"My son was locked up and I didn't know where to turn. Matthew had him out within days by getting his bail reduced. He treated our family with dignity when we needed it most."</p>
           <div class="testimonial-attr">
             <div class="testimonial-name">C.T.</div>
             <div class="testimonial-case">Bail Reduction &amp; Case Discharge, Philadelphia</div>
@@ -1620,55 +1318,54 @@
     </div>
   </section>
 
-  <!-- PRACTICE -->
-  <section class="practice" id="practice">
+  <!-- PRACTICE AREAS -->
+  <section class="section section-white" id="practice">
     <div class="wrap">
-      <div class="practice-head">
-        <span class="label">What Matthew Handles</span>
-        <h2>Built for <em>serious cases.</em></h2>
-      </div>
+      <span class="section-label">What Matthew Handles</span>
+      <h2 class="section-h2">Practice Areas</h2>
+      <div class="section-rule"></div>
       <div class="practice-grid">
 
         <div class="prac">
           <div class="prac-num">01</div>
-          <div class="prac-title">Violent<br>Crimes</div>
-          <p class="prac-body">Attempted Murder, Aggravated Assault, Robbery, Kidnapping. Matthew has won Not Guilty verdicts on the most serious charges prosecutors bring.</p>
-          <i class="prac-arrow" data-lucide="arrow-up-right" style="width:20px;height:20px"></i>
+          <div class="prac-title">Violent Crimes</div>
+          <p class="prac-body">Attempted Murder, Aggravated Assault, Robbery, Kidnapping. Matthew has won Not Guilty verdicts on the most serious charges Philadelphia prosecutors bring.</p>
+          <i class="prac-arrow" data-lucide="arrow-up-right" style="width:18px;height:18px"></i>
         </div>
 
         <div class="prac">
           <div class="prac-num">02</div>
-          <div class="prac-title">Drug &amp;<br>Firearms</div>
+          <div class="prac-title">Drug &amp; Firearms</div>
           <p class="prac-body">Possession, distribution, and firearms charges. Matthew challenges the evidence, the search, and the stop, and wins cases others would plead out.</p>
-          <i class="prac-arrow" data-lucide="arrow-up-right" style="width:20px;height:20px"></i>
+          <i class="prac-arrow" data-lucide="arrow-up-right" style="width:18px;height:18px"></i>
         </div>
 
         <div class="prac">
           <div class="prac-num">03</div>
-          <div class="prac-title">DUI<br>Defense</div>
+          <div class="prac-title">DUI Defense</div>
           <p class="prac-body">Challenging traffic stops, field sobriety tests, and breath test results. Matthew protects your license, your record, and your future.</p>
-          <i class="prac-arrow" data-lucide="arrow-up-right" style="width:20px;height:20px"></i>
+          <i class="prac-arrow" data-lucide="arrow-up-right" style="width:18px;height:18px"></i>
         </div>
 
         <div class="prac">
           <div class="prac-num">04</div>
-          <div class="prac-title">Pretrial &amp;<br>Bail</div>
+          <div class="prac-title">Pretrial &amp; Bail</div>
           <p class="prac-body">Matthew has represented clients at thousands of preliminary hearings and regularly gets clients out of custody before trial.</p>
-          <i class="prac-arrow" data-lucide="arrow-up-right" style="width:20px;height:20px"></i>
+          <i class="prac-arrow" data-lucide="arrow-up-right" style="width:18px;height:18px"></i>
         </div>
 
         <div class="prac">
           <div class="prac-num">05</div>
-          <div class="prac-title">Burglary<br>&amp; Theft</div>
+          <div class="prac-title">Burglary &amp; Theft</div>
           <p class="prac-body">Burglary, Robbery, Receiving Stolen Property. Strategic defense from the moment of arrest through trial.</p>
-          <i class="prac-arrow" data-lucide="arrow-up-right" style="width:20px;height:20px"></i>
+          <i class="prac-arrow" data-lucide="arrow-up-right" style="width:18px;height:18px"></i>
         </div>
 
         <div class="prac">
           <div class="prac-num">06</div>
-          <div class="prac-title">Free<br>Consultation</div>
-          <p class="prac-body">Not sure if you need an attorney? Call Matthew. He will tell you honestly what you are facing and what your options are.</p>
-          <i class="prac-arrow" data-lucide="arrow-up-right" style="width:20px;height:20px"></i>
+          <div class="prac-title">Free Consultation</div>
+          <p class="prac-body">Not sure if you need an attorney? Call Matthew. He will tell you honestly what you are facing and what your options are, with no pressure and no obligation.</p>
+          <i class="prac-arrow" data-lucide="arrow-up-right" style="width:18px;height:18px"></i>
         </div>
 
       </div>
@@ -1676,14 +1373,12 @@
   </section>
 
   <!-- PROCESS -->
-  <section class="process">
+  <section class="section section-light">
     <div class="wrap">
-      <div class="process-head">
-        <span class="label">From First Call to Verdict</span>
-        <h2>What to <em>expect.</em></h2>
-      </div>
+      <span class="section-label">From First Call to Verdict</span>
+      <h2 class="section-h2">What to Expect</h2>
+      <div class="section-rule"></div>
       <div class="process-grid">
-        <div class="process-line"></div>
         <div class="process-step">
           <div class="process-dot">01</div>
           <div class="process-title">Free Consultation</div>
@@ -1697,7 +1392,7 @@
         <div class="process-step">
           <div class="process-dot">03</div>
           <div class="process-title">Pretrial Strategy</div>
-          <p class="process-body">Motions to suppress, bail hearings, preliminary hearings. Many cases are won or lost before trial. Matthew knows this.</p>
+          <p class="process-body">Motions to suppress, bail hearings, preliminary hearings. Many cases are won or lost before trial. Matthew knows this and prepares accordingly.</p>
         </div>
         <div class="process-step">
           <div class="process-dot">04</div>
@@ -1709,14 +1404,16 @@
   </section>
 
   <!-- FAQ -->
-  <section class="faq" id="faq">
+  <section class="section section-white" id="faq">
     <div class="wrap">
       <div class="faq-aside">
-        <span class="label">Common Questions</span>
-        <h2>Answers, before <em>you ask.</em></h2>
-        <p>Criminal cases raise hundreds of questions. Here are the ones most clients ask first. For anything else, call directly.</p>
+        <span class="section-label">Common Questions</span>
+        <h2 class="section-h2">Frequently Asked Questions</h2>
+        <div class="section-rule"></div>
+        <p>Criminal cases raise urgent questions. Here are the ones most clients ask first. For anything else, call directly.</p>
       </div>
       <div class="faq-list">
+
         <div class="faq-item">
           <div class="faq-q">
             <span class="faq-q-text">Should I talk to police before hiring an attorney?</span>
@@ -1738,7 +1435,7 @@
             <span class="faq-q-text">What happens at a preliminary hearing?</span>
             <i class="faq-icon" data-lucide="plus" style="width:20px;height:20px"></i>
           </div>
-          <div class="faq-a">A preliminary hearing is one of the most important stages in a Pennsylvania criminal case. The judge decides whether the Commonwealth has enough evidence to proceed. Matthew has had countless cases dismissed or significantly reduced at this stage.</div>
+          <div class="faq-a">A preliminary hearing is one of the most important stages in a Pennsylvania criminal case. The judge decides whether the Commonwealth has enough evidence to proceed. Matthew has had countless cases dismissed or significantly reduced at this stage. It is an opportunity that should not be wasted with unprepared representation.</div>
         </div>
 
         <div class="faq-item">
@@ -1751,7 +1448,7 @@
 
         <div class="faq-item">
           <div class="faq-q">
-            <span class="faq-q-text">Can Matthew help if I've already been charged?</span>
+            <span class="faq-q-text">Can Matthew help if I have already been charged?</span>
             <i class="faq-icon" data-lucide="plus" style="width:20px;height:20px"></i>
           </div>
           <div class="faq-a">Yes. Matthew handles cases at every stage, from the moment of arrest through trial and beyond. The earlier you get representation the better, but it is never too late to call.</div>
@@ -1764,20 +1461,25 @@
           </div>
           <div class="faq-a">Matthew understands that criminal cases are urgent. He responds to inquiries quickly and can often schedule a same-day or next-day consultation. If you or a loved one is in custody, call directly and he will prioritize getting you the information you need right away.</div>
         </div>
+
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section class="contact" id="contact">
-    <div class="contact-bg"></div>
+  <section class="section section-dark" id="contact">
     <div class="wrap">
       <div class="contact-left">
-        <span class="label">Get in Touch</span>
-        <h2>Don't face this <em>alone.</em></h2>
-        <p>Every criminal case is different. Call or fill out the form and Matthew will personally review your situation and tell you exactly where you stand.</p>
+        <span class="section-label">Get in Touch</span>
+        <h2 class="section-h2 section-h2-light">Free Consultation</h2>
+        <div class="section-rule"></div>
+        <p class="contact-sub">Every criminal case is different. Call or fill out the form and Matthew will personally review your situation and tell you exactly where you stand, with no obligation and no pressure.</p>
 
         <div class="contact-photo">
+          <!--
+            IMAGE: assets/images/matthew-boyd-contact.webp + .jpg
+            Tight headshot, same source photo. Place in assets/images/
+          -->
           <picture>
             <source srcset="assets/images/matthew-boyd-contact.webp" type="image/webp">
             <img src="assets/images/matthew-boyd-contact.jpg" alt="Matthew C. Boyd" />
@@ -1806,16 +1508,16 @@
         <div class="form-row">
           <div class="form-group">
             <label for="fname">First Name</label>
-            <input type="text" id="fname" name="fname" required />
+            <input type="text" id="fname" name="fname" placeholder="John" required />
           </div>
           <div class="form-group">
             <label for="lname">Last Name</label>
-            <input type="text" id="lname" name="lname" required />
+            <input type="text" id="lname" name="lname" placeholder="Smith" required />
           </div>
         </div>
         <div class="form-group">
           <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" name="phone" required />
+          <input type="tel" id="phone" name="phone" placeholder="(215) 000-0000" required />
         </div>
         <div class="form-group">
           <label for="charge">Type of Charge</label>
@@ -1831,7 +1533,7 @@
         </div>
         <div class="form-group">
           <label for="message">Tell me about your situation</label>
-          <textarea id="message" name="message" required></textarea>
+          <textarea id="message" name="message" placeholder="Briefly describe the charges and where the case currently stands..." required></textarea>
         </div>
         <button type="submit" class="form-submit" id="form-submit-btn">
           <i data-lucide="send" style="width:14px;height:14px"></i>
@@ -1842,26 +1544,31 @@
     </div>
   </section>
 
-  <!-- FOOTER CTA -->
-  <section class="footer-cta">
+  <!-- CTA BAND -->
+  <div class="cta-band">
     <div class="wrap">
-      <h3>Facing charges? <em>Don't wait.</em></h3>
-      <div class="footer-cta-phone">
-        <div class="footer-cta-phone-label">Call Anytime</div>
-        <a href="tel:2150000000" class="footer-cta-phone-num">(215) 000-0000</a>
+      <div>
+        <h2>Facing charges? Don't wait.</h2>
+        <p>Every day matters in a criminal case. Matthew is available and responds quickly.</p>
+      </div>
+      <div class="cta-right">
+        <div class="cta-phone">
+          <i data-lucide="phone" style="width:22px;height:22px;stroke:var(--gold)"></i>
+          (215) 000-0000
+        </div>
+        <a href="#contact" class="btn-cta">Schedule a Free Consultation</a>
       </div>
     </div>
-  </section>
+  </div>
 
   <!-- FOOTER -->
   <footer class="footer">
     <div class="wrap">
       <div class="footer-main">
-        <div class="footer-brand">
-          <span class="nav-logo">Matthew C. Boyd<span class="dot">.</span></span>
-          <p>Criminal defense attorney serving Philadelphia and the surrounding counties. Of Counsel at Link Law, LLC.</p>
+        <div>
+          <span class="footer-logo">Matthew C. <span>Boyd</span></span>
+          <p class="footer-desc">Criminal defense attorney serving Philadelphia and the surrounding counties. Of Counsel at Link Law, LLC.</p>
         </div>
-
         <div class="footer-col">
           <h5>Practice</h5>
           <ul>
@@ -1869,9 +1576,9 @@
             <li><a href="#practice">Drug &amp; Firearms</a></li>
             <li><a href="#practice">DUI Defense</a></li>
             <li><a href="#practice">Pretrial &amp; Bail</a></li>
+            <li><a href="#practice">Burglary &amp; Theft</a></li>
           </ul>
         </div>
-
         <div class="footer-col">
           <h5>Firm</h5>
           <ul>
@@ -1881,21 +1588,19 @@
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
-
         <div class="footer-col">
           <h5>Contact</h5>
           <p>
             (215) 000-0000<br>
-            matthew@matthewboydlaw.com<br>
+            matthew@matthewboydlaw.com<br><br>
             Philadelphia, PA
           </p>
         </div>
       </div>
-
       <div class="footer-bottom">
         <div class="left">&copy; 2025 Matthew C. Boyd, Esq.</div>
-        <div class="mid">Attorney advertising. Prior results do not guarantee a similar outcome. Matthew C. Boyd is licensed to practice law in Pennsylvania. This website is for informational purposes only and does not constitute legal advice.</div>
-        <div class="right">Of Counsel · <a href="#" style="color:var(--gold)">Link Law, LLC</a></div>
+        <div class="mid">Attorney advertising. Prior results do not guarantee a similar outcome. Matthew C. Boyd is licensed to practice law in Pennsylvania. This website is for informational purposes only and does not constitute legal advice. Contacting this firm does not create an attorney-client relationship.</div>
+        <div class="right">Of Counsel &middot; <a href="#">Link Law, LLC</a></div>
       </div>
     </div>
   </footer>
