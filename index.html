@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Matthew C. Boyd | Philadelphia Criminal Defense Attorney</title>
-  <meta name="description" content="Philadelphia criminal defense attorney with 100+ jury trials and Not Guilty verdicts on Attempted Murder, Rape, Firearms, and more. Call for a free consultation." />
-  <link rel="canonical" href="https://matthewboydlaw.com/" />
+  <title>Boyd Law LLC | Philadelphia Criminal Defense Attorney</title>
+  <meta name="description" content="Boyd Law LLC — Philadelphia criminal defense attorney with 100+ jury trials and Not Guilty verdicts on Attempted Murder, Rape, Firearms, and more. Call for a free consultation." />
+  <link rel="canonical" href="https://boydlawllc.com/" />
 
   <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
 
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://matthewboydlaw.com/" />
-  <meta property="og:title" content="Matthew C. Boyd | Philadelphia Criminal Defense Attorney" />
+  <meta property="og:url" content="https://boydlawllc.com/" />
+  <meta property="og:title" content="Boyd Law LLC | Philadelphia Criminal Defense Attorney" />
   <meta property="og:description" content="100+ jury trials. Not Guilty verdicts on Attempted Murder, Rape, Firearms, and more." />
   <meta property="og:image" content="https://matthewboydlaw.com/assets/images/og-image.jpg" />
   <meta property="og:image:width" content="1200" />
@@ -102,6 +102,11 @@
       transition: color 0.2s;
     }
     .nav-links a:hover { color: var(--cream); }
+    .nav-links a.nav-active {
+      color: var(--cream);
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 2px;
+    }
     .nav-cta {
       background: var(--gold);
       color: var(--ink) !important;
@@ -1301,12 +1306,10 @@
       .process-title { font-size: 18px; }
       .process-body { font-size: 14px; }
 
-      /* FAQ — hide last 2 questions, keep top 4 */
+      /* FAQ — keep all items visible on mobile */
       .faq .wrap { grid-template-columns: 1fr; gap: 32px; }
       .faq-aside { position: static; }
       .faq-aside p { display: none; }
-      .faq-item:nth-child(5),
-      .faq-item:nth-child(6) { display: none; }
 
       /* Contact */
       .contact .wrap { grid-template-columns: 1fr; gap: 36px; }
@@ -1344,13 +1347,13 @@
   <!-- NAV -->
   <nav class="nav">
     <div class="wrap">
-      <div class="nav-logo">Matthew C. <span>Boyd</span></div>
+      <a href="#" class="nav-logo"><span>Boyd Law</span> LLC</a>
       <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#results">Verdicts</a></li>
-        <li><a href="#practice">Practice</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#contact" class="nav-cta">Free Consultation</a></li>
+        <li><a href="#about" data-section="about">About</a></li>
+        <li><a href="#results" data-section="results">Verdicts</a></li>
+        <li><a href="#practice" data-section="practice">Practice</a></li>
+        <li><a href="#faq" data-section="faq">FAQ</a></li>
+        <li><a href="#contact" class="nav-cta" data-section="contact">Free Consultation</a></li>
       </ul>
       <button class="nav-hamburger" aria-label="Toggle menu">
         <span></span><span></span><span></span>
@@ -1376,13 +1379,14 @@
       <div class="hero-left">
         <div class="hero-eyebrow">
           <div class="hero-eyebrow-line"></div>
-          <span class="hero-eyebrow-text">Philadelphia Criminal Defense</span>
+          <span class="hero-eyebrow-text">Boyd Law LLC · Philadelphia Criminal Defense</span>
         </div>
         <h1 class="hero-h1">
           When the stakes<br>
           are <span class="hero-italic">everything</span>,<br>
           go to trial.
         </h1>
+        <p style="font-family:'Playfair Display',serif;font-style:italic;color:var(--gold-light);font-size:18px;margin-bottom:24px;margin-top:-16px;font-weight:400;letter-spacing:0.01em;">Aggressive defense. Real results. No excuses.</p>
         <p class="hero-sub">
           Over a decade in Philadelphia's criminal courts. 100+ jury trials. Not Guilty verdicts on Attempted Murder, Rape, Firearms, and the most serious charges prosecutors can bring.
         </p>
@@ -1485,11 +1489,12 @@
         </picture>
       </div>
       <div class="about-content">
-        <span class="section-label">About Matthew</span>
-        <h2 class="section-h2">A trial attorney by conviction, not convention.</h2>
+        <span class="section-label">About Boyd Law LLC</span>
+        <h2 class="section-h2" style="font-size:clamp(40px,4.5vw,58px);">Matthew C. Boyd</h2>
+        <p style="font-family:'Playfair Display',serif;font-size:16px;color:var(--gold);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;font-weight:500;">Founder &amp; Principal Attorney</p>
         <div class="section-rule"></div>
         <p class="about-lead">
-          Matthew decided he wanted to be a trial attorney in fifth grade. He has been fighting for clients in that same spirit ever since.
+          A trial attorney by conviction, not convention — Matthew decided he wanted to be a trial attorney in fifth grade. He has been fighting for clients in that same spirit ever since.
         </p>
         <p class="about-body">
           Matthew has practiced criminal law since graduating from Villanova University School of Law in 2014. He has handled thousands of cases, including pretrial hearings, bail and detainer hearings, motions to suppress, and over 100 jury trials.
@@ -1697,6 +1702,22 @@
 
         <div class="faq-item">
           <div class="faq-q">
+            <span class="faq-q-text">Is what I tell Matthew confidential?</span>
+            <i class="faq-icon" data-lucide="plus" style="width:20px;height:20px"></i>
+          </div>
+          <div class="faq-a">Yes. Everything you share with Matthew is protected by attorney-client privilege — one of the strongest legal protections that exists. This means he cannot and will not disclose anything you tell him to police, prosecutors, or anyone else. This privilege applies from your very first conversation, including the free consultation. You can speak freely and honestly so he can give you the best possible advice.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            <span class="faq-q-text">Does the free consultation stay confidential too?</span>
+            <i class="faq-icon" data-lucide="plus" style="width:20px;height:20px"></i>
+          </div>
+          <div class="faq-a">Yes. Attorney-client privilege attaches from the moment you first consult with an attorney, even before you formally retain them. What you tell Matthew during the free consultation cannot be used against you and cannot be shared with anyone. You do not need to hold back out of fear that the information will go further.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
             <span class="faq-q-text">Should I talk to police before hiring an attorney?</span>
             <i class="faq-icon" data-lucide="plus" style="width:20px;height:20px"></i>
           </div>
@@ -1737,10 +1758,26 @@
 
         <div class="faq-item">
           <div class="faq-q">
+            <span class="faq-q-text">What if I can't afford an attorney?</span>
+            <i class="faq-icon" data-lucide="plus" style="width:20px;height:20px"></i>
+          </div>
+          <div class="faq-a">Matthew understands that legal fees are a real concern, especially when you are already under enormous stress. He offers flexible payment arrangements and will work with you to find a structure that fits your situation. Call for a free consultation and have an honest conversation about costs — there is no pressure and no obligation.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
             <span class="faq-q-text">How quickly can Matthew take my case?</span>
             <i class="faq-icon" data-lucide="plus" style="width:20px;height:20px"></i>
           </div>
           <div class="faq-a">Matthew understands that criminal cases are urgent. He responds to inquiries quickly and can often schedule a same-day or next-day consultation. If you or a loved one is in custody, call directly and he will prioritize getting you the information you need right away.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            <span class="faq-q-text">Will Matthew personally handle my case?</span>
+            <i class="faq-icon" data-lucide="plus" style="width:20px;height:20px"></i>
+          </div>
+          <div class="faq-a">Yes. Boyd Law LLC is a dedicated criminal defense practice and Matthew personally handles every case. You will not be handed off to a junior associate or lost in a large firm. When you hire Matthew, you get Matthew — in the courtroom, on the phone, and at every hearing.</div>
         </div>
 
       </div>
@@ -1788,6 +1825,12 @@
         <div class="contact-detail">
           <i data-lucide="clock" style="width:18px;height:18px"></i>
           <span>Available 7 days a week. Urgent matters answered same day.</span>
+        </div>
+        <div class="contact-detail" style="margin-top:8px;">
+          <i data-lucide="credit-card" style="width:18px;height:18px"></i>
+          <a href="#" style="display:inline-flex;align-items:center;gap:6px;background:transparent;border:1px solid var(--gold);color:var(--gold);font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:9px 18px;border-radius:2px;transition:background 0.2s,color 0.2s;" onmouseover="this.style.background='var(--gold)';this.style.color='var(--ink)'" onmouseout="this.style.background='transparent';this.style.color='var(--gold)'">
+            Make a Payment
+          </a>
         </div>
       </div>
 
@@ -1852,8 +1895,8 @@
     <div class="wrap">
       <div class="footer-main">
         <div>
-          <span class="footer-logo">Matthew C. <span>Boyd</span></span>
-          <p class="footer-desc">Criminal defense attorney serving Philadelphia and the surrounding counties. Of Counsel at Link Law, LLC.</p>
+          <span class="footer-logo"><span>Boyd Law</span> LLC</span>
+          <p class="footer-desc">Dedicated criminal defense practice serving Philadelphia and the surrounding counties. Matthew C. Boyd, Principal Attorney.</p>
         </div>
         <div class="footer-col">
           <h5>Practice</h5>
@@ -1890,9 +1933,9 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <div class="left">&copy; 2025 Matthew C. Boyd, Esq.</div>
+        <div class="left">&copy; 2025 Boyd Law LLC</div>
         <div class="mid">Attorney advertising. Prior results do not guarantee a similar outcome. Matthew C. Boyd is licensed to practice law in Pennsylvania. This website is for informational purposes only and does not constitute legal advice. Contacting this firm does not create an attorney-client relationship.</div>
-        <div class="right">Of Counsel &middot; <a href="#">Link Law, LLC</a></div>
+        <div class="right">Matthew C. Boyd, Esq. &middot; Principal Attorney</div>
       </div>
     </div>
   </footer>
@@ -1913,6 +1956,24 @@
           btn.classList.remove('open');
         });
       });
+
+      // Active nav highlight via IntersectionObserver
+      var sections = document.querySelectorAll('section[id], div[id]');
+      var navLinks = document.querySelectorAll('.nav-links a[data-section]');
+      var observerOptions = { rootMargin: '-20% 0px -60% 0px', threshold: 0 };
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            navLinks.forEach(function(link) {
+              link.classList.remove('nav-active');
+              if (link.getAttribute('data-section') === entry.target.id) {
+                link.classList.add('nav-active');
+              }
+            });
+          }
+        });
+      }, observerOptions);
+      sections.forEach(function(section) { observer.observe(section); });
 
       document.querySelectorAll('.faq-item').forEach(function (item) {
         item.addEventListener('click', function () {
