@@ -1344,7 +1344,42 @@
 </head>
 <body>
 
-  <!-- NAV -->
+  <!-- PASSWORD GATE -->
+  <div id="password-gate" style="position:fixed;inset:0;background:#07111f;z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:24px;">
+    <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:500;color:#f4efe6;letter-spacing:0.01em;">
+      <span style="color:#b8924d;">Boyd Law</span> LLC
+    </div>
+    <div style="font-size:11px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:#b8924d;">Preview Access</div>
+    <div style="display:flex;flex-direction:column;gap:10px;width:280px;">
+      <input id="gate-input" type="password" placeholder="Enter password" style="background:#0c1d30;border:1px solid #1e3554;color:#f4efe6;font-family:'Inter',sans-serif;font-size:14px;padding:13px 16px;outline:none;width:100%;letter-spacing:0.05em;" onkeydown="if(event.key==='Enter')checkPassword();" />
+      <button onclick="checkPassword();" style="background:#b8924d;color:#07111f;font-family:'Inter',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:13px;border:none;cursor:pointer;transition:background 0.2s;" onmouseover="this.style.background='#ceac6e'" onmouseout="this.style.background='#b8924d'">Enter Site</button>
+      <div id="gate-error" style="font-size:12px;color:#e05555;text-align:center;display:none;">Incorrect password. Please try again.</div>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      if (sessionStorage.getItem('odd_auth') === 'true') {
+        document.getElementById('password-gate').style.display = 'none';
+      }
+    })();
+    function checkPassword() {
+      var val = document.getElementById('gate-input').value;
+      if (val === 'odd2026') {
+        sessionStorage.setItem('odd_auth', 'true');
+        var gate = document.getElementById('password-gate');
+        gate.style.opacity = '0';
+        gate.style.transition = 'opacity 0.4s';
+        setTimeout(function() { gate.style.display = 'none'; }, 400);
+      } else {
+        document.getElementById('gate-error').style.display = 'block';
+        document.getElementById('gate-input').value = '';
+        document.getElementById('gate-input').focus();
+      }
+    }
+  </script>
+
+
   <nav class="nav">
     <div class="wrap">
       <a href="#" class="nav-logo"><span>Boyd Law</span> LLC</a>
